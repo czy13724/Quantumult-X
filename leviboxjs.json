@@ -1504,55 +1504,55 @@
       ]
     },
     {
-      "id": "zsfc.shop.online",
-      "name": "掌飞商城",
-      "author": "",
-      "repo": "",
-      "script": "",
-      "icons": [
-        "https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/icon/Zsfc.png",
-        "https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/icon/Zsfc.png"
-      ],
-      "keys": [
-	"zsfc_bang_shopname",
-	"zsfc_bang_url",   
-	"zsfc_bang_referer",
-	"zsfc_bang_data"
-      ],
-      "descs_html": [
-        "<h4 align=\"center\">获取数据方法：掌上飞车APP => 下方游戏栏 => 掌上商城</h4>",
-        "<h4 align=\"center\">道具名称只能填写以下其中之一</h4>",
-        "<h4 align=\"center\">雷诺、进气系统、燃料系统、点火系统、引擎系统、防护装置、普通粒子推进、普通阿尔法离合、重生宝珠LV1、效率宝珠LV1、效率宝珠LV2</h4>"
-      ],
-      "settings": [
-        {
-          "id": "zsfc_bang_shopname",
-          "name": "道具名称",
-          "val": "",
-          "type": "text",
-          "desc": "有点券或消费券时进行消费购物"
-        },
-        {
-          "id": "zsfc_bang_url",
-          "name": "余额地址",
-          "val": "",
-          "type": "text",
-          "desc": "获取余额的地址"
-        },
-        {
-          "id": "zsfc_bang_referer",
-          "name": "购物请求头",
-          "val": "",
-          "type": "textarea",
-          "desc": "发起购物请求的请求头"
-        },
-        {
-          "id": "zsfc_bang_data",
-          "name": "购物请求体",
-          "val": "",
-          "type": "textarea",
-          "desc": "发起购物请求的请求体"
-        },
+  "id": "zsfc.shop.online",
+  "name": "掌飞商城",
+  "author": "",
+  "repo": "",
+  "script": "",
+  "icons": [
+    "https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/icon/Zsfc.png",
+    "https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/icon/Zsfc.png"
+  ],
+  "keys": [
+    "zsfc_bang_shopname",
+    "zsfc_bang_url",
+    "zsfc_bang_referer",
+    "zsfc_bang_data"
+  ],
+  "descs_html": [
+    "<h4 align=\"center\">获取数据方法：掌上飞车APP => 下方游戏栏 => 掌上商城</h4>",
+    "<h4 align=\"center\">道具名称只能填写以下其中之一</h4>",
+    "<h4 align=\"center\">雷诺、进气系统、燃料系统、点火系统、引擎系统、防护装置、普通粒子推进、普通阿尔法离合、重生宝珠LV1、效率宝珠LV1、效率宝珠LV2</h4>"
+  ],
+  "settings": [
+    {
+      "id": "zsfc_bang_shopname",
+      "name": "道具名称",
+      "val": "",
+      "type": "text",
+      "desc": "有点券或消费券时进行消费购物"
+    },
+    {
+      "id": "zsfc_bang_url",
+      "name": "余额地址",
+      "val": "",
+      "type": "text",
+      "desc": "获取余额的地址"
+    },
+    {
+      "id": "zsfc_bang_referer",
+      "name": "购物请求头",
+      "val": "",
+      "type": "textarea",
+      "desc": "发起购物请求的请求头"
+    },
+    {
+      "id": "zsfc_bang_data",
+      "name": "购物请求体",
+      "val": "",
+      "type": "textarea",
+      "desc": "发起购物请求的请求体"
+    },
     {
       "id": "Tencent.Comic",
       "name": "腾讯动漫",
@@ -1568,7 +1568,7 @@
     {
       "id": "ChinaBroadnet",
       "name": "中国广电",
-      "desc": "首次使用需要编辑在rewrite_local下添加https://wx.10099.com.cn/contact-web/api/busi/qryUserInfo url script-request-body https://raw.githubusercontent.com/czy13724/wuhuhuuuu/main/Scripts/ChinaBroadnet/ChinaBroadnet.cookie.js?token=GHSAT0AAAAAACKIW7GBULYVO7II2OOSY2ICZKTHEHA ，mitm下添加hostname = wx.10099.com.cn。记得订阅boxjs，然后VX打开中国广电小程序并进行登录，当提示获取cookie时说明此脚本可用。"
+      "desc": "首次使用需要编辑在rewrite_local下添加https://wx.10099.com.cn/contact-web/api/busi/qryUserInfo url script-request-body https://raw.githubusercontent.com/czy13724/wuhuhuuuu/main/Scripts/ChinaBroadnet/ChinaBroadnet.cookie.js?token=GHSAT0AAAAAACKIW7GBULYVO7II2OOSY2ICZKTHEHA ，mitm下添加hostname = wx.10099.com.cn。记得订阅boxjs，然后VX打开中国广电小程序并进行登录，当提示获取cookie时说明此脚本可用。",
       "keys": ["@ChinaBroadnet.url", "@ChinaBroadnet.access", "@ChinaBroadnet.body"],
       "author": "原@wuhuhuuuu后@czy13724删除名称并添加使用说明（强迫症专属）",
       "script": "https://raw.githubusercontent.com/czy13724/wuhuhuuuu/main/Scripts/ChinaBroadnet/ChinaBroadnet.js?token=GHSAT0AAAAAACKIW7GBUXV4AOKJPWWBT4MYZKTHELA",
