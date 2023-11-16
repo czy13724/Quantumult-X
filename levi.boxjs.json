@@ -2114,14 +2114,18 @@
       ]
     },
     {
-      "author" : "@wuhuhuuuu",
+      "author" : "原@wuhuhuuuu改@czy13724去除名称",
       "keys" : [
         "@ChinaBroadnet.url",
         "@ChinaBroadnet.access",
         "@ChinaBroadnet.body"
       ],
       "script" : "https:\/\/github.com\/czy13724\/quantmultx\/raw\/main\/ChinaBroadnet.js",
-      "id" : "ChinaBroadnet",
+      "id" : [
+        "@ChinaBroadnet.url",
+        "@ChinaBroadnet.access",
+        "@ChinaBroadnet.body"
+      ],
       "repo" : "https:\/\/github.com\/wuhuhuuuu\/study\/tree\/main\/Scripts\/ChinaBroadnet",
       "name" : "中国广电",
       "icons" : [
