@@ -1,8 +1,8 @@
 {
-  "id" : "levi订阅boxjs仓库",
+  "id" : "levi.app.sub",
   "author" : "czy13724",
   "icon" : "",
-  "name" : "",
+  "name" : "levi脚本订阅",
   "repo" : "https://github.com/czy13724",
   "apps" : [
     {
