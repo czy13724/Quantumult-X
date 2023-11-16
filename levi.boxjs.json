@@ -2121,11 +2121,7 @@
         "@ChinaBroadnet.body"
       ],
       "script" : "https:\/\/github.com\/czy13724\/quantmultx\/raw\/main\/ChinaBroadnet.js",
-      "id" : [
-        "@ChinaBroadnet.url",
-        "@ChinaBroadnet.access",
-        "@ChinaBroadnet.body"
-      ],
+      "id" : "@ChinaBroadnet",
       "repo" : "https:\/\/github.com\/wuhuhuuuu\/study\/tree\/main\/Scripts\/ChinaBroadnet",
       "name" : "中国广电",
       "icons" : [
