@@ -12,6 +12,7 @@ Plz not FORK!!! Plz not FORK!!! Plz not FORK!!! If u like it, plz click star✨
 
 
 先看说明再操作，再不会无缘使用。
+
 请用qx中http请求功能添加 [levi.gallery.json](https://raw.githubusercontent.com/czy13724/quantmultx/main/levi.gallery.json)
 
 请用boxjs添加以下订阅 [levi.boxjs.json](https://raw.githubusercontent.com/czy13724/quantmultx/main/levi.boxjs.json)
