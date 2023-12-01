@@ -17,4 +17,6 @@ Plz not FORK!!! Plz not FORK!!! Plz not FORK!!! If u like it, plz click star✨
 
 请用boxjs添加以下订阅 [levi.boxjs.json](https://raw.githubusercontent.com/czy13724/quantmultx/main/levi.boxjs.json)
 
+请用Quantumult X, Surge, Loon等App添加图标订阅 [levi.icons.json](https://raw.githubusercontent.com/czy13724/LeviIcons/main/levi.icons.json)
+
 完成上述操作后再按照各个脚本的说明操作即可。
