@@ -145,7 +145,7 @@
         },{
             "config": "22 0 8 * * * https://gist.githubusercontent.com/Sliverkiss/c92ff545b2c48da565c029720c5282db/raw/hax.js, tag=Hax数据监控,img-url=https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/icon/Hax.png,enabled=true",
         },{
-            "config": "0 9 * * 1 https://raw.githubusercontent.com/czy13724/quantmultx/main/ChinaBroadnet.js, tag=中国广电查询套餐剩余, img-url=https://raw.githubusercontent.com/czy13724/Icons/main/icons/apps/CNBroadnet144x144.png, enabled=false",
+            "config": "0 9 * * 1 https://raw.githubusercontent.com/czy13724/quantmultx/main/scripts/China%20Broadnet/ChinaBroadnet.js, tag=中国广电查询套餐剩余, img-url=https://raw.githubusercontent.com/czy13724/Icons/main/icons/apps/CNBroadnet144x144.png, enabled=false",
             "addons": "https://raw.githubusercontent.com/czy13724/quantmultx/main/ChinaBroadnetcookie.conf, tag=中国广电获取cookie"
         },
     ]
