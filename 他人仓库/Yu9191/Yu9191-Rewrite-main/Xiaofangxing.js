@@ -1,5 +1,6 @@
 /******************************
 消费行  https://t.cn/A6OsSXGV
+作者三个软件
 @ios151
 *******************
 
@@ -13,14 +14,20 @@ hostname = www.xfx119.com
 
 *******************************/
 
-var chxm1023 = JSON.parse($response.body);
-
-chxm1023 = {...chxm1023,
-  "llkcValidityDays" : 4092599349,
-  "tkValidityDays" : 4092599349,
-  "validityDays" : 4092599349,
-  "fgjxjvValidityDays" : 4092599349,
-  "studySubsystem" : "2099-09-09 09:09:09"
+var B = JSON.parse($response.body);
+var ksDirectionMatch = $request.url.match(/&ksDirection=(\d+)/);
+var ksDirection = ksDirectionMatch ? parseInt(ksDirectionMatch[1]) : null;
+if (ksDirection === 1 || ksDirection === 2) {
+  B["userDirection"] = ksDirection;
 }
 
-$done({body : JSON.stringify(chxm1023)});
+B = {
+  ...B,
+  "llkcValidityDays": 4102415999,
+  "tkValidityDays": 4102415999,
+  "validityDays": 4102415999,
+  "fgjxjvValidityDays": 4102415999,
+  "studySubsystem": "2099-12-31 23:59:59"
+};
+
+$done({ body: JSON.stringify(B) });

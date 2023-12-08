@@ -16,7 +16,7 @@
 下载地址：Appspree https://t.cn/A6otfeAc 3.1
 下载地址：Persona 1.824
 下载地址：WordSwag 4.56
-
+下载地址：AnkiPro 1.22.1
 使用声明：⚠️仅供参考，🈲️转载与售卖！
 
 **************************************
@@ -71,6 +71,7 @@ if (typeof $response == "undefined") {
     'wordswag':{ name: 'pro', id: 'Pro_Launch_Monthly'},
     'BlackBox':{ name: 'plus', id: 'app.filmnoir.appstore.purchases.lifetime'},
     'LongmaoApp':{ name: 'pro', id: 'douyina_forever_01'},
+    'AnkiPro':{ name: 'Premium', id: 'com.ankipro.app.lifetime'},
   };
   const data = {
     "expires_date": "2099-12-31T12:00:00Z",
