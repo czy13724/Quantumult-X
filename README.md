@@ -2,13 +2,13 @@
 什么也不会，靠自己！
 
 
-Everyone is best! To try, to make it! U‘ll get some sense of achievements.
+Everyone is best! To try, to make it! U‘ll get some senses of achievement.
 
 
 请勿fork！！！请勿fork！！！请勿fork！！！喜欢请点击star✨
 
 
-Plz not FORK!!! Plz not FORK!!! Plz not FORK!!! If u like it, plz click star✨
+Plz Do Not FORK!!! Plz Do Not FORK!!! Plz Do Not FORK!!! If u like it, plz click star✨
 
 
 先看说明再操作，再不会无缘使用。
@@ -21,11 +21,11 @@ Plz not FORK!!! Plz not FORK!!! Plz not FORK!!! If u like it, plz click star✨
 
 完成上述操作后再按照各个脚本的说明操作即可。
 
-他人仓库文件夹仅做备份，建议原作者删库后再下载使用，之后也会随之删除。
+他人仓库文件夹仅做备份，建议在原作者删库后再来此库下载使用，之后也会随之删除。
 
 #### 免责声明
 
-项目内所涉及任何解锁和解密分析脚本、LOGO 、工作流仅为资源共享、学习参考之目的，不保证其合法性、正当性、准确性；请根据情况自行判断，切勿使用项目做任何商业用途或牟利；
+项目内所涉及任何脚本、LOGO 、工作流仅为资源共享、学习参考之目的，不保证其合法性、正当性、准确性；请根据情况自行判断，切勿使用项目做任何商业用途或牟利；
 
 遵循避风港原则，若有图片和内容等侵权，请在 Issues 告知，核实后删除，其版权均归原作者及其网站所有；
 
