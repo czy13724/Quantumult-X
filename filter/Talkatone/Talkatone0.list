@@ -4,7 +4,9 @@
 #远程引用此分流，开启“策略偏好”选择“Talkatone”
 #登录提示服务器错误或提示使用VPN或网络封锁均说明节点不干净,自行更换美国节点即可.
 HOST-SUFFIX, tktn.be, Talkatone
-Host-SUFFIX, inmobi.com, Talkatone
+HOST-SUFFIX, talkatone.com, Talkatone
+HOST-SUFFIX, inmobi.com, Talkatone
+HOST-SUFFIX, mobilefuse.com, Talkatone
 IP-CIDR, 50.117.27.0/24, Talkatone
 IP-CIDR, 69.46.75.0/24, Talkatone
 IP-CIDR, 205.164.56.29/24, Talkatone
