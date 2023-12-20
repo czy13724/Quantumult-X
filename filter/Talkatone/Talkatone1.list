@@ -3,7 +3,9 @@
 #登录提示服务器错误或提示使用VPN或网络封锁均说明节点不干净,自行更换美国节点即可.
 #引用默认直连，如有直连失败情况请打开策略偏好并选择美国节点，如有匹配美国节点的正则筛选最佳。
 HOST-SUFFIX, tktn.be, direct
-Host-SUFFIX, inmobi.com, direct
+HOST-SUFFIX, talkatone.com, direct
+HOST-SUFFIX, inmobi.com, direct
+HOST-SUFFIX, mobilefuse.com, direct
 IP-CIDR, 50.117.27.0/24, direct
 IP-CIDR, 69.46.75.0/24, direct
 IP-CIDR, 205.164.56.29/24, direct
