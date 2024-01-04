@@ -53,104 +53,100 @@ hostname =ios.songshuyouxi.com
 ******************************************/
 
 // env.js 全局
-const $ = new Env('松鼠ios');
-const ckName = 'sxios_data';
+const $ = new Env("松鼠ios");
+const ckName = "sxios_data";
 //-------------------- 一般不动变量区域 -------------------------------------
-const Notify = 1; //0为关闭通知,1为打开通知,默认为1
+const Notify = 1;//0为关闭通知,1为打开通知,默认为1
 const notify = $.isNode() ? require('./sendNotify') : '';
-let envSplitor = ['&']; //多账号分隔符
+let envSplitor = ["@"]; //多账号分隔符
 let userCookie = ($.isNode() ? process.env[ckName] : $.getdata(ckName)) || '';
 let userList = [];
 let userIdx = 0;
 let userCount = 0;
-let host = 'ios.songshuyouxi.com';
 //调试
 $.is_debug = ($.isNode() ? process.env.IS_DEDUG : $.getdata('is_debug')) || 'false';
 // 为通知准备的空数组
 $.notifyMsg = [];
 //bark推送
-$.barkKey = ($.isNode() ? process.env['bark_key'] : $.getdata('bark_key')) || '';
+$.barkKey = ($.isNode() ? process.env["bark_key"] : $.getdata("bark_key")) || '';
+//域名
+let host = 'ios.songshuyouxi.com';
 //---------------------- 自定义变量区域 -----------------------------------
 
 //脚本入口函数main()
 async function main() {
+    await getNotice()
     console.log('\n================== 任务 ==================\n');
-    let taskall = [];
     for (let user of userList) {
-        //ck未过期，开始执行任务
-        DoubleLog(`🔷账号${user.index} >> Start work`);
-        taskall.push(await user.nonce());
-        await $.wait(user.getRandomTime());
+        DoubleLog(`🔷账号${user.index} >> Start work`)
+        console.log(`随机延迟${user.getRandomTime()}ms`);
+        //执行签到
+        await user.nonce();
         if (user.ckStatus) {
-            console.log(`随机延迟${user.getRandomTime()}ms`);
-            taskall.push(await user.signin());
-            await $.wait(user.getRandomTime());
-            taskall.push(await user.point());
-            await $.wait(user.getRandomTime());
+            //ck未过期，开始执行任务
+            let {status,msg}=await user.signin();
+            let point=await user.point();
+            DoubleLog(`${status==1?'✅':'🔶'}${msg}!\n🎁当前余额:${point}`);
         } else {
             //将ck过期消息存入消息数组
-            $.notifyMsg.push(`❌账号${user.index} >> Check ck error!`);
+            $.notifyMsg.push(`❌账号${user.index} >> Check ck error!`)
         }
     }
-    await Promise.all(taskall);
 }
 
 class UserInfo {
-    constructor(str) {
+    constructor(str, cheerio) {
         this.index = ++userIdx;
-        this.ck = str;
+        this.token = str;
         this.ckStatus = true;
+        this.cheerio = cheerio;
         this.headers = {
             'User-Agent': 'StormSniffer-Extension/2254 CFNetwork/1327.0.4 Darwin/21.2.0',
-            Cookie: this.ck,
+            Cookie: this.token,
             'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
-        };
+        }
     }
     getRandomTime() {
-        return randomInt(5000, 7000);
+        return randomInt(1000, 3000)
     }
-    //查询积分
+    //请求二次封装
+    Request(options, method) {
+        typeof (method) === 'undefined' ? ('body' in options ? method = 'post' : method = 'get') : method = method;
+        return new Promise((resolve, reject) => {
+            $.http[method.toLowerCase()](options)
+                .then((response) => {
+                    let res = response.body;
+                    res = $.toObj(res) || res;
+                    resolve(res);
+                })
+                .catch((err) => reject(err));
+        });
+    };
+    //验证
     async nonce() {
         try {
-            // console.log(this.ck);
-            let signinRequest = {
+            const options = {
                 //签到任务调用签到接口
                 url: `https://${host}/user`,
                 //请求头, 所有接口通用
-                headers: {
-                    'User-Agent': 'StormSniffer-Extension/2254 CFNetwork/1327.0.4 Darwin/21.2.0',
-                    Cookie: this.ck,
-                    'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
-                }
+                headers: this.headers
             };
-            debug(signinRequest.headers)
-            return new Promise(resolve => {
-                $.post(signinRequest, async (error, response, data) => {
-                    try {
-                        if (data) {
-                            var reg = /data-nonce=\"(.*)\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"每日签到奖励: 0.3积分\"\>/;
-                            if (response.body?.search(reg) != -1) {
-                                this.nonceVal = reg.exec(response.body)[1];
-                                debug(this.nonceVal);
-                                $.log(`✅验证成功！`);
-                            } else {
-                                $.log(`❌账号${this.index} >> Check ck error!`);
-                            }
-                        } else {
-                            $.log('服务器返回了空数据');
-                        }
-                    } catch (error) {
-                        $.log(error);
-                    } finally {
-                        resolve();
-                    }
-                });
-            });
+            //post方法
+            let res = await this.Request(options, "post");
+            var reg = /data-nonce=\"(.*)\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"每日签到奖励: 0.2积分\"\>/;
+            if (res?.search(reg) != -1) {
+                this.nonceVal = reg.exec(res)[1];
+                debug(this.nonceVal);
+                $.log(`✅验证成功！`);
+            } else {
+                //ck过期
+                this.ckStatus = false;
+            }
         } catch (e) {
-            throw new Error(`❌运行错误，原因为：${e}`);
+            throw e;
         }
     }
-    //签到函数
+    //签到
     async signin() {
         try {
             const options = {
@@ -159,102 +155,88 @@ class UserInfo {
                 //请求头, 所有接口通用
                 headers: {
                     'User-Agent': 'StormSniffer-Extension/2254 CFNetwork/1327.0.4 Darwin/21.2.0',
-                    Cookie: this.ck,
+                    "Cookie": this.token,
                     'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
                 },
                 body: `action=user_qiandao&nonce=${this.nonceVal}`
             };
-            debug(options.headers)
-            return new Promise(resolve => {
-                $.post(options, async (error, response, data) => {
-                    try {
-                        console.log(data);
-                        let result = JSON.parse(data);
-                        if (result.status == 1) {
-                            //obj.error是0代表完成
-                            DoubleLog(`✅${result?.msg}`);
-                        } else {
-                            DoubleLog(`🔶${result?.msg}`);
-                            //console.log(result);
-                        }
-                    } catch (error) {
-                        $.log(error);
-                    } finally {
-                        resolve();
-                    }
-                });
-            });
+            //post方法
+            return await this.Request(options, "post");
         } catch (e) {
-            throw new Error(`❌运行错误，原因为：${e}`);
+            throw e;
         }
     }
-    //查询积分
+    //签到
     async point() {
         try {
             const options = {
-                //签到任务调用签到接口
                 url: `https://${host}/user`,
                 //请求头, 所有接口通用
-                headers: {
-                    'User-Agent': 'StormSniffer-Extension/2254 CFNetwork/1327.0.4 Darwin/21.2.0',
-                    Cookie: this.ck,
-                    'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
-                }
+                headers: this.headers
             };
-            debug(options.headers)
-            return new Promise(resolve => {
-                $.post(options, async (error, response, data) => {
-                    try {
-                        var reg = /\<p class=\"small m-0\"\>当前余额：(.*)\</;
-                        this.pointNumber = reg.exec(response.body)[1];
-                        DoubleLog(`🎁当前余额:${this.pointNumber}`);
-                    } catch (error) {
-                        $.log(error);
-                    } finally {
-                        resolve();
-                    }
-                });
-            });
+            //post方法
+            let res = await this.Request(options, "post");
+            //移除文本多余的换行符号
+            var reg = /\<p class=\"small m-0\"\>当前余额：(.*)\</;
+            return reg.exec(res)[1];
         } catch (e) {
-            throw new Error(`❌运行错误，原因为：${e}`);
+            throw e;
         }
     }
 }
+
+
 //获取Cookie
 async function getCookie() {
     if ($request && $request.method != 'OPTIONS') {
         const tokenValue = $request.headers['Cookie'] || $request.headers['cookie'];
         if (tokenValue) {
             $.setdata(tokenValue, ckName);
-            $.msg($.name, '', '获取签到Cookie成功🎉');
+            $.msg($.name, "", "获取签到Cookie成功🎉");
         } else {
-            $.msg($.name, '', '错误获取签到Cookie失败');
+            $.msg($.name, "", "错误获取签到Cookie失败");
         }
+    }
+}
+
+
+async function getNotice() {
+    try {
+        const urls = ["https://raw.githubusercontent.com/Sliverkiss/GoodNight/main/notice.json", "https://raw.githubusercontent.com/Sliverkiss/GoodNight/main/tip.json"];
+        for (const url of urls) {
+            const options = {
+                url,
+                headers: {
+                    "User-Agent": ""
+                },
+            }
+            const result = await httpRequest(options);
+            if (result) console.log(result.notice);
+        }
+    } catch (e) {
+        console.log(e);
     }
 }
 
 //主程序执行入口
 !(async () => {
     //没有设置变量,执行Cookie获取
-    if (typeof $request != 'undefined') {
+    if (typeof $request != "undefined") {
         await getCookie();
         return;
     }
     //未检测到ck，退出
-    if (!(await checkEnv())) {
-        throw new Error(`❌未检测到ck，请添加环境变量`);
-    }
+    if (!(await checkEnv())) { throw new Error(`❌未检测到ck，请添加环境变量`) };
     if (userList.length > 0) {
         await main();
     }
-    if ($.barkKey) {
-        //如果已填写Bark Key
-        await BarkNotify($, $.barkKey, $.name, $.notifyMsg.join('\n')); //推送Bark通知
-    }
 })()
-    .catch(e => $.notifyMsg.push(e.message || e)) //捕获登录函数等抛出的异常, 并把原因添加到全局变量(通知)
+    .catch((e) => $.notifyMsg.push(e.message || e))//捕获登录函数等抛出的异常, 并把原因添加到全局变量(通知)
     .finally(async () => {
-        await SendMsg($.notifyMsg.join('\n')); //带上总结推送通知
+        if ($.barkKey) { //如果已填写Bark Key
+            await BarkNotify($, $.barkKey, $.name, $.notifyMsg.join('\n')); //推送Bark通知
+        };
+        await SendMsg($.notifyMsg.join('\n'))//带上总结推送通知
         $.done(); //调用Surge、QX内部特有的函数, 用于退出脚本执行
     });
 
@@ -273,30 +255,25 @@ function DoubleLog(data) {
     }
 }
 
-//把json 转为以 ‘&’ 连接的字符串
-function toParams(body) {
-    var params = Object.keys(body)
-        .map(function (key) {
-            return encodeURIComponent(key) + '=' + encodeURIComponent(body[key]);
-        })
-        .join('&');
-    return params;
-}
 // DEBUG
-function debug(text) {
+function debug(text, title = 'debug') {
     if ($.is_debug === 'true') {
         if (typeof text == "string") {
+            console.log(`\n-----------${title}------------\n`);
             console.log(text);
+            console.log(`\n-----------${title}------------\n`);
         } else if (typeof text == "object") {
+            console.log(`\n-----------${title}------------\n`);
             console.log($.toStr(text));
+            console.log(`\n-----------${title}------------\n`);
         }
     }
 }
 
+
 //检查变量
 async function checkEnv() {
     if (userCookie) {
-        // console.log(userCookie);
         let e = envSplitor[0];
         for (let o of envSplitor)
             if (userCookie.indexOf(o) > -1) {
@@ -306,10 +283,10 @@ async function checkEnv() {
         for (let n of userCookie.split(e)) n && userList.push(new UserInfo(n));
         userCount = userList.length;
     } else {
-        console.log('未找到CK');
+        console.log("未找到CK");
         return;
     }
-    return console.log(`共找到${userCount}个账号`), true; //true == !0
+    return console.log(`共找到${userCount}个账号`), true;//true == !0
 }
 
 /**
@@ -323,12 +300,12 @@ async function SendMsg(message) {
     if (!message) return;
     if (Notify > 0) {
         if ($.isNode()) {
-            await notify.sendNotify($.name, message);
+            await notify.sendNotify($.name, message)
         } else {
-            $.msg($.name, '', message);
+            $.msg($.name, '', message)
         }
     } else {
-        console.log(message);
+        console.log(message)
     }
 }
 
