@@ -15,7 +15,7 @@ https://social.blued.cn/users/recommend url reject-dict
 hostname=social.blued.cn
 
 //blued脚本内容 
-chxm1023 = JSON.parse($response.body);
+let chxm1023 = JSON.parse($response.body);
 chxm1023.data[0].banner={};
 chxm1023.data[0].service=[];
 chxm1023.data[0].healthy={};
