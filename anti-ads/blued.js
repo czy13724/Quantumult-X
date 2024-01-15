@@ -9,18 +9,18 @@ https://social.blued.cn/users/recommend url reject-dict
 ^https:\/\/social\.blued\.cn\/users\/no_auth\/benefit url reject-dict
 
 //登录后个人界面广告 
-^https:\/\/social\.blued\.cn\/users\/.+\/more\/ios\?v=2 url script-response-body blued.js 
+^https:\/\/social\.blued\.cn\/users\/.+\/more\/ios\?v=2 url script-response-body https://raw.githubusercontent.com/czy13724/Quantumult-X/main/anti-ads/blued.js
 
 [mitm]
 hostname=social.blued.cn
 
 //blued脚本内容 
-let chxm1023 = JSON.parse($response.body);
-chxm1023.data[0].banner={};
-chxm1023.data[0].service=[];
-chxm1023.data[0].healthy={};
-chxm1023.data[0].healthy_banner=[];
-chxm1023.data[0].emotions=[];
+let levi = JSON.parse($response.body);
+levi.data[0].banner={};
+levi.data[0].service=[];
+levi.data[0].healthy={};
+levi.data[0].healthy_banner=[];
+levi.data[0].emotions=[];
 $done({
-  body: JSON.stringify(chxm1023)
+  body: JSON.stringify(levi)
 });
