@@ -1,0 +1,9 @@
+# 金融时报CN
+#!name=FTzhongwenwang
+#!desc=FTzhongwenwang
+
+[Script]
+FTzhongwenwang = type=http-response, pattern=^https:\/\/dqbam2jv6gg9m\.cloudfront\.net\/index\.php\/jsapi\/paywall, script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/FTzhongwenwang.js, requires-body=true, max-size=-1, timeout=60
+
+[MITM]
+hostname = %APPEND% dqbam2jv6gg9m.cloudfront.net
