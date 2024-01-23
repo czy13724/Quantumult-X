@@ -1,0 +1,7 @@
+#!name=sxios
+#!desc=Generated from sxios
+
+[MITM]
+hostname = %APPEND%ios.songshuyouxi.com
+[Script]
+sxios = type=http-request,pattern=^https\:\/\/ios\.songshuyouxi\.com\/user,requires-body=1,max-size=0,script-path=sxios.js
