@@ -27,15 +27,15 @@ Loon:
 loon
 ------------------------------------------
 [Script]
-cron "10 8 * * *" script-path=sxios.js, timeout=10, tag=松鼠ios
-http-request ^https\:\/\/ios\.songshuyouxi\.com\/user script-path=sxios.js,timeout=10, tag=松鼠ios获取token
+cron "10 8 * * *" script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/sxios.js, timeout=10, tag=松鼠ios
+http-request ^https\:\/\/ios\.songshuyouxi\.com\/user script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/sxios.js,timeout=10, tag=松鼠ios获取token
 [MITM]
 hostname = ios.songshuyouxi.com
 ------------------------------------------
 QuantumultX
 ------------------------------------------
 [rewrite_local]
-^https\:\/\/ios\.songshuyouxi\.com\/user url script-request-header sxios.js
+^https\:\/\/ios\.songshuyouxi\.com\/user url script-request-header https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/sxios.js
 [mitm]
 hostname =ios.songshuyouxi.com
 ====================================
