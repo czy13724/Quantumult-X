@@ -1,5 +1,5 @@
 #!name=sxios
-#!desc=Generated from sxios
+#!desc=sxios is automatically converted by levi script. If not available, please use script-hub.
 
 [MITM]
 hostname = %APPEND%ios.songshuyouxi.com
