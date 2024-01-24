@@ -21,7 +21,7 @@ def js_to_sgmodule(js_content):
         else:
             raise ValueError("Invalid JS file format")
         
-        project_desc = f"Generated from {project_name}"
+        project_desc = f"{project_name} is automatically converted by levi script. If not available, please use script-hub."
 
     else:
         project_name = name_match.group(1).strip()
