@@ -5,13 +5,11 @@
 使用说明：无
 使用声明：仅供个人参考学习交流，勿用于其它用途
 
-
 [rewrite_local]
 ^https?:\/\/api\.revenuecat\.com\/v1\/(subscribers\/[^\/]+$|receipts$) url script-response-body https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/Timus.js
 
 [Mitm]
 hostname = api.revenuecat.com
-  
 */
 
 var Levi = JSON.parse($response.body);
