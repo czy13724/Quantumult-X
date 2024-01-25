@@ -19,9 +19,9 @@ def js_to_sgmodule(js_content):
         if last_part_match:
             project_name = os.path.splitext(os.path.basename(last_part_match.group(1).strip()))[0]
         else:
-            raise ValueError("Invalid JS file format")
+            raise ValueError("JS内容格式不符合要求")
         
-        project_desc = f"Generated from {project_name}"
+        project_desc = f"{project_name} is automatically converted by LEVI SCRIPT; if not available plz use Script-Hub."
 
     else:
         project_name = name_match.group(1).strip()
@@ -48,7 +48,7 @@ def js_to_sgmodule(js_content):
     rewrite_local_matches = list(rewrite_local_pattern.finditer(js_content))
 
     if not rewrite_local_matches:
-        raise ValueError("No [rewrite_local] rule found")
+        raise ValueError("找不到[rewrite_local]规则")
 
     # Append to sgmodule content
     for rewrite_match_item in rewrite_local_matches:
@@ -58,7 +58,7 @@ def js_to_sgmodule(js_content):
         pattern_script_matches = re.finditer(r'^(.*?)\s*url\s+script-(response-body|request-body|echo-response|request-header|response-header|analyze-echo-response)\s+(\S+.*?)$', rewrite_local_content, re.MULTILINE)
 
         if not pattern_script_matches:
-            raise ValueError("Invalid rewrite_local format")
+            raise ValueError("[rewrite_local]格式不正确，请删除JS文件该部分的注释")
 
         # Append to sgmodule content
         for pattern_script_match in pattern_script_matches:
