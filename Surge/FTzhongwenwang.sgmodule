@@ -1,8 +1,0 @@
-#!name=FTzhongwenwang
-#!desc=Generated from FTzhongwenwang
-
-[MITM]
-hostname = %APPEND% dqbam2jv6gg9m.cloudfront.net
-
-[Script]
-FTzhongwenwang = type=http-response,pattern=^https:\/\/dqbam2jv6gg9m\.cloudfront\.net\/index\.php\/jsapi\/paywall,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/FTzhongwenwang.js

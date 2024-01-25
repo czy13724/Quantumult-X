@@ -1,8 +1,0 @@
-#!name=shiguangxu
-#!desc=Generated from shiguangxu
-
-[MITM]
-hostname = %APPEND% api.weilaizhushou.com
-
-[Script]
-shiguangxu = type=http-response,pattern=^https:\/\/api\.weilaizhushou\.com\/base\/user\/vip\/getUserVip,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/shiguangxu.js

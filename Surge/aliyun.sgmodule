@@ -1,8 +1,0 @@
-#!name=aliyun
-#!desc=Generated from aliyun
-
-[MITM]
-hostname = %APPEND% auth.alipan.com,auth.aliyundrive.com
-
-[Script]
-aliyun = type=http-request,pattern=^https:\/\/(auth|aliyundrive)\.alipan\.com\/v2\/account\/token,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/Sliverkiss/33800a98dcd029ba09f8b6fc6f0f5162/raw/aliyun.js
