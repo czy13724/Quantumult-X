@@ -1,0 +1,7 @@
+#!name=wangyy
+#!desc=Generated from wangyy
+
+[MITM]
+hostname = %APPEND% *.music.163.com
+
+[Script]
