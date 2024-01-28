@@ -13,51 +13,68 @@
 hostname = api.revenuecat.com
   
 */
-
-var Levi = JSON.parse($response.body);
-Levi= {
-  "request_date_ms" : 1706073444478,
-  "request_date" : "2024-01-24T05:17:24Z",
-  "subscriber" : {
-    "non_subscriptions" : {
-
+let obj = {
+  "request_date_ms": 1704664060864,
+  "request_date": "2024-01-07T21:47:40Z",
+  "subscriber": {
+    "last_seen": "2024-01-07T21:42:02Z",
+    "first_seen": "2024-01-07T21:42:02Z",
+    "original_application_version": "1",
+    "other_purchases": {
     },
-    "first_seen" : "2024-01-23T00:09:49Z",
-    "original_application_version" : "27",
-    "other_purchases" : {
-
-    },
-    "management_url" : "https:\/\/apps.apple.com\/account\/subscriptions",
-    "subscriptions" : {
-      "timus_999_1y_3d0" : {
-        "original_purchase_date" : "2024-01-24T05:17:20Z",
-        "expires_date" : "2099-01-27T05:17:19Z",
-        "is_sandbox" : false,
-        "refunded_at" : null,
-        "store_transaction_id" : "320001699296977",
-        "unsubscribe_detected_at" : null,
-        "grace_period_expires_date" : null,
-        "period_type" : "trial",
-        "purchase_date" : "2024-01-24T05:17:19Z",
-        "billing_issues_detected_at" : null,
-        "ownership_type" : "PURCHASED",
-        "store" : "app_store",
-        "auto_resume_date" : null
+    "management_url": null,
+    "subscriptions": {
+      "timus_999_1y_1w0": {
+        "expires_date": "2099-02-18T07:52:54Z",
+        "original_purchase_date": "2020-02-11T07:52:55Z",
+        "purchase_date": "2020-02-11T07:52:54Z"
+      },
+      "timus_999_1y_3d0": {
+        "expires_date": "2099-02-18T07:52:54Z",
+        "original_purchase_date": "2020-02-11T07:52:55Z",
+        "purchase_date": "2020-02-11T07:52:54Z"
+      },
+      "timus_299_1m": {
+        "expires_date": "2099-02-18T07:52:54Z",
+        "original_purchase_date": "2020-02-11T07:52:55Z",
+        "purchase_date": "2020-02-11T07:52:54Z"
+      },
+      "timus_lt": {
+        "expires_date": "2099-02-18T07:52:54Z",
+        "original_purchase_date": "2020-02-11T07:52:55Z",
+        "purchase_date": "2020-02-11T07:52:54Z"
+      },
+      "timus_0_lt": {
+        "expires_date": "2099-02-18T07:52:54Z",
+        "original_purchase_date": "2020-02-11T07:52:55Z",
+        "purchase_date": "2020-02-11T07:52:54Z"
+      },
+      "timus_599_3m_3d0": {
+        "expires_date": "2099-02-18T07:52:54Z",
+        "original_purchase_date": "2020-02-11T07:52:55Z",
+        "purchase_date": "2020-02-11T07:52:54Z"
+      },
+      "timus_lt_base": {
+        "expires_date": "2099-02-18T07:52:54Z",
+        "original_purchase_date": "2020-02-11T07:52:55Z",
+        "purchase_date": "2020-02-11T07:52:54Z"
       }
     },
-    "entitlements" : {
-      "premium" : {
-        "grace_period_expires_date" : null,
-        "purchase_date" : "2024-01-24T05:17:19Z",
-        "product_identifier" : "timus_999_1y_3d0",
-        "expires_date" : "2099-01-27T05:17:19Z"
+    "entitlements": {
+      "premium": {
+        "purchase_date": "2020-02-11T07:52:54Z",
+        "product_identifier": "timus_lt_base",
+        "original_purchase_date": "2020-02-11T07:52:55Z",
+        "expires_date": "2099-02-18T07:52:54Z"
       }
     },
-    "original_purchase_date" : "2024-01-23T00:09:15Z",
-    "original_app_user_id" : "$RCAnonymousID:a1c7981ab3ce4d058397a27f2594ccf8",
-    "last_seen" : "2024-01-24T03:29:08Z"
+    "original_purchase_date": "2024-01-07T21:38:41Z",
+    "original_app_user_id": "$RCAnonymousID:06923c3f1dfc4f23b1b56c9e24dbdffc",
+    "non_subscriptions": {
+    }
   }
-};
-$done({body : JSON.stringify(Levi)});
+}
 
-// Adding a dummy change to trigger git commit
+
+
+$done({ body: JSON.stringify(obj), status: 200 });
