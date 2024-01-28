@@ -6,13 +6,13 @@
 使用声明：仅供个人参考学习交流，勿用于其它用途
 
 [rewrite_local]
-^https?:\/\/api\.revenuecat\.com\/v1\/(subscribers\/[^\/]+$|receipts$) url script-response-body https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/itranscreen.js
+^https?:\/\/api\.revenuecat\.com\/v1\/(receipts|subscribers\/\$RCAnonymousID%3A\w{32}) url script-response-body https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/itranscreen.js
 
 [mitm]
 hostname = api.revenuecat.com
 */
 
-let obj = {
+let obj =  {
 "request_date_ms": 1704664060864,
   "request_date": "2024-01-07T21:47:40Z",
   "subscriber": {
@@ -21,7 +21,7 @@ let obj = {
     "original_application_version": "1",
     "other_purchases": {
     },
-    "management_url": "https:\/\/t.me\/LKTEAM23",
+    "management_url": "google.com",
     "subscriptions": {
       "caiyun_10w_1dollar": {
         "store": "app_store",
@@ -85,6 +85,3 @@ let obj = {
 
 $done({ body: JSON.stringify(obj), status: 200 });
 
-// Adding a dummy change to trigger git commit
-
-// Adding a dummy change to trigger git commit
