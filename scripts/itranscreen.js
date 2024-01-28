@@ -1,6 +1,6 @@
 /*
 项目名称：itranscreen
-项目作者：LKTEAM23
+项目作者：David
 下载地址：https://apps.apple.com/us/app/itranscreen-screen-translator/id1663139919
 使用说明：未填写该内容
 使用声明：仅供个人参考学习交流，勿用于其它用途
