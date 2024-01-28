@@ -1,5 +1,5 @@
 #!name=itranscreen
-#!desc=未填写该内容
+#!desc=显示pro3866即成功，请关闭其他语言类脚本。下载链接请访问本js链接
 
 [MITM]
 hostname = %APPEND% api.revenuecat.com
