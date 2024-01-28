@@ -1,7 +1,0 @@
-#!name=wangyy
-#!desc=wangyy is automatically converted by LEVI SCRIPT; if not available plz use Script-Hub.
-
-[MITM]
-hostname = %APPEND% *.music.163.com
-
-[Script]
