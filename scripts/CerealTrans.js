@@ -5,7 +5,7 @@
 下载地址：https://apps.apple.com/us/app/cereal-translator/id6466264767
 
 [rewrite_local]
-^https:\/\/youxifanyizhushou\.com\/ios\/api\/product\/user\/remain\/ios$ url script-response-body cerealscreen.js
+^https:\/\/youxifanyizhushou\.com\/ios\/api\/product\/user\/remain\/ios$ url script-response-body https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/CerealTrans.js
 
 [mitm]
 hostname = youxifanyizhushou.com
