@@ -1,0 +1,8 @@
+#!name=cereal-translator
+#!desc=先开脚本再重新进入，未成功点击recharge栏恢复。
+
+[MITM]
+hostname = %APPEND% youxifanyizhushou.com
+
+[Script]
+cereal-translator = type=http-response,pattern=^https:\/\/youxifanyizhushou\.com\/ios\/api\/product\/user\/remain\/ios$,requires-body=1,max-size=0,script-path=cerealscreen.js
