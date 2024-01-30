@@ -46,8 +46,9 @@ jobs:
           set -x
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
+          file_name=$(git diff --name-only | head -n 1)
           git add .
-          git commit -m "已转换$(git diff --name-only | head -n 1)"
+          git commit -m "已转换${file_name}"
           git push origin HEAD:main --force
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
