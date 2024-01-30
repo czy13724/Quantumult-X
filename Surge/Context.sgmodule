@@ -2,4 +2,5 @@
 #!desc=Context is automatically converted by LEVI SCRIPT; if not available plz use Script-Hub.
 [MITM]
 hostname = %APPEND% api.revenuecat.com
+[Script]
 Context = type=http-response,pattern=^https?:\/\/api\.revenuecat\.com\/v1\/(subscribers\/[^\/]+$|receipts$),script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/Context.js
