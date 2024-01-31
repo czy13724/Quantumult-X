@@ -1,7 +1,6 @@
 # author:Levi
 # 搭配convert_js_to_plugin.yml使用。可将qx的js/conf/snippet文件转换为plugin文件。
 
-
 import os
 import re
 
