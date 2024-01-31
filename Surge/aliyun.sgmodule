@@ -3,4 +3,5 @@
 [MITM]
 hostname = %APPEND% auth.alipan.com,auth.aliyundrive.com
 [Script]
+aliyun = type=cron, cronexp="0 7,11,17 * * *", script-path=https://gist.githubusercontent.com/Sliverkiss/33800a98dcd029ba09f8b6fc6f0f5162/raw/aliyun.js
 aliyun = type=http-request,pattern=^https:\/\/(auth|aliyundrive)\.alipan\.com\/v2\/account\/token,script-path=https://gist.githubusercontent.com/Sliverkiss/33800a98dcd029ba09f8b6fc6f0f5162/raw/aliyun.js
