@@ -1,0 +1,6 @@
+#!name=shiguangxu
+#!desc=shiguangxu is automatically converted by LEVI SCRIPT; if not available plz use Script-Hub.
+[MITM]
+hostname = api.weilaizhushou.com
+[Script]
+http-response ^https:\/\/api\.weilaizhushou\.com\/base\/user\/vip\/getUserVip,script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/shiguangxu.js, tag=shiguangxu

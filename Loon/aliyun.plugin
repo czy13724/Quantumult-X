@@ -1,0 +1,8 @@
+#!name=aliyun
+#!desc=aliyun is automatically converted by LEVI SCRIPT; if not available plz use Script-Hub.
+#!icon=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/AliYunDrive.png,
+[MITM]
+hostname = auth.alipan.com,auth.aliyundrive.com
+[Script]
+cron "0 7,11,17 * * *" script-path=https://gist.githubusercontent.com/Sliverkiss/33800a98dcd029ba09f8b6fc6f0f5162/raw/aliyun.js, tag=aliyun
+http-request ^https:\/\/(auth|aliyundrive)\.alipan\.com\/v2\/account\/token,script-path=https://gist.githubusercontent.com/Sliverkiss/33800a98dcd029ba09f8b6fc6f0f5162/raw/aliyun.js, tag=aliyun
