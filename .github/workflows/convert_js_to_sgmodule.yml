@@ -1,5 +1,5 @@
 # author:Levi
-# 搭配convert js to sgmodule.py使用。可将qx的js文件转换为sgmodule文件。使用方法见博客。
+# 搭配convert js to sgmodule.py使用。可将qx的js/conf/snippet文件转换为sgmodule文件。使用方法见博客。
 
 name: convert js to sgmodule
 
