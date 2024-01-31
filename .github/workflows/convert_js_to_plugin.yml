@@ -1,0 +1,50 @@
+name: convert_js_to_plugin
+
+on:
+  push:
+    paths:
+      - 'scripts/**' # Trigger on changes in scripts folder
+  pull_request:
+    paths:
+      - 'Loon/**' # Trigger on changes in surge folder
+  workflow_dispatch:
+
+jobs:
+  generate_plugin:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install PyGithub
+
+      - name: Run script
+        run: python .github/scripts/convert_js_to_plugin.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Archive artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: plugin-artifacts
+          path: ${{ github.workspace }}/Loon
+        
+      - name: Push to TEST Repository
+        run: |
+          set -x
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          git add .
+          git commit -m "Add generated plugin file"
+          git push origin HEAD:main --force
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
