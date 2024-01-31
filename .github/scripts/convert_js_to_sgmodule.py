@@ -1,5 +1,5 @@
 # author:Levi
-# 搭配convert js to sgmodule.yml使用。可将qx的js文件转换为sgmodule文件。
+# 搭配convert js to sgmodule.yml使用。可将qx的js/conf/snippet文件转换为sgmodule文件。
 
 import os
 import re
