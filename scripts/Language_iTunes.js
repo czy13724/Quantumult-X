@@ -16,7 +16,8 @@
 下载地址：Learn Polish https://apps.apple.com/app/id1551554802
 下载地址：Learn Chinese https://apps.apple.com/app/id1506394878
 下载地址：Learn Finnish https://apps.apple.com/app/id1512597815
-使用声明：⚠️仅供参考，🈲️转载与售卖！
+下载地址：Learn German https://apps.apple.com/app/id1397752797
+使用说明：先开脚本再重新进入一次应用，即可解锁订阅；未解锁需要点击菜单恢复购买。⚠️仅供参考，🈲️转载与售卖！
 
 **************************************
 
@@ -56,6 +57,7 @@ var uaProductMapping = {
   'ReWord%20pl_en/2': {product_id: 'sub_pl_en_12_600'},
   'ReWord%20zh_en/2': {product_id: 'sub_zh_en_12_600'},
   'ReWord%20fi_ru/2': {product_id: 'sub_fi_ru_12_600'},
+  'ReWord%20de_ru/2': {product_id: 'sub_de_ru_12_600'},
 };
 var receipt = {
   "quantity": "1",
