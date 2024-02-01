@@ -83,7 +83,7 @@ def js_to_sgmodule(js_content):
         script_path = match.group(3).strip()
 
         # Append the rewrite rule to the SGModule content
-        sgmodule_content += f"{project_name} = type=http-{script_type},pattern={pattern},script-path={script_path}\n"
+        sgmodule_content += f"{project_name} = type=http-{script_type},pattern={pattern},script-path={script_path}, requires-body=true, max-size=-1, timeout=60\n"
 
     return sgmodule_content
 
