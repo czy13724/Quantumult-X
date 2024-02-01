@@ -86,7 +86,7 @@ def js_to_plugin(js_content):
         script_path = match.group(3).strip()
 
         # Append the rewrite rule to the plugin content
-        plugin_content += f"http-{script_type} {pattern},script-path={script_path}, tag={project_name}\n"
+        plugin_content += f"http-{script_type} {pattern},script-path={script_path}, requires-body=true, timeout=60, tag={project_name}\n"
 
     return plugin_content
 
