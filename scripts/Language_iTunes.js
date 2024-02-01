@@ -17,7 +17,8 @@
 下载地址：Learn Chinese https://apps.apple.com/app/id1506394878
 下载地址：Learn Finnish https://apps.apple.com/app/id1512597815
 下载地址：Learn German https://apps.apple.com/app/id1397752797
-使用说明：先开脚本再重新进入一次应用，即可解锁订阅；未解锁需要点击菜单恢复购买。⚠️仅供参考，🈲️转载与售卖！
+使用说明：先开脚本再重新进入一次应用，即可解锁订阅；未解锁需要点击菜单恢复购买。下载链接请通过script-path链接获取。
+使用声明：⚠️仅供参考，🈲️转载与售卖！
 
 **************************************
 
