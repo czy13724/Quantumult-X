@@ -3,4 +3,4 @@
 [MITM]
 hostname = api.revenuecat.com
 [Script]
-http-response ^https?:\/\/api\.revenuecat\.com\/v1\/(subscribers\/[^\/]+$|receipts$),script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/Context.js, tag=Context
+http-response ^https?:\/\/api\.revenuecat\.com\/v1\/(subscribers\/[^\/]+$|receipts$),script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/Context.js, requires-body=true, timeout=60, tag=Context

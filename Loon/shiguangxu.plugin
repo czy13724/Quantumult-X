@@ -3,4 +3,4 @@
 [MITM]
 hostname = api.weilaizhushou.com
 [Script]
-http-response ^https:\/\/api\.weilaizhushou\.com\/base\/user\/vip\/getUserVip,script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/shiguangxu.js, tag=shiguangxu
+http-response ^https:\/\/api\.weilaizhushou\.com\/base\/user\/vip\/getUserVip,script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/shiguangxu.js, requires-body=true, timeout=60, tag=shiguangxu
