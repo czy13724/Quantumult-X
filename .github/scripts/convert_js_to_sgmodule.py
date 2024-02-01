@@ -23,7 +23,7 @@ def task_local_to_sgmodule(js_content):
             # Extract the file name from the link to use as the tag
             tag = os.path.splitext(os.path.basename(script_url))[0]
             # Construct the SGModule cron task section
-            task_local_content = f"{tag} = type=cron, cronexp=\"{cronexp}\", script-path={script_url}\n"
+            task_local_content = f"{tag} = type=cron, cronexp=\"{cronexp}\", script-path={script_url}, timeout=60, wake-system=1\n"
     # Return the task_local section content, if any
     return task_local_content
 
@@ -83,7 +83,7 @@ def js_to_sgmodule(js_content):
         script_path = match.group(3).strip()
 
         # Append the rewrite rule to the SGModule content
-        sgmodule_content += f"{project_name} = type=http-{script_type},pattern={pattern},script-path={script_path}, requires-body=true, max-size=-1, timeout=60\n"
+        sgmodule_content += f"{project_name} = type=http-{script_type}, pattern={pattern}, script-path={script_path}, requires-body=true, max-size=-1, timeout=60\n"
 
     return sgmodule_content
 
@@ -122,7 +122,7 @@ def main():
 
                 # Since we're simulating a git operation, we'll do this for all file types
                 with open(file_path, 'a', encoding='utf-8') as file:
-                    file.write("\n// Adding a dummy change to trigger git commit\n")
+                    file.write("\n// Adding a dummy sgmodule change to trigger git commit\n")
 
                 os.system(f'git add {file_path}')
                 os.system('git commit -m "Trigger update"')
