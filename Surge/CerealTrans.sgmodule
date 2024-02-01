@@ -3,4 +3,4 @@
 [MITM]
 hostname = %APPEND% youxifanyizhushou.com
 [Script]
-cereal-translator = type=http-response,pattern=^https:\/\/youxifanyizhushou\.com\/ios\/api\/product\/user\/remain\/ios$,script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/CerealTrans.js
+cereal-translator = type=http-response,pattern=^https:\/\/youxifanyizhushou\.com\/ios\/api\/product\/user\/remain\/ios$,script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/CerealTrans.js, requires-body=true, max-size=-1, timeout=60

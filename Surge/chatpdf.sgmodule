@@ -3,4 +3,4 @@
 [MITM]
 hostname = %APPEND% api.revenuecat.com
 [Script]
-chatpdf = type=http-response,pattern=^https?:\/\/api\.revenuecat\.com\/v1\/(subscribers\/[^\/]+$|receipts$),script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/chatpdf.js
+chatpdf = type=http-response,pattern=^https?:\/\/api\.revenuecat\.com\/v1\/(subscribers\/[^\/]+$|receipts$),script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/chatpdf.js, requires-body=true, max-size=-1, timeout=60

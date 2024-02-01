@@ -1,6 +1,6 @@
 #!name=语言类iTunes合集（此合集只包含learn xx with flashcards）
-#!desc=先开脚本再重新进入一次应用，即可解锁订阅；未解锁需要点击菜单恢复购买。⚠️仅供参考，🈲️转载与售卖！
+#!desc=先开脚本再重新进入一次应用，即可解锁订阅；未解锁需要点击菜单恢复购买。下载链接请通过script-path链接获取。
 [MITM]
 hostname = %APPEND% buy.itunes.apple.com
 [Script]
-语言类iTunes合集（此合集只包含learn xx with flashcards） = type=http-response,pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$,script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/Language_iTunes.js
+语言类iTunes合集（此合集只包含learn xx with flashcards） = type=http-response,pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$,script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/Language_iTunes.js, requires-body=true, max-size=-1, timeout=60

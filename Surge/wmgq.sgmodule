@@ -3,4 +3,4 @@
 [MITM]
 hostname = %APPEND% buy.itunes.apple.com
 [Script]
-完美钢琴 = type=http-response,pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$,script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/wmgq.js
+完美钢琴 = type=http-response,pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$,script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/wmgq.js, requires-body=true, max-size=-1, timeout=60
