@@ -41,7 +41,7 @@ jobs:
           name: plugin-artifacts
           path: ${{ github.workspace }}/Loon
         
-      - name: Push to TEST Repository
+      - name: Push to Quantumult-X Repository
         run: |
           set -x
           git config user.name "${{ github.actor }}"
