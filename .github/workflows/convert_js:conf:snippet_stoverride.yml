@@ -1,7 +1,7 @@
 # author: Levi
-# 搭配convert_js_to_stoverride.py使用。可将qx的js/conf/snippet文件转换为stoverride文件。
+# 搭配convert_js&conf&snippet_stoverride.py使用。可将qx的js/conf/snippet文件转换为stoverride文件。
 
-name: convert_js/conf/snippet_stoverride
+name: convert_js&conf&snippet_stoverride
 
 on:
   push:
@@ -31,7 +31,7 @@ jobs:
           pip install PyGithub
 
       - name: Run script
-        run: python .github/scripts/convert_js/conf/snippet_stoverride.py
+        run: python .github/scripts/convert_js&conf&snippet_stoverride.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
