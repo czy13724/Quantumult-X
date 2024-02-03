@@ -1,4 +1,4 @@
-本文件夹（Loon）内所有文件均由脚本转换，如不可用，请尝试使用[script-hub](https://github.com/Script-Hub-Org/Script-Hub/wiki)。
+本文件夹（Stash）内所有文件均由脚本转换，如不可用，请尝试使用[script-hub](https://github.com/Script-Hub-Org/Script-Hub/wiki)。
 注：
 * 转换脚本目前支持转换js/conf/snippet到stoverride.
 * 转换脚本目前支持转换[rewrite_local]为多条规则的js/conf/snippet.如原文件该部分不止一条规则也可使用该文件夹内的stoverride.
