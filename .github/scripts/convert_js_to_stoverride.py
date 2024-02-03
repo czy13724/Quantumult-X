@@ -147,8 +147,8 @@ def js_to_stoverride(js_content):
 
 
 def main():
-    # Process files in the 'qx' folder
-    qx_folder_path = 'qx'
+    # Process files in the 'scripts' folder
+    qx_folder_path = 'scripts'
     if not os.path.exists(qx_folder_path):
         print(f"Error: {qx_folder_path} does not exist.")
         return
@@ -166,7 +166,7 @@ def main():
                 
                 if stoverride_content is not None:
                     # Write stoverride content to 'stash' folder if stoverride_content is not None
-                    stash_folder_path = 'stash'
+                    stash_folder_path = 'Stash'
                     os.makedirs(stash_folder_path, exist_ok=True)
                     stoverride_file_path = os.path.join(stash_folder_path, f"{os.path.splitext(file_name)[0]}.stoverride")
                     
