@@ -31,7 +31,7 @@ jobs:
           pip install PyGithub
 
       - name: Run script
-        run: python .github/scripts/convert_js&conf&snippet_stoverride.py
+        run: python .github/scripts/convert_js_stoverride.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
