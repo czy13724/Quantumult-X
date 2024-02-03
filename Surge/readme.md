@@ -7,4 +7,4 @@
   [使用教程](https://levifree.tech/2024/01/29/%E8%87%AA%E5%8A%A8%E8%BD%AC%E6%8D%A2js-conf-snippet%E5%88%B0sgmodule/)
   [工作流地址](https://raw.githubusercontent.com/czy13724/Quantumult-X/main/.github/workflows/convert_js_to_sgmodule.yml)
   [脚本地址](https://raw.githubusercontent.com/czy13724/Quantumult-X/main/.github/scripts/convert_js_to_sgmodule.py)
-* 如您是脚本使用者，通过获取本文件夹文件的raw链接进行远程引用即可，注意检查脚本中[rewrite_local]或[mitm]是否有无内容，如没有内容请不要引用该文件。
+* 如您是该文件夹sgmodule脚本引用者，通过获取本文件夹文件的raw链接进行远程引用即可，注意检查脚本中[Script]或[mitm]是否有无内容，如没有内容请不要引用该文件。
