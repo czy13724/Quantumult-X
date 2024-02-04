@@ -32,7 +32,7 @@ def get_file_list(folder_name):
 
 def update_file(file_path, b64_encoded_content, sha):
     update_url = f"{GITHUB_API}/repos/{GITHUB_USERNAME}/{REPO_NAME}/contents/{file_path}"
-    message = f"Add custom header to {file_path}"
+    message = f"为{file_path}增加综合注释"
     data = {
         'message': message,
         'content': b64_encoded_content,
