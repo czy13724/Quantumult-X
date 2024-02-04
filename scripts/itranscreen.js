@@ -7,12 +7,12 @@
 /*
 项目名称：itranscreen
 项目作者：David
-下载地址：https://apps.apple.com/us/app/itranscreen-screen-translator/id1663139919
+下载地址：https://apps.apple.com/us/app/id1663139919
 使用说明：显示pro3866即成功，请关闭其他语言类脚本。下载链接请访问本js链接
 使用声明：仅供个人参考学习交流，勿用于其它用途
 
 [rewrite_local]
-^https?:\/\/api\.revenuecat\.com\/v1\/(subscribers\/[^\/]+$|receipts$) url script-request-body https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/itranscreen.js
+^https?:\/\/api\.revenuecat\.com\/v1\/(subscribers\/[^\/]+$|receipts$) url script-response-body https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/itranscreen.js
 
 [mitm]
 hostname = api.revenuecat.com
