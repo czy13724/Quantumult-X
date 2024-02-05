@@ -1,5 +1,6 @@
 
 
+
 // Quantumult X引用地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/Timus.js
 // Surge/Shadowrocket 模块地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Surge/Timus.sgmodule
 // Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/Timus.plugin
@@ -169,7 +170,3 @@ $done({ body: JSON.stringify(obj), status: 200 });
 // Adding a dummy stoverride change to trigger git commit
 
 // Adding a dummy plugin change to trigger git commit
-
-// Adding a dummy stoverride change to trigger git commit
-
-// Adding a dummy sgmodule change to trigger git commit
