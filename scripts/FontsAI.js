@@ -1,3 +1,9 @@
+
+// Quantumult X引用地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/FontsAI.js
+// Surge/Shadowrocket 模块地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Surge/FontsAI.sgmodule
+// Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/FontsAI.plugin
+// Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/FontsAI.stoverride
+
 /*
 项目名称： FontsAI
 项目作者： Levi
@@ -90,7 +96,3 @@ Levi= {
 };
 
 $done({body: JSON.stringify(Levi)});
-
-// Adding a dummy stoverride change to trigger git commit
-
-// Adding a dummy sgmodule change to trigger git commit
