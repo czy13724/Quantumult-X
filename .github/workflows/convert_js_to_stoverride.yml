@@ -3,14 +3,14 @@
 
 name: convert_js_to_stoverride
 
-on:
-  push:
-    paths:
-      - 'scripts/**' # Trigger on changes in 'scripts' folder
-  pull_request:
-    paths:
-      - 'Stash/**' # Trigger on changes in 'Stash' folder
-  workflow_dispatch:
+on: # 注释内容默认关闭，如单一使用工作流取消#并删除工作流最后一部分即可
+ # push:
+   # paths:
+     # - 'scripts/**' 
+ # pull_request:
+   # paths:
+     # - 'Stash/**' 
+  workflow_dispatch: # 这是手动触发
 
 jobs:
   generate_stoverride:
@@ -65,3 +65,10 @@ jobs:
           git push --force origin HEAD:main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Trigger next workflow generate_desc
+        if: steps.check_changes.outputs.changes_exist == 'true'
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: generate_desc.yml
+          token: ${{ secrets.GITHUB_TOKEN }}   
