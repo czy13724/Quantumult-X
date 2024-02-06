@@ -9,13 +9,13 @@
 
 name: generate_desc
 
-on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'scripts/**'
-  workflow_dispatch:
+on: # 注释内容默认关闭，如单一使用工作流取消#并删除工作流最后一部分即可
+ # push:
+   # branches:
+     # - main
+   # paths:
+     # - 'scripts/**'
+  workflow_dispatch: # 这是手动触发
 
 jobs:
   generate-desc:
