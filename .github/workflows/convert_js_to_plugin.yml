@@ -3,14 +3,14 @@
 
 name: convert_js_to_plugin
 
-on:
-  push:
-    paths:
-      - 'scripts/**' # Trigger on changes in scripts folder
-  pull_request:
-    paths:
-      - 'Loon/**' # Trigger on changes in surge folder
-  workflow_dispatch:
+on: # 注释内容默认关闭，如单一使用工作流取消#并删除工作流最后一部分即可
+ # push:
+   # paths:
+     # - 'scripts/**' 
+ # pull_request:
+   # paths:
+     # - 'Loon/**' 
+  workflow_dispatch: # 这是手动触发
 
 jobs:
   generate_plugin:
@@ -65,3 +65,10 @@ jobs:
           git push --force origin HEAD:main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Trigger next workflow convert_js_to_stoverride
+        if: steps.check_changes.outputs.changes_exist == 'true'
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: convert_js_to_stoverride.yml
+          token: ${{ secrets.GITHUB_TOKEN }}    
