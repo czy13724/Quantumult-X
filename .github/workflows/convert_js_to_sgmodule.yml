@@ -65,3 +65,10 @@ jobs:
           git push --force origin HEAD:main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Trigger next workflow convert_js_to_plugin
+        if: steps.check_changes.outputs.changes_exist == 'true'
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: convert_js_to_plugin.yml
+          token: ${{ secrets.GITHUB_TOKEN }}    
