@@ -46,6 +46,14 @@ jobs:
         run: |
           git status
           git diff-index --quiet HEAD || echo "::set-output name=changes_exist::true"
+
+      - name: Sync with remote
+        if: steps.check_changes.outputs.changes_exist == 'true'
+        run: |
+          git fetch origin
+          git reset --soft origin/main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    
     
       - name: Commit and push if changes exist
         if: steps.check_changes.outputs.changes_exist == 'true'
