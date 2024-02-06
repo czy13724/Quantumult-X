@@ -1,9 +1,3 @@
-
-// Quantumult X引用地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/smartphotos.js
-// Surge/Shadowrocket 模块地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Surge/smartphotos.sgmodule
-// Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/smartphotos.plugin
-// Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/smartphotos.stoverride
-
 /*
 项目名称： smartphotos 相册助手
 项目作者： Levi
@@ -96,3 +90,4 @@ Levi= {
 };
      
 $done({body: JSON.stringify(Levi)});
+// Adding a dummy sgmodule change to trigger git commit
