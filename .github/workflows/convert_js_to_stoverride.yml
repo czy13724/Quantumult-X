@@ -67,7 +67,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Trigger next workflow generate_desc
-        if: steps.check_changes.outputs.changes_exist == 'true'
         uses: benc-uk/workflow-dispatch@v1
         with:
           workflow: generate_desc.yml
