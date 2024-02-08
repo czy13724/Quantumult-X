@@ -19,7 +19,7 @@
 ^https?:\/\/.*\.oracle\.bendingspoonsapps\.com\/v\d\/(users\/.+|purchases\/verify) url script-response-body https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/ReminiLifetime.js
 
 [mitm]
-*.oracle.bendingspoonsapps.com
+hostname = *.oracle.bendingspoonsapps.com
 
 */
 
