@@ -10,7 +10,7 @@ http:
 
   script:  
   - match: ^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt
-    name: headway_45
+    name: headway_18
     type: response
     require-body: true
     max-size: -1
@@ -18,7 +18,7 @@ http:
 
 
 script-providers:
-  "headway_45":
+  "headway_18":
     url: https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/headway.js
     interval: 86400
 
