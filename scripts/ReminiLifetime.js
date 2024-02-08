@@ -31,3 +31,5 @@ mgmdev["settings"]["__identity__"]["expiration"] = "2080-08-08T08:08:08+00:00";
 $done({body : JSON.stringify(mgmdev)});
 }
 // Adding a dummy sgmodule change to trigger git commit
+
+// Adding a dummy plugin change to trigger git commit
