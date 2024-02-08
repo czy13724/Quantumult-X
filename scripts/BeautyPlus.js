@@ -5,7 +5,7 @@
 // Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/BeautyPlus.stoverride
 
 [rewrite_local]
-https:\/\/(api\.mr\.pixocial\.com\/v1\/manual_unlock|newbeee-api\.beautyplus\.com\/api\/v1\/asset\/balance)
+https:\/\/(api\.mr\.pixocial\.com\/v1\/manual_unlock|newbeee-api\.beautyplus\.com\/api\/v1\/asset\/balance) url script-response-body https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/BeautyPlus.js
 
 [mitm]
 hostname = api.mr.pixocial.com, newbeee-api.beautyplus.com
