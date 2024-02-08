@@ -1,5 +1,5 @@
 name: |-
-  transcribeAI
+  imprint
 desc: |-
   先开脚本再打开软件，未成功尝试恢复购买，下载地址请访问script-path链接获取。
 
@@ -10,7 +10,7 @@ http:
 
   script:  
   - match: ^https?:\/\/api\.revenuecat\.com\/v1\/(subscribers\/[^\/]+$|receipts$)
-    name: transcribeAI_29
+    name: imprint_29
     type: response
     require-body: true
     max-size: -1
@@ -18,7 +18,7 @@ http:
 
 
 script-providers:
-  "transcribeAI_29":
-    url: https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/transcribeAI.js
+  "imprint_29":
+    url: https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/imprint.js
     interval: 86400
 

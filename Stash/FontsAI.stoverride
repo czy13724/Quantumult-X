@@ -10,7 +10,7 @@ http:
 
   script:  
   - match: ^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$
-    name: FontsAI_40
+    name: FontsAI_29
     type: response
     require-body: true
     max-size: -1
@@ -18,7 +18,7 @@ http:
 
 
 script-providers:
-  "FontsAI_40":
+  "FontsAI_29":
     url: https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/FontsAI.js
     interval: 86400
 
