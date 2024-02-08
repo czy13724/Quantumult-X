@@ -1,0 +1,24 @@
+name: |-
+  XbackVPN
+desc: |-
+  You need to create an account for VIP to be activate
+
+http:
+
+  mitm:
+    - "client-alphant.xback.io"
+
+  script:  
+  - match: https:\/\/client-alphant\.xback\.io\/alphant\/api\/member\/getInfo
+    name: XbackVPN_1
+    type: response
+    require-body: true
+    max-size: -1
+    timeout: 60
+
+
+script-providers:
+  "XbackVPN_1":
+    url: https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/XbackVPN.js
+    interval: 86400
+
