@@ -10,7 +10,7 @@ http:
 
   script:  
   - match: ^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$
-    name: digitalplanner_1
+    name: digitalplanner_28
     type: response
     require-body: true
     max-size: -1
@@ -18,7 +18,7 @@ http:
 
 
 script-providers:
-  "digitalplanner_1":
+  "digitalplanner_28":
     url: https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/digitalplanner.js
     interval: 86400
 
