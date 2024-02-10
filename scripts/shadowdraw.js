@@ -10,7 +10,6 @@
 
 
 
-
 // Quantumult X引用地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/shadowdraw.js
 // Surge/Shadowrocket 模块地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Surge/shadowdraw.sgmodule
 // Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/shadowdraw.plugin
@@ -148,3 +147,5 @@ $done({body: JSON.stringify(Levi)});
 // Adding a dummy plugin change to trigger git commit
 
 // Adding a dummy sgmodule change to trigger git commit
+
+// Adding a dummy plugin change to trigger git commit

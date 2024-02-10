@@ -1,7 +1,6 @@
 
 
 
-
 // Quantumult X引用地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/AlohaVPNbrowser.js
 // Surge/Shadowrocket 模块地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Surge/AlohaVPNbrowser.sgmodule
 // Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/AlohaVPNbrowser.plugin
@@ -57,3 +56,5 @@ $done({body});
 // Adding a dummy plugin change to trigger git commit
 
 // Adding a dummy sgmodule change to trigger git commit
+
+// Adding a dummy plugin change to trigger git commit
