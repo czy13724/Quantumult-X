@@ -5,7 +5,7 @@
 
 /*
 项目名称： Aloha Browser VPN: Surf internet with more privacy
-项目作者： Levi
+项目作者： David
 下载地址： https://apps.apple.com/us/app/aloha-browser-private-vpn/id1105317682?l=en-GB
 使用说明： You need to crate free account first and use the script
 使用声明： 仅供个人参考学习交流，勿用于其它用途
