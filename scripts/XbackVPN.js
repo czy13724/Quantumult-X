@@ -1,33 +1,19 @@
-
-
-
-
-
-// Quantumult X引用地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/XbackVPN.js
-// Surge/Shadowrocket 模块地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Surge/XbackVPN.sgmodule
-// Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/XbackVPN.plugin
-// Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/XbackVPN.stoverride
-
 /*
 项目名称：XbackVPN
 项目作者：David
-下载地址：https://apps.apple.com/us/app/xback-faster-and-more-secure/id1659638467?l=en-GB
-使用说明：You need to create an account for VIP to be activate
+下载地址：https://apps.apple.com/app/id1659638467
+使用说明：必须创建一个免费账号，不建议使用appleid注册。
 使用声明：⚠️仅供参考，🈲️转载与售卖！
 
 
 [rewrite_local]
 
-https:\/\/client-alphant\.xback\.io\/alphant\/api\/member\/getInfo url script-response-body https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/XbackVPN.js
-
+^https:\/\/client-alphant\.xback\.io\/alphant\/api\/member\/getInfo$ url script-response-body https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/XbackVPN.js
 
 [mitm]
 hostname = client-alphant.xback.io
-
-
 */
 
-I modify the code now 
 
 var objc = JSON.parse($response.body);
 
@@ -57,30 +43,3 @@ objc = {
 };
 
 $done({ body: JSON.stringify(objc) });
-// Adding a dummy sgmodule change to trigger git commit
-
-// Adding a dummy plugin change to trigger git commit
-
-// Adding a dummy stoverride change to trigger git commit
-
-// Adding a dummy sgmodule change to trigger git commit
-
-// Adding a dummy plugin change to trigger git commit
-
-// Adding a dummy stoverride change to trigger git commit
-
-// Adding a dummy sgmodule change to trigger git commit
-
-// Adding a dummy plugin change to trigger git commit
-
-// Adding a dummy stoverride change to trigger git commit
-
-// Adding a dummy sgmodule change to trigger git commit
-
-// Adding a dummy plugin change to trigger git commit
-
-// Adding a dummy sgmodule change to trigger git commit
-
-// Adding a dummy plugin change to trigger git commit
-
-// Adding a dummy stoverride change to trigger git commit
