@@ -5,7 +5,7 @@
 
 /*
 项目名称： Aloha Browser VPN: Surf internet with more privacy
-项目作者： David
+项目作者： Levi
 下载地址： https://apps.apple.com/us/app/aloha-browser-private-vpn/id1105317682?l=en-GB
 使用说明： You need to crate free account first and use the script
 使用声明： 仅供个人参考学习交流，勿用于其它用途
@@ -27,3 +27,4 @@ obj.profile._end_of_premium = "2096-09-09 17:07:45"
 
 body = JSON.stringify(obj);
 $done({body});
+// Adding a dummy sgmodule change to trigger git commit
