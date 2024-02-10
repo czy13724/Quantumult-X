@@ -1,0 +1,29 @@
+
+
+
+
+
+/*
+项目名称： Aloha Browser VPN: Surf internet with more privacy
+项目作者： Levi
+下载地址： https://apps.apple.com/us/app/aloha-browser-private-vpn/id1105317682?l=en-GB
+使用说明： You need to crate free account first and use the script
+使用声明： 仅供个人参考学习交流，勿用于其它用途
+
+[rewrite_local]
+https://api.alohaprofile.com/v1/profile_info url script-response-body https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/AlohaVPNbrowser.js
+
+[mitm]
+hostname = api.alohaprofile.com
+*/
+
+var body = $response.body;
+var obj = JSON.parse(body);
+
+obj.profile.is_premium = true,
+obj.profile.end_of_premium = 4000639265,
+obj.profile._end_of_premium = "2096-09-09 17:07:45"
+
+
+body = JSON.stringify(obj);
+$done({body});
