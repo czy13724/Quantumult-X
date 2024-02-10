@@ -14,8 +14,7 @@
 
 [rewrite_local]
 
-(https://client-alphant\\.xback\\.io/alphant/api/member/getInfo).*
- url script-response-body https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/XbackVPN.js
+(https://client-alphant\\.xback\\.io/alphant/api/member/getInfo).* url script-response-body https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/XbackVPN.js
 
 [mitm]
 hostname = client-alphant.xback.io
@@ -61,4 +60,4 @@ $done({ body: JSON.stringify(objc) });
 
 // Adding a dummy plugin change to trigger git commit
 
-// Adding a dummy stoverride change to trigger git commit
+// Adding a dummy sgmodule change to trigger git commit
