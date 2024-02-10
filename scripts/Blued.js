@@ -16,6 +16,7 @@
 
 
 
+
 // Quantumult X引用地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/Blued.js
 // Surge/Shadowrocket 模块地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Surge/Blued.sgmodule
 // Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/Blued.plugin
@@ -221,5 +222,3 @@ $done({ body: JSON.stringify(anye) });
 // Adding a dummy sgmodule change to trigger git commit
 
 // Adding a dummy plugin change to trigger git commit
-
-// Adding a dummy stoverride change to trigger git commit
