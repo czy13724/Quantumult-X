@@ -16,7 +16,6 @@
 
 
 
-
 // Quantumult X引用地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/CerealTrans.js
 // Surge/Shadowrocket 模块地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Surge/CerealTrans.sgmodule
 // Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/CerealTrans.plugin
@@ -206,3 +205,5 @@ $done({ body: JSON.stringify(objc) });
 // Adding a dummy sgmodule change to trigger git commit
 
 // Adding a dummy plugin change to trigger git commit
+
+// Adding a dummy stoverride change to trigger git commit
