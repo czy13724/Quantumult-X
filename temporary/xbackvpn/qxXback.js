@@ -2,7 +2,8 @@
 项目名称：XbackVPN
 项目作者：David&Levi
 下载地址：https://apps.apple.com/app/id1659638467
-使用说明：必须创建一个免费账号，不建议使用appleid注册。Quantumult X 可远程直接引用该脚本
+使用说明：必须创建一个免费账号，不建议使用appleid注册。
+使用平台：Quantumult X 可远程直接引用该脚本
 使用声明：⚠️仅供参考，🈲️转载与售卖！
 
 
