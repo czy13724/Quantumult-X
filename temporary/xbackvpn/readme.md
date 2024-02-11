@@ -30,7 +30,7 @@ Surge需要拉取到本地使用，请自行查看*Surge添加*链接操作。
 [QX手动添加](https://raw.githubusercontent.com/czy13724/Quantumult-X/main/temporary/xbackvpn/qxXback.js)  
 
 ⚠️ 如未生效则需要搭配Boxjs使用。使用方法请看下方说明。
-操作说明：抓包抓取类似于https://client-alphant.xback.io/alphant/api/member/getInfo?deviceCode=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx,找到该地址的响应体(response body),点击json查看(json viewer),将newToken双引号的内容复制出来备用。若你使用boxjs网页则点击我的-数据查看器-输入key为xbackvpn_token并点击view将得到的newToken粘贴进来保存。若使用boxjs管理快捷指令也可以操作。
+操作说明：抓包抓取类似于 https://client-alphant.xback.io/alphant/api/member/getInfo?deviceCode=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx ,找到该地址的响应体(response body),点击json查看(json viewer),将newToken双引号的内容复制出来备用。若你使用boxjs网页则点击我的-数据查看器-输入key为xbackvpn_token并点击view将得到的newToken粘贴进来保存。若使用boxjs管理快捷指令也可以操作。
 
 ### Loon
 
