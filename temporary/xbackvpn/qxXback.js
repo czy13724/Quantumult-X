@@ -24,54 +24,27 @@ hostname = client-alphant.xback.io
 */
 
 
-// 获取完整的请求 URL
-let url = $request.url;
+let objc = JSON.parse($response.body);
 
-// 定义要匹配的URL基础部分（不包含查询参数）
-const baseUrl = 'https://client-alphant.xback.io/alphant/api/member/getInfo';
+// 使用 BoxJS 获取并设置 newToken
+objc.data.newToken = $prefs.valueForKey('xbackvpn_token') || objc.data.newToken;
 
-// 如果请求的 URL 正好是基础 URL（确保没有查询参数）
-if (url === baseUrl) {
-    // 解析原始响应体的 JSON 数据
-    let originalBody = JSON.parse($response.body);
-  
-    // 修改响应体中的内容
-    let modifiedBody = {
-        "code": "SUCCESS",
-        "success": true,
-        "data": {
-            "expireUnix": 4000103307,
-            "appleSub": "apple_pay",
-            "id": "4",
-            "productNo": "com.xback.subscription.1year",
-            "limited_offer": false,
-            "duration": 366,
-            "type": "yearly",
-            "newToken": $request.headers["x-token"],
-            "isEnable": true,
-            "desc": "Yearly",
-            "vipNo": "1",
-            "duration": 99999999,
-            "paypalSub": "",
-            "isPaySinceRegister": true
-        },
-        "msg": "success",
-        "requestId": "2f2bfc10df558190db386c141b24d1a1"
-    };
-  
-    // 使用 $done 方法返回修改后的响应体
-    $done({ body: JSON.stringify(modifiedBody) });
-} else {
-    // 如果 URL 包含查询参数，则不修改响应体
-    $done({});
-}
+objc.code = "SUCCESS";
+objc.success = true;
+objc.data.expireUnix = 4000103307;
+objc.data.appleSub = "apple_pay";
+objc.data.id = "4";
+objc.data.productNo = "com.xback.subscription.1year";
+objc.data.limited_offer = false;
+objc.data.duration = 366;
+objc.data.type = "yearly";
+objc.data.isEnable = true;
+objc.data.desc = "Yearly";
+objc.data.vipNo = "1";
+objc.data.duration = 99999999;
+objc.data.paypalSub = "";
+objc.data.isPaySinceRegister = true;
+objc.msg = "success";
+objc.requestId = "2f2bfc10df558190db386c141b24d1a1";
 
-// Adding a dummy sgmodule change to trigger git commit
-
-// Adding a dummy plugin change to trigger git commit
-
-// Adding a dummy sgmodule change to trigger git commit
-
-// Adding a dummy plugin change to trigger git commit
-
-// Adding a dummy stoverride change to trigger git commit
+$done({ body: JSON.stringify(objc) });
