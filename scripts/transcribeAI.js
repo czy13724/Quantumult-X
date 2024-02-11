@@ -1,28 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Quantumult X引用地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/transcribeAI.js
-// Surge/Shadowrocket 模块地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Surge/transcribeAI.sgmodule
-// Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/transcribeAI.plugin
-// Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/transcribeAI.stoverride
-
 /*
 项目名称： transcribeAI
 项目作者： Levi
@@ -50,6 +25,7 @@ Levi= {
           "purchase_date": "2024-01-10T05:35:24Z",
           "original_purchase_date": "2024-01-10T05:35:24Z",
           "store": "app_store",
+          "ownership_type": "PURCHASED",
           "store_transaction_id": "580001283302291"
         }
       ]
@@ -61,15 +37,18 @@ Levi= {
         "purchase_date": "2024-01-10T05:35:24Z"
       }
     },
-    "management_url": null,
+    "management_url": https://t.me/plbyjl,
     "subscriptions": {
     },
     "entitlements": {
       "pro": {
+        "ownership_type": "PURCHASED",
+        "is_sandbox": false,
+        "store": "app_store",
         "grace_period_expires_date": null,
         "purchase_date": "2024-01-10T05:35:24Z",
         "product_identifier": "voicenotes_0_lifetime",
-        "expires_date": null
+        "expires_date": "2099-12-31T01:01:01Z",
       }
     },
     "original_purchase_date": "2024-01-10T05:35:24Z",
@@ -79,120 +58,3 @@ Levi= {
 };
      
 $done({body: JSON.stringify(Levi)});
-// Adding a dummy sgmodule change to trigger git commit
-
-// Adding a dummy plugin change to trigger git commit
-
-// Adding a dummy stoverride change to trigger git commit
-
-// Adding a dummy sgmodule change to trigger git commit
-
-// Adding a dummy plugin change to trigger git commit
-
-// Adding a dummy stoverride change to trigger git commit
-
-// Adding a dummy sgmodule change to trigger git commit
-
-// Adding a dummy plugin change to trigger git commit
-
-// Adding a dummy stoverride change to trigger git commit
-
-// Adding a dummy sgmodule change to trigger git commit
-
-// Adding a dummy plugin change to trigger git commit
-
-// Adding a dummy stoverride change to trigger git commit
-
-// Adding a dummy sgmodule change to trigger git commit
-
-// Adding a dummy stoverride change to trigger git commit
-
-// Adding a dummy sgmodule change to trigger git commit
-
-// Adding a dummy plugin change to trigger git commit
-
-// Adding a dummy stoverride change to trigger git commit
-
-// Adding a dummy sgmodule change to trigger git commit
-
-// Adding a dummy plugin change to trigger git commit
-
-// Adding a dummy sgmodule change to trigger git commit
-
-// Adding a dummy plugin change to trigger git commit
-
-// Adding a dummy stoverride change to trigger git commit
-
-// Adding a dummy sgmodule change to trigger git commit
-
-// Adding a dummy stoverride change to trigger git commit
-
-// Adding a dummy sgmodule change to trigger git commit
-
-// Adding a dummy plugin change to trigger git commit
-
-// Adding a dummy stoverride change to trigger git commit
-
-// Adding a dummy sgmodule change to trigger git commit
-
-// Adding a dummy plugin change to trigger git commit
-
-// Adding a dummy stoverride change to trigger git commit
-
-// Adding a dummy sgmodule change to trigger git commit
-
-// Adding a dummy plugin change to trigger git commit
-
-// Adding a dummy stoverride change to trigger git commit
-
-// Adding a dummy sgmodule change to trigger git commit
-
-// Adding a dummy plugin change to trigger git commit
-
-// Adding a dummy stoverride change to trigger git commit
-
-// Adding a dummy sgmodule change to trigger git commit
-
-// Adding a dummy plugin change to trigger git commit
-
-// Adding a dummy sgmodule change to trigger git commit
-
-// Adding a dummy plugin change to trigger git commit
-
-// Adding a dummy stoverride change to trigger git commit
-
-// Adding a dummy sgmodule change to trigger git commit
-
-// Adding a dummy plugin change to trigger git commit
-
-// Adding a dummy stoverride change to trigger git commit
-
-// Adding a dummy sgmodule change to trigger git commit
-
-// Adding a dummy plugin change to trigger git commit
-
-// Adding a dummy sgmodule change to trigger git commit
-
-// Adding a dummy sgmodule change to trigger git commit
-
-// Adding a dummy plugin change to trigger git commit
-
-// Adding a dummy stoverride change to trigger git commit
-
-// Adding a dummy sgmodule change to trigger git commit
-
-// Adding a dummy plugin change to trigger git commit
-
-// Adding a dummy stoverride change to trigger git commit
-
-// Adding a dummy sgmodule change to trigger git commit
-
-// Adding a dummy plugin change to trigger git commit
-
-// Adding a dummy stoverride change to trigger git commit
-
-// Adding a dummy sgmodule change to trigger git commit
-
-// Adding a dummy plugin change to trigger git commit
-
-// Adding a dummy stoverride change to trigger git commit
