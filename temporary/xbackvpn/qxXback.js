@@ -1,9 +1,17 @@
+
+
+
+
+// Quantumult X引用地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/temporary/xbackvpn/qxXback.js
+
+
+
+
 /*
 项目名称：XbackVPN
 项目作者：David&Levi
 下载地址：https://apps.apple.com/app/id1659638467
 使用说明：必须创建一个免费账号，不建议使用appleid注册。
-使用平台：Quantumult X
 使用声明：⚠️仅供参考，🈲️转载与售卖！
 
 
@@ -58,3 +66,12 @@ if (url === baseUrl) {
     $done({});
 }
 
+// Adding a dummy sgmodule change to trigger git commit
+
+// Adding a dummy plugin change to trigger git commit
+
+// Adding a dummy sgmodule change to trigger git commit
+
+// Adding a dummy plugin change to trigger git commit
+
+// Adding a dummy stoverride change to trigger git commit
