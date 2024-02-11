@@ -3,8 +3,9 @@
 项目作者：David&Levi
 下载地址：https://apps.apple.com/app/id1659638467
 使用说明：必须创建一个免费账号，不建议使用appleid注册。
-使用平台：Quantumult X 可远程直接引用该脚本
+使用平台: Quantumult X 可直接远程引用该脚本
 使用声明：⚠️仅供参考，🈲️转载与售卖！
+
 
 
 [rewrite_local]
@@ -13,7 +14,7 @@
 
 [mitm]
 hostname = client-alphant.xback.io
-******************************************************/
+*/
 
 
 // 获取完整的请求 URL
@@ -57,3 +58,4 @@ if (url === baseUrl) {
     // 如果 URL 包含查询参数，则不修改响应体
     $done({});
 }
+
