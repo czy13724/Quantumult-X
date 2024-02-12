@@ -46,3 +46,5 @@ obj = {
 }
 $done({body: JSON.stringify(obj)});
 // Adding a dummy sgmodule change to trigger git commit
+
+// Adding a dummy plugin change to trigger git commit
