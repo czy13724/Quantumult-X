@@ -1,11 +1,3 @@
-
-
-
-// Quantumult X引用地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/BeautyPlus.js
-// Surge/Shadowrocket 模块地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Surge/BeautyPlus.sgmodule
-// Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/BeautyPlus.plugin
-// Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/BeautyPlus.stoverride
-
 /*
 项目名称： BeautyPlus
 项目作者： David
@@ -38,17 +30,6 @@ var objc = JSON.parse($response.body);
 }
 
 $done({body : JSON.stringify(objc)});
-
-
-
-
-
-
-
-
-
-
-
 // Adding a dummy sgmodule commit(19)
 // Adding a dummy plugin commit(18)
 // Adding a dummy stoverride commit(16)
