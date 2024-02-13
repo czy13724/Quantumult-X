@@ -1,3 +1,9 @@
+
+// Quantumult X引用地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/FTzhongwenwang.js
+// Surge/Shadowrocket 模块地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Surge/FTzhongwenwang.sgmodule
+// Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/FTzhongwenwang.plugin
+// Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/FTzhongwenwang.stoverride
+
 /******************************
 FT中文网 外区
 特别说明：微信登录
