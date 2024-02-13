@@ -1,24 +1,24 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Quantumult X引用地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/clearful.js
-// Surge/Shadowrocket 模块地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Surge/clearful.sgmodule
-// Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/clearful.plugin
-// Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/clearful.stoverride
+// Surge/Shadowrocket 模块地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/surge/clearful.sgmodule
+// Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/loon/clearful.plugin
+// Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/stash/clearful.stoverride
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
 项目名称： clearful
