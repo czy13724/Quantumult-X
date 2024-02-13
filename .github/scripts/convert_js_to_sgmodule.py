@@ -3,6 +3,7 @@
 
 import os
 import re
+import subprocess
 
 def insert_append(content):
     # Insert %APPEND% after the first '=' sign
