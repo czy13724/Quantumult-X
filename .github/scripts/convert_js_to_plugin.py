@@ -3,6 +3,7 @@
 
 import os
 import re
+import subprocess
 
 def task_local_to_plugin(js_content):
     from typing import Optional  # Import the Optional type
