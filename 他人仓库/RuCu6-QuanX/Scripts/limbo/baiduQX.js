@@ -16,5 +16,4 @@ var newJavaScript =
   '<script type="text/javascript" async="async" src="https://gitlab.com/RuCu6/QuanX/-/raw/main/Scripts/limbo/baidu.js"></script>';
 let body = $response.body.replace(rHead, newStyle).replace(rBody, newJavaScript);
 $done({ body });
-// Adding a dummy sgmodule commit(1)
-// Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(2)

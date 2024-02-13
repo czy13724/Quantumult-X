@@ -142,5 +142,4 @@ function read(key) {
     return JSON.parse($persistentStore.read(key) || "{}");
   }
 }
-// Adding a dummy sgmodule commit(1)
-// Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(2)

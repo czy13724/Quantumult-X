@@ -21,5 +21,4 @@ var body = JSON.parse($response.body);
 body = {"valid":true,"hasUserConsumedAppleFreeTrial":false,"isCurrentlyInFreeTrial":false,"newlyAssociated":false,"membership":{"isCurrentlyInFreeTrial":false,"valid":true,"hasUserConsumedAppleFreeTrial":false,"newlyAssociated":false}}
 
 $done({ body: JSON.stringify(body) });
-// Adding a dummy sgmodule commit(1)
-// Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(2)

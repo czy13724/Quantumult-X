@@ -26,5 +26,4 @@ obj.advertisement_num = 0;
 obj.advertisement_info = [];
 delete obj.appid;
 $done({body: JSON.stringify(obj)});
-// Adding a dummy sgmodule commit(1)
-// Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(2)

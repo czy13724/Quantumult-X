@@ -5,5 +5,4 @@ var Newone =
   '<head><link rel="stylesheet" href="https://gitlab.com/RuCu6/QuanX/-/raw/main/Css/javbus.css" type="text/css"><script type="text/javascript"  src="//limbopro.com/Adguard/javbus.js"></script>';
 let body = $response.body.replace(Oldone, Newone);
 $done({ body });
-// Adding a dummy sgmodule commit(1)
-// Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(2)

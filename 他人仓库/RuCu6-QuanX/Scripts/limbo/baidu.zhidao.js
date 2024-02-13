@@ -7,5 +7,4 @@ var str = document.getElementById("respect-footer").innerHTML;
 var regx = /https?:\/\/.*?itunes.*?\?mt=8/g;
 var strreplace = str.replace(regx, "https://www.zhihu.com");
 document.getElementById("respect-footer").innerHTML = strreplace;
-// Adding a dummy sgmodule commit(1)
-// Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(2)

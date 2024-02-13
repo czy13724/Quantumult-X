@@ -30,5 +30,4 @@ chxm1023.data.vitalityVipPastDueTime = 4092599349000;
 chxm1023.data.vitalityPcVipPastDueTime = 4092599349000;
 
 $done({body : JSON.stringify(chxm1023)});
-// Adding a dummy sgmodule commit(1)
-// Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(2)

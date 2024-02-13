@@ -37,5 +37,4 @@ var objc = JSON.parse($response.body);
 "pending_renewal_info":[{"auto_renew_product_id":"Prog_oneYear_auto", "product_id":"Prog_oneYear_auto", "original_transaction_id":"430001235331729", "auto_renew_status":"0"}], "status":0}
 
 $done({body : JSON.stringify(objc)});
-// Adding a dummy sgmodule commit(1)
-// Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(2)

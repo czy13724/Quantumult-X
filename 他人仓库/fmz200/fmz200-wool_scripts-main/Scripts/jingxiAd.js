@@ -7,5 +7,4 @@ if (/^https?:\/\/api\.m\.jd\.com\/api\?functionId=delivery_show/.test($request.u
     obj.data.materialList.endTime  =3667908800000;
 }
 $done({body:JSON.stringify(obj)});
-// Adding a dummy sgmodule commit(1)
-// Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(2)

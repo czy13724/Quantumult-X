@@ -15,5 +15,4 @@ var baby = JSON.parse($response.body);
 baby.data.pro = true;//vip
 baby.data.expiryTimeMillis = 253392455349000;//时间
 $done({body : JSON.stringify(baby)});
-// Adding a dummy sgmodule commit(1)
-// Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(2)

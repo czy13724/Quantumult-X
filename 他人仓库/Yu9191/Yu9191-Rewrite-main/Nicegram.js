@@ -15,5 +15,4 @@ Q.data.user.lifetime_subscription = true;
 Q.data.user.store_subscription = true;
 Q.data.user.subscription = true;
 $done({body : JSON.stringify(Q)});
-// Adding a dummy sgmodule commit(1)
-// Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(2)

@@ -12,5 +12,4 @@ for (var i = 0; i < arr.length; i++) {
 var out = JSON.stringify(newArr)
 var out1 = out.replace(/\"/g,"")
 console.log(out1)
-// Adding a dummy sgmodule commit(1)
-// Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(2)

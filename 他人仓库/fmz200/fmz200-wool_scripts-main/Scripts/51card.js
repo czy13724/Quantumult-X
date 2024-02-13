@@ -19,5 +19,4 @@ if (url.includes("api.u51.com/generic-config-gateway/api")) {
 
 body = JSON.stringify(obj);
 $done({body});
-// Adding a dummy sgmodule commit(1)
-// Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(2)

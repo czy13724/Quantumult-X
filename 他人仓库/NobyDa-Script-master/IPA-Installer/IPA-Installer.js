@@ -146,5 +146,4 @@ function compatible_tool() {
 		$done((value.response && isQuanX) ? value.response : value)
 	}
 };
-// Adding a dummy sgmodule commit(1)
-// Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(2)

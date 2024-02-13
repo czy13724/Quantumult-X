@@ -47,5 +47,4 @@ if (/whole_user_info_v3/.test(url)) {
   })
 } else {
   $done({ body })
-// Adding a dummy sgmodule commit(1)
-// Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(2)

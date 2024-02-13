@@ -55,5 +55,4 @@ hostname=*3m5sbs*,*yrvguhx*,*cbsbwr*,*hxcwqh*,*nocqvbo*,*5wxksg*,*bqisxzq*,*mdy0
 ^http[s]?:\/\/.*(3m5sbs|yrvguhx|cbsbwr|hxcwqh|nocqvbo|5wxksg|bqisxzq|mdy069p).*api\/app/(ping\/config|media\/home|user\/info|media\/play|comics\/detail|post\/list) url script-response-body https://raw.githubusercontent.com/Yuheng0101/X/main/Scripts/mdsq.js
 
 ******************************************/
-// Adding a dummy sgmodule commit(1)
-// Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(2)

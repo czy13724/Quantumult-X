@@ -175,5 +175,4 @@ function sendNotification(usageRate, expire, infoList) {
   }
   $persistentStore.write(JSON.stringify(notifyCounter), title);
 }
-// Adding a dummy sgmodule commit(1)
-// Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(2)

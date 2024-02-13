@@ -26,5 +26,4 @@ var ip = obj['query'];
 var description = obj['country'] + '-' +ValidCheck(obj['city']) + '\n' + obj['org'] + '\n'+obj['ipName']+ '\n' + obj['query'];
 
 $done({title, subtitle, ip, description});
-// Adding a dummy sgmodule commit(1)
-// Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(2)

@@ -28,5 +28,4 @@ var body = $response.body.replace(/expiredAt":".*?"/g,'expiredAt":"2099-09-21T11
 .replace(/coins30":\d+/g,'coins30":99999')
 .replace(/level":\d+/g,'level":99')
 $done({ body });
-// Adding a dummy sgmodule commit(1)
-// Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(2)

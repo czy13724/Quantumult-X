@@ -37,5 +37,4 @@ var body = $response.body.replace(/"isOrderSvip":\w+/g,'"isOrderSvip":true')
 .replace(/"isCantplay":\d/g,'"isCantplay":0')
 .replace(/"unloakDay":\d+/g,'"unloakDay":99')
 $done({ body });
-// Adding a dummy sgmodule commit(1)
-// Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(2)

@@ -3,5 +3,4 @@ if (new_body.biz) {
   new_body.biz = Object.values(new_body.biz).filter(item => !(item["type"] == "promoted"));
 }
 $done({body: JSON.stringify(new_body)});
-// Adding a dummy sgmodule commit(1)
-// Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(2)

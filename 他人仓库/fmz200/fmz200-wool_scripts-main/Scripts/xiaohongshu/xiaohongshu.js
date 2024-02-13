@@ -36,5 +36,4 @@ function process() {
   console.log('图片画质增强完成✅');
   responseBody = JSON.parse(responseBody);
 }
-// Adding a dummy sgmodule commit(1)
-// Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(2)

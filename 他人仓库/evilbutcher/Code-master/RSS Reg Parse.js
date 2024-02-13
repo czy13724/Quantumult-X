@@ -78,5 +78,4 @@ function parsehtmlrss(str, title, items, urls, covers) {
     }
   }
 }
-// Adding a dummy sgmodule commit(1)
-// Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(2)

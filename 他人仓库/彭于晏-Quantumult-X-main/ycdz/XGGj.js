@@ -39,5 +39,4 @@ var objc = JSON.parse($response.body);
 {"auto_renew_product_id":"habitminder.yearlysubscription", "product_id":"habitminder.yearlysubscription", "original_transaction_id":"430001236977054", "auto_renew_status":"0"}], "status":0}
 
 $done({body : JSON.stringify(objc)});
-// Adding a dummy sgmodule commit(1)
-// Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(2)

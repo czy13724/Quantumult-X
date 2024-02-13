@@ -28,5 +28,4 @@ var body = $response.body.replace(/vipLevel": 0/g,'vipLevel": 3')
 .replace(/expires": "1970-01-01 00:00:00"/g,'expires": "2099-01-01 00:00:00"')
 .replace(/vipTipsType": -1/g,'vipTipsType": 0')
 $done({ body });
-// Adding a dummy sgmodule commit(1)
-// Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(2)

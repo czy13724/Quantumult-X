@@ -23,5 +23,4 @@ if (url == 'https://api.x-storm.com/app/user-profile/') {
   var body = '{"code":200,"data":"' + data + '","msg":"success","status":"success"}';
 }
 $done({ body });
-// Adding a dummy sgmodule commit(1)
-// Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(2)

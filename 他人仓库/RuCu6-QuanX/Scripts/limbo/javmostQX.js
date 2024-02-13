@@ -5,5 +5,4 @@ let body_1 =
   '<link rel="stylesheet" href="https://gitlab.com/RuCu6/QuanX/-/raw/main/Css/javmost.css" type="text/css"><script type="text/javascript" async="async" src="https://gitlab.com/RuCu6/QuanX/-/raw/main/Scripts/limbo/javmost.js"></script><title>';
 let body = $response.body.replace(regex_1, body_1);
 $done({ body });
-// Adding a dummy sgmodule commit(1)
-// Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(2)

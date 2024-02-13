@@ -6,5 +6,4 @@
 https?:\/\/api\.taptapdada\.com\/startup\-logo\/v1\/combo\? url reject-dict
 [mitm]
 hostname = api.taptapdada.com
-// Adding a dummy sgmodule commit(1)
-// Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(2)

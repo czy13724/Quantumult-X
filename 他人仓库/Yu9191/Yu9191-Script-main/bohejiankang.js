@@ -27,5 +27,4 @@ var chxm1023 = JSON.parse($response.body);
       };
 
 $done({body : JSON.stringify(chxm1023)});
-// Adding a dummy sgmodule commit(1)
-// Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(2)

@@ -25,5 +25,4 @@ hostname = api.pollykann.com
 
 var body = $response.body.replace(/"isPurchased":false/g,'"isPurchased":true')
 $done({ body });
-// Adding a dummy sgmodule commit(1)
-// Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(2)

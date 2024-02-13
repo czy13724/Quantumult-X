@@ -64,5 +64,4 @@ var description = '国家：' + obj['countryCode'] + ' ' + obj['country'] + '\n'
   + '经纬度：' + obj['lat'] + ' / ' + obj['lon'] + '\n'
   + '时区：' + obj['timezone'];
 $done({title, subtitle, ip, description});
-// Adding a dummy sgmodule commit(1)
-// Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(2)

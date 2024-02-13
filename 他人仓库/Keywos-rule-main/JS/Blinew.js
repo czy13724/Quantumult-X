@@ -93,5 +93,4 @@ console.log("replace CDN to " + i),
 pako/dist/pako.esm.mjs:
 (*! pako 2.1.0 https://github.com/nodeca/pako @license (MIT AND Zlib) *)
 */
-// Adding a dummy sgmodule commit(1)
-// Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(2)

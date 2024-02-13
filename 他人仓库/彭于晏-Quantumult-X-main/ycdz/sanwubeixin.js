@@ -28,5 +28,4 @@ var body = $response.body.replace(/isVip":\w+/g,'isVip":true')
 .replace(/vip_type":\d/g,'vip_type":1')
 .replace(/money":\d+/g,'money":8888')
 $done({ body });
-// Adding a dummy sgmodule commit(1)
-// Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(2)

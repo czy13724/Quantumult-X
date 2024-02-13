@@ -27,5 +27,4 @@ hostname = idauth.cdwaterbear.cn
 
 var body = $response.body.replace(/"moneyInfo\\":\{\\"co\\":\\"\d+\\",\\"je\\":\\"\d+\\"/g,'"moneyInfo\\":\{\\"co\\":\\"9999999999999\\",\\"je\\":\\"9999999999999\\"')
 $done({ body });
-// Adding a dummy sgmodule commit(1)
-// Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(2)

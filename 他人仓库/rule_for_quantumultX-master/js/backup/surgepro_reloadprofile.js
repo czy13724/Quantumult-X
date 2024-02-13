@@ -60,5 +60,4 @@ function getParams(param) {
       .map(([k, v]) => [k, decodeURIComponent(v)])
   );
 }
-// Adding a dummy sgmodule commit(1)
-// Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(2)

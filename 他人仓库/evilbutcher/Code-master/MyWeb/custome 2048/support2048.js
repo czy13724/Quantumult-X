@@ -160,5 +160,4 @@ function loadImg() {
 		img[i].src = 'picture/' + i + '.jpg';
 	}
 }
-// Adding a dummy sgmodule commit(1)
-// Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(2)
