@@ -28,4 +28,6 @@ var body = $response.body.replace(/expiration_time":".*?"/g,'expiration_time":"9
 .replace(/free_trial":\d/g,'free_trial":1')
 .replace(/is_vip":\d/g,'is_vip":1')
 $done({ body });
-// Adding a dummy sgmodule commit(2)
+// Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)
+// Adding a dummy stoverride commit(1)

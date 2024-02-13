@@ -26,4 +26,6 @@ hostname = dashen.shuiyinyu.com
 var body = $response.body.replace(/vip_expire_time": \w+/g,'vip_expire_time": 4076744128000')
 .replace(/auto_subscribe_or_permanent_vip": \w+/g,'auto_subscribe_or_permanent_vip": true')
 $done({ body });
-// Adding a dummy sgmodule commit(2)
+// Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)
+// Adding a dummy stoverride commit(1)

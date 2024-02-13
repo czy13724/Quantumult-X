@@ -31,4 +31,6 @@ var body = $response.body.replace(/"pro_expire_time":".*?"/g,'"pro_expire_time":
 .replace(/"use_by_pro":1/g,'"use_by_pro":0')
 .replace(/"need_subscribe":\d/g,'"need_subscribe":0')
 $done({ body });
-// Adding a dummy sgmodule commit(2)
+// Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)
+// Adding a dummy stoverride commit(1)

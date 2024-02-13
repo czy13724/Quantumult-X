@@ -32,4 +32,6 @@ var body = $response.body.replace(/"vipType":0/g,'"vipType":1')
 .replace(/"vipRank":\d/g,'"vipRank":3')
 .replace(/"joinType":\w+/g,'"joinType":true')
 $done({ body });
-// Adding a dummy sgmodule commit(2)
+// Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)
+// Adding a dummy stoverride commit(1)

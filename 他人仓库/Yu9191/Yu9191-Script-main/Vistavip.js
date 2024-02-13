@@ -43,4 +43,6 @@ body = body.replace(/"isBuyArticle":0/g, '"isBuyArticle":1');
 body = body.replace(/"isFreeMag":0/g, '"isFreeMag":1');
 
 $done({ body });
-// Adding a dummy sgmodule commit(2)
+// Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)
+// Adding a dummy stoverride commit(1)

@@ -77,4 +77,6 @@ $task.fetch(myRequest).then(response => {
   $notify("油价查询", "请求失败", "请检查网络或反馈给开发者");
   $done({});
 });
-// Adding a dummy sgmodule commit(2)
+// Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)
+// Adding a dummy stoverride commit(1)

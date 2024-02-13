@@ -32,4 +32,6 @@ var body = $response.body.replace(/"isTry":\d/g,'"isTry":1')
 .replace(/"freeSearchCount":"\d+"/g,'"freeSearchCount":"9999"')
 .replace(/"isShowAd":"1"/g,'"isShowAd":"0"')
 $done({ body });
-// Adding a dummy sgmodule commit(2)
+// Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)
+// Adding a dummy stoverride commit(1)

@@ -219,4 +219,6 @@ http:\/\/wallpaper\.soutushenqi\.com\/api\/v1\/account url script-response-body 
 # *******************************
 
 ^https:\/\/api\.meiyan\.com\/vip\/user_info\.json url script-response-body https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/myxj.js
-// Adding a dummy sgmodule commit(2)
+// Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)
+// Adding a dummy stoverride commit(1)

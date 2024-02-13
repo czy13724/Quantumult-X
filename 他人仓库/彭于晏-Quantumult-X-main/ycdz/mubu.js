@@ -30,4 +30,6 @@ hostname = api2.mubu.com
 var body = $response.body.replace(/vipEndDate":""/g,'vipEndDate":"99999999"')
 .replace(/level":\d+/g,'level":1')
 $done({ body });
-// Adding a dummy sgmodule commit(2)
+// Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)
+// Adding a dummy stoverride commit(1)

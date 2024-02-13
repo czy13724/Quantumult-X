@@ -53,4 +53,6 @@ function getENV(key, names, database) {
 	function traverseObject(o,c){for(var t in o){var n=o[t];o[t]="object"==typeof n&&null!==n?traverseObject(n,c):c(t,n)}return o}
 	function string2number(string){ if(string && !isNaN(string)) string = parseInt(string, 10); return string}
 };
-// Adding a dummy sgmodule commit(2)
+// Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)
+// Adding a dummy stoverride commit(1)
