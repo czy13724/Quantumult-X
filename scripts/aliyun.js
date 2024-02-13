@@ -29,6 +29,7 @@
 
 
 
+
 // Quantumult X引用地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/aliyun.js
 // Surge/Shadowrocket 模块地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Surge/aliyun.sgmodule
 // Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/aliyun.plugin
@@ -1378,9 +1379,7 @@ function Env(t, e) { class s { constructor(t) { this.env = t } send(t, e = "GET"
 
 
 
+// Adding a dummy stoverride commit(2)
 
-
-
-// Adding a dummy sgmodule commit(8)
-// Adding a dummy plugin commit(6)
-// Adding a dummy stoverride commit(3)
+// Adding a dummy plugin commit(5)
+// Adding a dummy sgmodule commit(7)
