@@ -1,7 +1,7 @@
 // Quantumult X引用地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/headway.js
-// Surge/Shadowrocket 模块地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/surge/headway.sgmodule
-// Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/loon/headway.plugin
-// Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/stash/headway.stoverride
+// Surge/Shadowrocket 模块地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Surge/headway.sgmodule
+// Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/headway.plugin
+// Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/headway.stoverride
 
 
 
