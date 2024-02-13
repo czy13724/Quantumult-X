@@ -49,24 +49,17 @@ def generate_custom_header(file_name, file_extension):
     # Custom header format
     header_format = """
 // Quantumult X引用地址： https://raw.githubusercontent.com/{username}/{repo}/main/{folder}/{file}{ext}
-// Surge/Shadowrocket 模块地址： https://raw.githubusercontent.com/{username}/{repo}/main/Surge/{file}.sgmodule
-// Loon 插件地址： https://raw.githubusercontent.com/{username}/{repo}/main/Loon/{file}.plugin
-// Stash 覆写地址： https://raw.githubusercontent.com/{username}/{repo}/main/Stash/{file}.stoverride
-"""
+// Surge/Shadowrocket 模块地址： https://raw.githubusercontent.com/{username}/{repo}/main/surge/{file}.sgmodule
+// Loon 插件地址： https://raw.githubusercontent.com/{username}/{repo}/main/loon/{file}.plugin
+// Stash 覆写地址： https://raw.githubusercontent.com/{username}/{repo}/main/stash/{file}.stoverride
+""".strip('\n')
     return header_format.format(username=GITHUB_USERNAME, repo=REPO_NAME, folder=FOLDER_NAME, file=file_name, ext=file_extension)
 
 # Check if the file already contains any of the key comments to be replaced
 def contains_key_comments(file_content):
-    key_comments = [
-        "// Quantumult X引用地址",
-        "// Surge/Shadowrocket 模块地址",
-        "// Loon 插件地址",
-        "// Stash 覆写地址"
-    ]
-    for comment in key_comments:
-        if comment in file_content:
-            return True
-    return False
+    key_comments_pattern = re.compile(r"// Quantumult X引用地址.*?// Stash 覆写地址.*?\n", re.DOTALL)
+    matches = key_comments_pattern.findall(file_content)
+    return matches
 
 # Fetch the list of files
 files = get_file_list(FOLDER_NAME)
@@ -77,24 +70,27 @@ pattern = re.compile(r'(// Quantumult X引用地址.*?// Stash 覆写地址.*?)\
 for file in files:
     file_name, file_extension = os.path.splitext(file['name'])
     
-    if file_extension in ('.js', '.conf', '.snippet'):  
+    if file_extension in ('.js', '.conf', '.snippet'):
         download_url = file['download_url']
         file_sha = file['sha']
-        
+
         # Download the existing file content
         file_content_response = requests.get(download_url)
-        
+
         if file_content_response.status_code == 200:
             file_content = file_content_response.content.decode('utf-8')
             custom_header = generate_custom_header(file_name, file_extension)
 
-            # Check if the file contains the key comments
-            if contains_key_comments(file_content):
-                # Replace the existing custom header with the new one
-                updated_file_content = pattern.sub(custom_header, file_content, count=1)
+            # Check if the file contains the key comments and remove them
+            matches = contains_key_comments(file_content)
+            if matches:
+                # Use sub() method to replace all matched key comments with an empty string
+                file_content = re.sub(pattern, '', file_content)
+                # Concatenate the custom header with the cleaned file content
+                updated_file_content = custom_header + '\n' + file_content
             else:
                 # Prepend the custom header if key comments do not exist
-                updated_file_content = custom_header + '\n' + file_content
+                updated_file_content = custom_header + '\n\n' + file_content
 
             # Encode the updated file content in base64
             b64_encoded_content = base64.b64encode(updated_file_content.encode('utf-8')).decode('utf-8')
