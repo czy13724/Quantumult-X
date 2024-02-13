@@ -8,6 +8,7 @@ https?:\/\/api\.taptapdada\.com\/startup\-logo\/v1\/combo\? url reject-dict
 hostname = api.taptapdada.com
 
 
-// Adding a dummy sgmodule commit(3)
+
 // Adding a dummy plugin commit(2)
 // Adding a dummy stoverride commit(1)
+// Adding a dummy sgmodule commit(4)

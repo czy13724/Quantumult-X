@@ -28,6 +28,7 @@ body = $response.body.replace(/\"user_is_pro":\w+/g, '\"user_is_pro":true').repl
 $done({body});
 
 
-// Adding a dummy sgmodule commit(3)
+
 // Adding a dummy plugin commit(2)
 // Adding a dummy stoverride commit(1)
+// Adding a dummy sgmodule commit(4)

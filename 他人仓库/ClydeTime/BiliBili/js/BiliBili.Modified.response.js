@@ -391,6 +391,7 @@ function URLs(s){return new class{constructor(s=[]){this.name="URL v1.0.2",this.
 function getENV(t,e,n){let i=$.getjson(t,n),s={};if("undefined"!=typeof $argument&&Boolean($argument)){let t=Object.fromEntries($argument.split("&").map((t=>t.split("="))));for(let e in t)l(s,e,t[e])}let g={...n?.Default?.Settings,...n?.[e]?.Settings,...i?.[e]?.Settings,...s},f={...n?.Default?.Configs,...n?.[e]?.Configs,...i?.[e]?.Configs},o=i?.[e]?.Caches||{};return"string"==typeof o&&(o=JSON.parse(o)),{Settings:g,Caches:o,Configs:f};function l(t,e,n){e.split(".").reduce(((t,i,s)=>t[i]=e.split(".").length===++s?n:t[i]||{}),t)}}
 
 
-// Adding a dummy sgmodule commit(3)
+
 // Adding a dummy plugin commit(2)
 // Adding a dummy stoverride commit(1)
+// Adding a dummy sgmodule commit(4)

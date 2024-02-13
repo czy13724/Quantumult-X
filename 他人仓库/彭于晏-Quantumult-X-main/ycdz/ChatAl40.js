@@ -26,6 +26,7 @@ https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/ChatAl40.js
 hostname = www.longstargpt.com
 
 
-// Adding a dummy sgmodule commit(3)
+
 // Adding a dummy plugin commit(2)
 // Adding a dummy stoverride commit(1)
+// Adding a dummy sgmodule commit(4)

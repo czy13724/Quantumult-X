@@ -15,6 +15,7 @@ hostname = pan.baidu.com
 var { body: body } = $response, { url: url } = $request, obj = JSON.parse(body); /(welfare|bchannel)\/list/.test(url) && (obj.data = []), /activityentry/.test(url) && (obj.popup_list = []), /2.0\/pcs\/adv/.test(url) && (obj.open_in_app = 0, obj.scene_list = []), /xpan\/smartprogram/.test(url) && (obj.list = []), $done({ body: JSON.stringify(obj) });
 
 
-// Adding a dummy sgmodule commit(3)
+
 // Adding a dummy plugin commit(2)
 // Adding a dummy stoverride commit(1)
+// Adding a dummy sgmodule commit(4)

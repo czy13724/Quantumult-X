@@ -12,6 +12,7 @@ c.search:c.href.replace("abp:subscribe","adguard:subscribe");break a}}catch(f){d
 if(!document[O]){document[O]=!0;if(K){M||(J&&x.b&&D(x.b),D(x.h));var P=x.c;P&&!r&&(new ExtendedCss({styleSheet:P,i:C})).apply()}L&&H();(w.isSubscriptionIntercept||w.isUserscriptIntercept)&&I();N||y()}delete x.b;delete x.h;delete x.c;delete x.g;delete x.a;delete x.f;n.removeChild(h);})();
 
 
-// Adding a dummy sgmodule commit(3)
+
 // Adding a dummy plugin commit(2)
 // Adding a dummy stoverride commit(1)
+// Adding a dummy sgmodule commit(4)

@@ -245,6 +245,7 @@ var hexcase = 0; var b64pad = ""; function hex_sha256(s) { return rstr2hex(rstr_
 /*********************************** SHA256 *************************************/
 
 
-// Adding a dummy sgmodule commit(3)
+
 // Adding a dummy plugin commit(2)
 // Adding a dummy stoverride commit(1)
+// Adding a dummy sgmodule commit(4)

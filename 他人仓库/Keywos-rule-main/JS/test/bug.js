@@ -5,6 +5,7 @@
 // const nameclear = /邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|下次|版本|官址|备用|到期|过期|已用|国内|国际|国外|联系|邮箱|工单|贩卖|倒卖|防止|(\b(USE|USED|TOTAL|EXPIRE|EMAIL)\b)|\d\s?g/i;
 
 
-// Adding a dummy sgmodule commit(3)
+
 // Adding a dummy plugin commit(2)
 // Adding a dummy stoverride commit(1)
+// Adding a dummy sgmodule commit(4)

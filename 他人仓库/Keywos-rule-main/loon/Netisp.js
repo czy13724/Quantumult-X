@@ -188,6 +188,7 @@ function getflag(t){const n=t.toUpperCase().split("").map((t=>127397+t.charCodeA
 async function tKey(t,e,o){let r=1,s=1;const i=new Promise(((i,l)=>{const a=async f=>{try{const r=await Promise.race([new Promise(((n,o)=>{let r=Date.now();$httpClient.get({url:t,node:e},((t,e,s)=>{if(t){o(t)}else{let t=Date.now()-r;let o=e.status;switch(o){case 200:let o=e.headers["Content-Type"];switch(true){case o.includes("application/json"):let e=JSON.parse(s);e.tk=t;n(e);break;case o.includes("text/html"):n("text/html");break;case o.includes("text/plain"):let r=s.split("\n");let i=r.reduce(((n,e)=>{let[o,r]=e.split("=");n[o]=r;n.tk=t;return n}),{});n(i);break;case o.includes("image/svg+xml"):n("image/svg+xml");break;default:n("未知");break}break;case 204:let r={tk:t};n(r);break;default:n("nokey");break}}}))})),new Promise(((t,n)=>{setTimeout((()=>n(new Error("timeout"))),o)}))]);if(r){i(r)}else{i("超时");l(new Error(n.message))}}catch(t){if(f<r){s++;a(f+1)}else{i("检测失败, 重试次数"+s);l(t)}}};a(0)}));return i}
 
 
-// Adding a dummy sgmodule commit(3)
+
 // Adding a dummy plugin commit(2)
 // Adding a dummy stoverride commit(1)
+// Adding a dummy sgmodule commit(4)

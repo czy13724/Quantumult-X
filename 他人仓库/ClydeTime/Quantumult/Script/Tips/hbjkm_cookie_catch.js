@@ -20,6 +20,7 @@ $notify("河北健康码cookie获取", "获取成功", JSON.stringify(token));
 $done({});
 
 
-// Adding a dummy sgmodule commit(3)
+
 // Adding a dummy plugin commit(2)
 // Adding a dummy stoverride commit(1)
+// Adding a dummy sgmodule commit(4)
