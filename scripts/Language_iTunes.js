@@ -1,18 +1,18 @@
-
-
-
-
-
-
-
-
-
-
-
 // Quantumult X引用地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/Language_iTunes.js
-// Surge/Shadowrocket 模块地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Surge/Language_iTunes.sgmodule
-// Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/Language_iTunes.plugin
-// Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/Language_iTunes.stoverride
+// Surge/Shadowrocket 模块地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/surge/Language_iTunes.sgmodule
+// Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/loon/Language_iTunes.plugin
+// Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/stash/Language_iTunes.stoverride
+
+
+
+
+
+
+
+
+
+
+
 
 /*************************************
 
