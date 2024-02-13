@@ -30,6 +30,5 @@ var body = $response.body.replace(/playerInfo_gold\\":\d+/g,'playerInfo_gold\\":
 .replace(/playerInfo_shipuScore\\":\d+/g,'playerInfo_shipuScore\\":8888')
 .replace(/playerInfo_diamond\\":\d+/g,'playerInfo_diamond\\":8888')
 $done({ body });
-// Adding a dummy sgmodule commit(1)
+// Adding a dummy sgmodule commit(2)
 // Adding a dummy plugin commit(1)
-// Adding a dummy stoverride commit(1)

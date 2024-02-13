@@ -17,6 +17,5 @@ hostname=comic.321mh.com
 
 var body = $response.body.replace(/price":\d+/g,'price":0')
 $done({ body });
-// Adding a dummy sgmodule commit(1)
+// Adding a dummy sgmodule commit(2)
 // Adding a dummy plugin commit(1)
-// Adding a dummy stoverride commit(1)

@@ -28,6 +28,5 @@ var body = $response.body.replace(/"vip_type":\d/g,'"vip_type":1')
 .replace(/"balance":\d+/g,'"balance":99999')
 .replace(/"success":\d/g,'"success":1')
 $done({ body });
-// Adding a dummy sgmodule commit(1)
+// Adding a dummy sgmodule commit(2)
 // Adding a dummy plugin commit(1)
-// Adding a dummy stoverride commit(1)

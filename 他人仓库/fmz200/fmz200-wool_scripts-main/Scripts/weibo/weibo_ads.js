@@ -244,6 +244,5 @@ function swapObjectsInArray(array, index1, index2) {
   delete array[index2].navigation_title;
   console.log('交换tab页顺序结束💕💕');
 }
-// Adding a dummy sgmodule commit(1)
+// Adding a dummy sgmodule commit(2)
 // Adding a dummy plugin commit(1)
-// Adding a dummy stoverride commit(1)

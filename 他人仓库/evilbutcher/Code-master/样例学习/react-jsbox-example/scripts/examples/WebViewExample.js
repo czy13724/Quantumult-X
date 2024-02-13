@@ -7,6 +7,5 @@ const html = $file.read('/report.html').string
 export default function WebViewExample() {
   return <web frame={$rect(0, 0, width, width)} html={html} />
 }
-// Adding a dummy sgmodule commit(1)
+// Adding a dummy sgmodule commit(2)
 // Adding a dummy plugin commit(1)
-// Adding a dummy stoverride commit(1)

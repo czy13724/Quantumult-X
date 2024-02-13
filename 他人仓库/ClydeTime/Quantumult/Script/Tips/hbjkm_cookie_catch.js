@@ -18,6 +18,5 @@ const token = $request.headers.accessToken;
 console.log(JSON.stringify(token));
 $notify("河北健康码cookie获取", "获取成功", JSON.stringify(token));
 $done({});
-// Adding a dummy sgmodule commit(1)
+// Adding a dummy sgmodule commit(2)
 // Adding a dummy plugin commit(1)
-// Adding a dummy stoverride commit(1)

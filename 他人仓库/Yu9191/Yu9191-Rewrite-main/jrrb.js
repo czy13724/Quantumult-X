@@ -18,6 +18,5 @@ Q.data.vip_expired = "8888888888";
 Q.data.is_vip_now = true;
 Q.data.is_vip = "1";
 $done({body : JSON.stringify(Q)});
-// Adding a dummy sgmodule commit(1)
+// Adding a dummy sgmodule commit(2)
 // Adding a dummy plugin commit(1)
-// Adding a dummy stoverride commit(1)

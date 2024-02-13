@@ -57,6 +57,5 @@ var subtitle =  "💋 "+ ISP_ValidCheck(obj['isp']) + " ➠ "+ obj['country'];
 var ip = obj['addr']; 
 var description = '服务商:'+obj['isp'] + '\n'+'定位: [' +obj["latitude"]+","+obj["longitude"]+"]"+ '\n' + 'IP:'+ obj['addr'] + '\n' +'时区:'+ obj['timezone'];
 $done({title, subtitle, ip, description});
-// Adding a dummy sgmodule commit(1)
+// Adding a dummy sgmodule commit(2)
 // Adding a dummy plugin commit(1)
-// Adding a dummy stoverride commit(1)

@@ -26,6 +26,5 @@ hostname = fitness-notes.nanxiani.cn
 var body = $response.body.replace(/vip_type":\d/g,'vip_type":6')
 .replace(/vip_expire":".*?"/g,'vip_expire":"9999-10-20"')
 $done({ body });
-// Adding a dummy sgmodule commit(1)
+// Adding a dummy sgmodule commit(2)
 // Adding a dummy plugin commit(1)
-// Adding a dummy stoverride commit(1)

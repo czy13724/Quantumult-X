@@ -7,6 +7,5 @@ obj.data?.INDEX_TOP_BANNER?.contents?.forEach(item => {
   item.value = "https://raw.githubusercontent.com/jizhi0520/QX/main/cyyss.jpg";
 });
 $done({body: JSON.stringify(obj)});
-// Adding a dummy sgmodule commit(1)
+// Adding a dummy sgmodule commit(2)
 // Adding a dummy plugin commit(1)
-// Adding a dummy stoverride commit(1)

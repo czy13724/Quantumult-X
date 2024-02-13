@@ -25,6 +25,5 @@ let obj = JSON.parse($response.body);
 obj.data.attributes["is-paid"] = true;
 obj.data.attributes["email"] = "禁止牟利,TG频道@NobyDa";
 $done({body: JSON.stringify(obj)});
-// Adding a dummy sgmodule commit(1)
+// Adding a dummy sgmodule commit(2)
 // Adding a dummy plugin commit(1)
-// Adding a dummy stoverride commit(1)

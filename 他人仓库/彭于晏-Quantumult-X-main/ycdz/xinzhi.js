@@ -30,6 +30,5 @@ var body = $response.body.replace(/is_vip":\d+/g,'is_vip":1')
 .replace(/vip_expire":null/g,'vip_expire":"您当前为终身VIP，会员永不"')
 .replace(/nickname":".*?"/g,'nickname":"彭于晏解锁"')
 $done({ body });
-// Adding a dummy sgmodule commit(1)
+// Adding a dummy sgmodule commit(2)
 // Adding a dummy plugin commit(1)
-// Adding a dummy stoverride commit(1)

@@ -30,6 +30,5 @@ var body = $response.body.replace(/"hasAccess":false/g,'"hasAccess":true')
 .replace(/"isFree":false/g,'"isFree":true')
 .replace(/"activeSalesOffer":null/g,'"activeSalesOffer":true')
 $done({ body });
-// Adding a dummy sgmodule commit(1)
+// Adding a dummy sgmodule commit(2)
 // Adding a dummy plugin commit(1)
-// Adding a dummy stoverride commit(1)
