@@ -1,3 +1,32 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Quantumult X引用地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/ReminiLifetime.js
+// Surge/Shadowrocket 模块地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Surge/ReminiLifetime.sgmodule
+// Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/ReminiLifetime.plugin
+// Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/ReminiLifetime.stoverride
+
 /*
 项目名称：Remini
 项目作者：David
@@ -30,11 +59,121 @@ mgmdev["me"]["active_bundle_subscriptions"] = [{
 mgmdev["settings"]["__identity__"]["expiration"] = "2080-08-08T08:08:08+00:00";
 $done({body : JSON.stringify(mgmdev)});
 }
+// Adding a dummy sgmodule change to trigger git commit
+
+// Adding a dummy stoverride change to trigger git commit
+
+// Adding a dummy sgmodule change to trigger git commit
+
+// Adding a dummy plugin change to trigger git commit
+
+// Adding a dummy stoverride change to trigger git commit
+
+// Adding a dummy sgmodule change to trigger git commit
+
+// Adding a dummy plugin change to trigger git commit
+
+// Adding a dummy stoverride change to trigger git commit
+
+// Adding a dummy sgmodule change to trigger git commit
+
+// Adding a dummy plugin change to trigger git commit
+
+// Adding a dummy stoverride change to trigger git commit
+
+// Adding a dummy sgmodule change to trigger git commit
+
+// Adding a dummy plugin change to trigger git commit
+
+// Adding a dummy stoverride change to trigger git commit
+
+// Adding a dummy sgmodule change to trigger git commit
+
+// Adding a dummy plugin change to trigger git commit
+
+// Adding a dummy sgmodule change to trigger git commit
+
+// Adding a dummy plugin change to trigger git commit
+
+// Adding a dummy stoverride change to trigger git commit
+
+// Adding a dummy sgmodule change to trigger git commit
+
+// Adding a dummy plugin change to trigger git commit
+
+// Adding a dummy stoverride change to trigger git commit
+
+// Adding a dummy sgmodule change to trigger git commit
+
+// Adding a dummy plugin change to trigger git commit
+
+// Adding a dummy sgmodule change to trigger git commit
+
+// Adding a dummy sgmodule change to trigger git commit
+
+// Adding a dummy plugin change to trigger git commit
+
+// Adding a dummy stoverride change to trigger git commit
+
+// Adding a dummy sgmodule change to trigger git commit
+
+// Adding a dummy plugin change to trigger git commit
+
+// Adding a dummy stoverride change to trigger git commit
+
+// Adding a dummy sgmodule change to trigger git commit
+
+// Adding a dummy plugin change to trigger git commit
+
+// Adding a dummy stoverride change to trigger git commit
+
+// Adding a dummy sgmodule change to trigger git commit
+
+// Adding a dummy plugin change to trigger git commit
+
+// Adding a dummy stoverride change to trigger git commit
+
+// Adding a dummy sgmodule change to trigger git commit
+
+// Adding a dummy plugin change to trigger git commit
+
+// Adding a dummy stoverride change to trigger git commit
+
+// Adding a dummy sgmodule change to trigger git commit
+
+// Adding a dummy plugin change to trigger git commit
+
+// Adding a dummy stoverride change to trigger git commit
+
+// Adding a dummy sgmodule change to trigger git commit
+
+// Adding a dummy plugin change to trigger git commit
+
+// Adding a dummy stoverride change to trigger git commit
 
 
 
 
 
-// Adding a dummy sgmodule commit(13)
-// Adding a dummy plugin commit(11)
-// Adding a dummy stoverride commit(8)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Adding a dummy sgmodule commit(12)
+// Adding a dummy plugin commit(10)
+// Adding a dummy stoverride commit(7)
