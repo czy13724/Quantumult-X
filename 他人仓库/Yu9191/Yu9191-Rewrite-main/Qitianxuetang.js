@@ -24,5 +24,6 @@ baby.data.sms.isCloseBuy = true;
 baby.data.expiredTime = "2099\/01\/01 00:00:00";
 $done({body : JSON.stringify(baby)});
 
-// Adding a dummy plugin commit(1)
+
 // Adding a dummy sgmodule commit(3)
+// Adding a dummy plugin commit(2)

@@ -153,5 +153,6 @@ console.log('图片画质增强完成✅');
 
 $done({body: obj});
 
-// Adding a dummy plugin commit(1)
+
 // Adding a dummy sgmodule commit(3)
+// Adding a dummy plugin commit(2)

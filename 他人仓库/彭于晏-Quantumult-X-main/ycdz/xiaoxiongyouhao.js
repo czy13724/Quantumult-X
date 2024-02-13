@@ -30,5 +30,6 @@ var body = $response.body.replace(/vip_state":\d/g,'vip_state":2')
 .replace(/vip_valid_till_date":".*?"/g,'vip_valid_till_date":"9999年08月31日"')
 $done({ body });
 
-// Adding a dummy plugin commit(1)
+
 // Adding a dummy sgmodule commit(3)
+// Adding a dummy plugin commit(2)

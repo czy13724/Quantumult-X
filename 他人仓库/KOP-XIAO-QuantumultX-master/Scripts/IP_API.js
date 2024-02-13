@@ -48,5 +48,6 @@ var ip = obj['query'];
 var description = '服务商:'+obj['isp'] + '\n'+'地区:' +City_ValidCheck(obj['regionName'])+ '\n' + 'IP:'+ obj['query'] + '\n' +'时区:'+ obj['timezone'];
 $done({title, subtitle, ip, description});
 
-// Adding a dummy plugin commit(1)
+
 // Adding a dummy sgmodule commit(3)
+// Adding a dummy plugin commit(2)

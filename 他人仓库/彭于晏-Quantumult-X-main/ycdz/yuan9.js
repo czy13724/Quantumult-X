@@ -29,5 +29,6 @@ var body = $response.body.replace(/expiration_time":".*?"/g,'expiration_time":"9
 .replace(/is_vip":\d/g,'is_vip":1')
 $done({ body });
 
-// Adding a dummy plugin commit(1)
+
 // Adding a dummy sgmodule commit(3)
+// Adding a dummy plugin commit(2)

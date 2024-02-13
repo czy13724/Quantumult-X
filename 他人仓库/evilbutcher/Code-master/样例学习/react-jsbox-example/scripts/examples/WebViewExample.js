@@ -8,5 +8,6 @@ export default function WebViewExample() {
   return <web frame={$rect(0, 0, width, width)} html={html} />
 }
 
-// Adding a dummy plugin commit(1)
+
 // Adding a dummy sgmodule commit(3)
+// Adding a dummy plugin commit(2)

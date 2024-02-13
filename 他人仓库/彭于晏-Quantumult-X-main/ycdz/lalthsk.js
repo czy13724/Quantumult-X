@@ -33,5 +33,6 @@ var body = $response.body.replace(/"isTry":\d/g,'"isTry":1')
 .replace(/"isShowAd":"1"/g,'"isShowAd":"0"')
 $done({ body });
 
-// Adding a dummy plugin commit(1)
+
 // Adding a dummy sgmodule commit(3)
+// Adding a dummy plugin commit(2)

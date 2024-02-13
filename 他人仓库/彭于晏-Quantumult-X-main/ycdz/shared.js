@@ -29,5 +29,6 @@ var body = $response.body.replace(/"vipTime":\d+/g,'"vipTime":4567891456')
 .replace(/"isVip":false/g,'"isVip":true')
 $done({ body });
 
-// Adding a dummy plugin commit(1)
+
 // Adding a dummy sgmodule commit(3)
+// Adding a dummy plugin commit(2)

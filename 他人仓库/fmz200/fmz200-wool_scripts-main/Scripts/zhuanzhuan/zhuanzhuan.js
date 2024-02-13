@@ -34,5 +34,6 @@ function process() {
     console.log('转转APP处理完成✅');
 }
 
-// Adding a dummy plugin commit(1)
+
 // Adding a dummy sgmodule commit(3)
+// Adding a dummy plugin commit(2)

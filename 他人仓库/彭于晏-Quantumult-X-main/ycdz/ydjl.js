@@ -31,5 +31,6 @@ var body = $response.body.replace(/member_type":\d/g,'member_type":4')
 .replace(/is_publish":\d/g,'is_publish":1')
 $done({ body });
 
-// Adding a dummy plugin commit(1)
+
 // Adding a dummy sgmodule commit(3)
+// Adding a dummy plugin commit(2)

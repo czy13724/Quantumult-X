@@ -31,5 +31,6 @@ hostname = bluediary-d0778.du.r.appspot.com
 var body = $response.body.replace(/expires_at":".*?"/g,'expires_at":"2099-09-04T10:52:35.618177"')
 $done({ body });
 
-// Adding a dummy plugin commit(1)
+
 // Adding a dummy sgmodule commit(3)
+// Adding a dummy plugin commit(2)

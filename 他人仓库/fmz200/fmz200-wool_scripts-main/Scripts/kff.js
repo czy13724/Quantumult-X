@@ -9,5 +9,6 @@ obj.data.config = JSON.stringify(JSON.parse(obj.data.config).filter(item => !ite
 obj.data.config = JSON.stringify(JSON.parse(obj.data.config).filter(item => !item.id.includes("a11b0e7d-a162-4802-ac71-21d98e8adddf")));
 $done({body: JSON.stringify(obj)});
 
-// Adding a dummy plugin commit(1)
+
 // Adding a dummy sgmodule commit(3)
+// Adding a dummy plugin commit(2)

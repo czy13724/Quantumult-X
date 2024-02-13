@@ -33,5 +33,6 @@ var body = $response.body.replace(/"vipType":0/g,'"vipType":1')
 .replace(/"joinType":\w+/g,'"joinType":true')
 $done({ body });
 
-// Adding a dummy plugin commit(1)
+
 // Adding a dummy sgmodule commit(3)
+// Adding a dummy plugin commit(2)

@@ -29,5 +29,6 @@ var body = $response.body.replace(/purchaseTime":\d+/g,'purchaseTime":99999')
 .replace(/count":\d+/g,'count":88888')
 $done({ body });
 
-// Adding a dummy plugin commit(1)
+
 // Adding a dummy sgmodule commit(3)
+// Adding a dummy plugin commit(2)

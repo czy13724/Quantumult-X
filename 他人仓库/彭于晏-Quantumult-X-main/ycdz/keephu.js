@@ -30,5 +30,6 @@ var body = $response.body.replace(/vip":\d/g,'vip":1')
 .replace(/expire":".*?"/g,'expire":"9999-01-01 08:00:00"')
 $done({ body });
 
-// Adding a dummy plugin commit(1)
+
 // Adding a dummy sgmodule commit(3)
+// Adding a dummy plugin commit(2)

@@ -43,5 +43,6 @@ var body = $response.body.replace(/is_svip":"\d/g,'is_svip":"1')
 .replace(/vip_button_text":".*?"/g,'vip_button_text":"已永久"')
 $done({ body });
 
-// Adding a dummy plugin commit(1)
+
 // Adding a dummy sgmodule commit(3)
+// Adding a dummy plugin commit(2)

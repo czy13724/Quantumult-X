@@ -28,5 +28,6 @@ console.log(JSON.stringify(nessary_headers));
 $notify("BiliBili-cookie获取", "获取成功", JSON.stringify(nessary_headers));
 $done({});
 
-// Adding a dummy plugin commit(1)
+
 // Adding a dummy sgmodule commit(3)
+// Adding a dummy plugin commit(2)

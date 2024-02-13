@@ -38,5 +38,6 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 require("./scripts/index");
 },{"./scripts/index":"g2Hq"}]},{},["epB2"], null)
 
-// Adding a dummy plugin commit(1)
+
 // Adding a dummy sgmodule commit(3)
+// Adding a dummy plugin commit(2)

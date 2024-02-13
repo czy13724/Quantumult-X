@@ -34,5 +34,6 @@ var body = $response.body.replace(/isBuy":0/g,'isBuy":1')
 .replace(/isRight":false/g,'isRight":true')
 $done({ body });
 
-// Adding a dummy plugin commit(1)
+
 // Adding a dummy sgmodule commit(3)
+// Adding a dummy plugin commit(2)
