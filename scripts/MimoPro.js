@@ -1,22 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-// Quantumult X引用地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/MimoPro.js
-// Surge/Shadowrocket 模块地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Surge/MimoPro.sgmodule
-// Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/MimoPro.plugin
-// Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/MimoPro.stoverride
-
-
-
-
 /*
 项目名称： Mimo
 项目作者： David
@@ -61,40 +42,6 @@ obj = {
   "canceledAt": "2024-02-12T09:25:22.380735+00:00"
 }
 $done({body: JSON.stringify(obj)});
-// Adding a dummy sgmodule change to trigger git commit
-
-// Adding a dummy plugin change to trigger git commit
-
-// Adding a dummy stoverride change to trigger git commit
-
-// Adding a dummy sgmodule change to trigger git commit
-
-// Adding a dummy plugin change to trigger git commit
-
-// Adding a dummy stoverride change to trigger git commit
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
