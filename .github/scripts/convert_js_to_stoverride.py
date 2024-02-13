@@ -3,6 +3,7 @@
 
 import os
 import re
+import subprocess
 import random
 
 # Generate a random number at the beginning to maintain consistency in usage
