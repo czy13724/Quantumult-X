@@ -1,3 +1,9 @@
+
+// Quantumult X引用地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/Language_iTunes.js
+// Surge/Shadowrocket 模块地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Surge/Language_iTunes.sgmodule
+// Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/Language_iTunes.plugin
+// Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/Language_iTunes.stoverride
+
 /*************************************
 
 项目名称：语言类iTunes合集（此合集只包含learn xx with flashcards）
