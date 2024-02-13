@@ -301,4 +301,4 @@ function hex_md5(r){return rstr2hex(rstr_md5(str2rstr_utf8(r)))}function b64_md5
 // Adding a dummy stoverride commit(2)
 
 // Adding a dummy plugin commit(5)
-// Adding a dummy sgmodule commit(7)
+// Adding a dummy sgmodule commit(8)
