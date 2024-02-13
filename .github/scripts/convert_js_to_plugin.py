@@ -132,11 +132,52 @@ def main():
                     # Skip files without the required sections
                     print(f"跳过 {file_name} 由于文件缺失匹配内容，请仔细检查.")
 
-                # Since we're simulating a git operation, we'll do this for all file types
-                with open(file_path, 'a', encoding='utf-8') as file:
-                    file.write("\n// Adding a dummy plugin change to trigger git commit\n")
-                os.system(f'git add {file_path}')
-                os.system('git commit -m "Trigger update"')
+# Define regular expressions that match comments
+commit_pattern = re.compile(r'// Adding a dummy plugin commit\((\d+)\)')
+
+# Extract the maximum count value from the content
+def extract_max_count(content):
+    counts = commit_pattern.findall(content)
+    max_count = max(map(int, counts)) if counts else 0
+    return max_count
+
+# Update the comment count in the file
+def update_file_commit_count(file_path):
+    with open(file_path, 'r+', encoding='utf-8') as file:
+        content = file.read()
+
+     # Extract the maximum count value in an existing comment
+        max_count = extract_max_count(content)
+
+       # Remove all existing count annotations
+        content = re.sub(commit_pattern, '', content)
+
+        # New count value is the maximum count value plus 1
+        new_count = max_count + 1
+        new_commit_comment = f'// Adding a dummy plugin commit({new_count})\n'
+
+       # Append new comment at end of document
+        content = content.rstrip() + '\n' + new_commit_comment
+
+       # Write new file contents
+        file.seek(0)
+        file.write(content)
+        file.truncate()
+
+# Process all adapter files in the directory
+def process_directory(directory):
+    for root, dirs, files in os.walk(directory):
+        for file_name in files:
+            if file_name.endswith(('.js', '.conf', '.snippet')):
+                file_path = os.path.join(root, file_name)
+                update_file_commit_count(file_path)
+
+def main():
+    process_directory('.')
+   # Add all changes to git
+    subprocess.run(['git', 'add', '.'])
+  # Submit these changes
+    subprocess.run(['git', 'commit', '-m', 'Update commit counts'])
 
 if __name__ == "__main__":
     main()
