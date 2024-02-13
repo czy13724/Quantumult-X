@@ -67,6 +67,7 @@ const e=$persistentStore.read("字幕位置"),t={"仅输出译文":"d","译文�
 
 
 
-// Adding a dummy sgmodule commit(26)
+
 // Adding a dummy plugin commit(24)
 // Adding a dummy stoverride commit(21)
+// Adding a dummy sgmodule commit(27)
