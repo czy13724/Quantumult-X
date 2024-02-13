@@ -37,6 +37,7 @@ hostname = sfo.mddcloud.com.cn, mob.mddcloud.com.cn, toblog.ctobsnssdk.com, t-ds
 
 
 
-// Adding a dummy plugin commit(10)
+
 // Adding a dummy stoverride commit(7)
 // Adding a dummy sgmodule commit(13)
+// Adding a dummy plugin commit(11)
