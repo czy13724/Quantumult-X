@@ -108,3 +108,4 @@ function title_random(num){
   return num==0?"节日快乐，万事大吉":dic[r]
 }
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

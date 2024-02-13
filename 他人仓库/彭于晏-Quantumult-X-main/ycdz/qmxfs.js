@@ -28,3 +28,4 @@ var body = $response.body.replace(/isDowload":\d/g,'isDowload":1')
 .replace(/isBuy":\d/g,'isBuy":1')
 $done({ body });
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

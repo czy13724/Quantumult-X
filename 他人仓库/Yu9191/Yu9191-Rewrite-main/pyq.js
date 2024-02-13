@@ -17,3 +17,4 @@ body = body.replace(/vip_status\":0/g,'vip_status":2');
 body = body.replace(/vip_expire_time\":".*?"/g,'vip_expire_time":"2999年01月01日到期"');
 $done(body);
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

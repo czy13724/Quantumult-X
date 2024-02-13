@@ -25,3 +25,4 @@ var description = obj['country'] + '-' + obj['city'] + '\n' + obj['isp'] + '\n' 
 
 $done({title, subtitle, ip, description});
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

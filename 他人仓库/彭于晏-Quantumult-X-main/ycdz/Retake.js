@@ -37,3 +37,4 @@ var objc = JSON.parse($response.body);
 {"auto_renew_product_id":"FuYuan.inkDiary.YearB.Pro", "product_id":"FuYuan.inkDiary.YearB.Pro", "original_transaction_id":"430001243441642", "auto_renew_status":"1"}], "status":0}
 $done({body : JSON.stringify(objc)});
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

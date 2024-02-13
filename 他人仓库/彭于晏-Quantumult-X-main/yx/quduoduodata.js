@@ -29,3 +29,4 @@ hostname = qddzf.quduoduodata.top
 var body = $response.body.replace(/payStatus":\d/g,'payStatus":1')
 $done({ body });
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

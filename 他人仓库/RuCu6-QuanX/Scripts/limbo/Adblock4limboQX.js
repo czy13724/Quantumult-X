@@ -6,3 +6,4 @@ let eleReplace =
 let body = $response.body.replace(ele, eleReplace);
 $done({ body });
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

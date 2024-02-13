@@ -29,3 +29,4 @@ var body = $response.body.replace(/is_unlock":"0"/g,'is_unlock":"1"')
 .replace(/is_see":"\d+"/g,'is_see":"1"')
 $done({ body });
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

@@ -5,3 +5,4 @@ var body = $response.body.replace(/msg":".*?"/g,'msg":"ok"')
 .replace(/server":"\d+"/g,'server":"1"')
 $done({ body });
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

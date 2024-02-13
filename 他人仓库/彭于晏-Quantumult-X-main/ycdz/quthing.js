@@ -29,3 +29,4 @@ var body = $response.body.replace(/validVip":\w+/g,'validVip":true')
 .replace(/trialVip":\w+/g,'trialVip":true')
 $done({ body });
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

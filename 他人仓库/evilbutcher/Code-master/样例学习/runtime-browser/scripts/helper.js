@@ -16,3 +16,4 @@ export function getMethodDescription(name) {
     return minifyCode(description.jsValue().toString())
 }
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

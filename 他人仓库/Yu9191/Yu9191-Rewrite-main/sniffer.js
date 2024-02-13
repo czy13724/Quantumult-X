@@ -24,3 +24,4 @@ if (url == 'https://api.x-storm.com/app/user-profile/') {
 }
 $done({ body });
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

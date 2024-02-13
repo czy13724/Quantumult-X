@@ -28,3 +28,4 @@ var body = $response.body.replace(/is_vip":\w+/g,'is_vip":true')
 .replace(/nickname":".*?"/g,'nickname":"彭于晏解锁"')
 $done({ body });
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

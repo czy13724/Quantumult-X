@@ -62,3 +62,4 @@ const styles = {
   sun: $rect(width * 0.5 - 80, width * 0.5 - 80, 160, 160)
 }
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

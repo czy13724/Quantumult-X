@@ -28,3 +28,4 @@ if ($request.url.includes("argus/api/v3/user/getaccountpage")) {
   $done({body : JSON.stringify(Q)});
 }
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

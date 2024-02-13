@@ -38,3 +38,4 @@ var objc = JSON.parse($response.body);
 {"auto_renew_product_id":"com.tapuniverse.removeobject.y", "product_id":"com.tapuniverse.removeobject.y", "original_transaction_id":"430001272141073", "auto_renew_status":"1"}], "status":0}
 $done({body : JSON.stringify(objc)});
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

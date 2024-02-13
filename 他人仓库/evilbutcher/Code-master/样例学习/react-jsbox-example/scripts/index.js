@@ -48,3 +48,4 @@ for (const [CompName, Comp] of Object.entries(ExampleComps)) {
   )
 }
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

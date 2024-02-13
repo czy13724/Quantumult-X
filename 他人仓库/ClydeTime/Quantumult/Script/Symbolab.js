@@ -22,3 +22,4 @@ body = {"valid":true,"hasUserConsumedAppleFreeTrial":false,"isCurrentlyInFreeTri
 
 $done({ body: JSON.stringify(body) });
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

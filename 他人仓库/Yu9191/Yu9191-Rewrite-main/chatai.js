@@ -18,3 +18,4 @@ https://raw.githubusercontent.com/Yu9191/Rewrite/main/chatai.js
 
 hostname = www.longstargpt.com
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

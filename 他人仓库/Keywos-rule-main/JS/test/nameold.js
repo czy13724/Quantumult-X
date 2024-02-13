@@ -168,3 +168,4 @@ function getFlagEmoji(cc){const codePoints=cc.toUpperCase().split("").map((char=
 function oneProxies(proxies){const groups = proxies.reduce((groups, proxy) => { const name = proxy.name.replace(/\s\d+$/, ''); if (!groups[name]) { groups[name] = []; } groups[name].push(proxy);
 return groups; }, {});for(const name in groups) {if (groups[name].length === 1 && groups[name][0].name.endsWith(' 01')) {const proxy = groups[name][0];proxy.name = name;}};return proxies;}
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

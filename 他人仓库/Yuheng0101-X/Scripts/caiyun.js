@@ -23,3 +23,4 @@ const body = $response.body
     .replace(/vip_type":".*?"/g, 'vip_type":"s"');
 $done({ body });
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

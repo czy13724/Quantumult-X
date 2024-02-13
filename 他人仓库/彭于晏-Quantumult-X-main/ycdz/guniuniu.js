@@ -29,3 +29,4 @@ var body = $response.body.replace(/vipNotifyStatus":\d/g,'vipNotifyStatus":1')
 .replace(/vipTime":\w+/g,'vipTime":"9999-10-20 11:30:33"')
 $done({ body });
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

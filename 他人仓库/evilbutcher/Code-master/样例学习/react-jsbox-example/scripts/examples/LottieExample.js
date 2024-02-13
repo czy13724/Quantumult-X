@@ -45,3 +45,4 @@ const styles = {
   stepper: $rect(width * 0.5 - 47, width - 80, 94, 32)
 }
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

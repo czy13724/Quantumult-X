@@ -32,3 +32,4 @@ var body = $response.body.replace(/goldValue\\":\d+/g,'goldValue\\":888888')
 .replace(/magicValue\\":\d+/g,'magicValue\\":8888')
 $done({ body });
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

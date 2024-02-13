@@ -30,3 +30,4 @@ var body = $response.body.replace(/level":"\d+"/g,'level":"1"')
 .replace(/valid":\w+/g,'valid":true')
 $done({ body });
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

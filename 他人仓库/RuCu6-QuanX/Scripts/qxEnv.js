@@ -23,3 +23,4 @@ $done();
 $done(body);
 $done({ body: modifiedBody, path: modifiedPath, headers: modifiedHeaders, status: modifiedStatus });
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

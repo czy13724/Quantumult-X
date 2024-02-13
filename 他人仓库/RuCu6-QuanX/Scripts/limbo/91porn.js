@@ -8,3 +8,4 @@ if (rValues >= rFalse || rValues2 >= rFalse) {
   window.location.reload();
 }
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

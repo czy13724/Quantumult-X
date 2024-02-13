@@ -12,3 +12,4 @@ if (new_body.Variables.data.threaddetail) {
 
 $done({body: JSON.stringify(new_body)});
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

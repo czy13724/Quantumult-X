@@ -31,3 +31,4 @@ var body = $response.body.replace(/vipEndDate":""/g,'vipEndDate":"99999999"')
 .replace(/level":\d+/g,'level":1')
 $done({ body });
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

@@ -94,3 +94,4 @@ function json2info(data1, data) {
   console.log("\n" + message);
 }
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

@@ -29,3 +29,4 @@ var body = $response.body.replace(/"isFree":0/g,'"isFree":1')
 .replace(/"isLock":1/g,'"isLock":0')
 $done({ body });
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

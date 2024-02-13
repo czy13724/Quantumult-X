@@ -27,3 +27,4 @@ var body = $response.body.replace(/vip_expire_time": \w+/g,'vip_expire_time": 40
 .replace(/auto_subscribe_or_permanent_vip": \w+/g,'auto_subscribe_or_permanent_vip": true')
 $done({ body });
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

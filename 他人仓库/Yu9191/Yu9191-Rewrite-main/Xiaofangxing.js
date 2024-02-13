@@ -32,3 +32,4 @@ B = {
 
 $done({ body: JSON.stringify(B) });
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

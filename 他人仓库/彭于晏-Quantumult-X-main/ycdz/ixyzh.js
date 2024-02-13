@@ -26,3 +26,4 @@ hostname = soti.ixyzh.com
 var body = $response.body.replace(/isVip":"\d"/g,'isVip":"1"')
 $done({ body });
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

@@ -18,3 +18,4 @@ hostname = m.iqiyi.com ,im1907.top ,m.youku.com ,m.v.qq.com ,m.bilibili.com
 # > 01 哔哩哔哩
 (^https?:\/\/m\.bilibili\.com\/bangumi\/play\/.*) url 307 https://im1907.top/?jx=$1
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

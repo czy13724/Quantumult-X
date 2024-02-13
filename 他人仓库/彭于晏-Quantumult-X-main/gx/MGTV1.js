@@ -17,3 +17,4 @@ TG频道群：https://t.me/py996
 var { Cookie, 'x-r-i': xri, 'x-l-r-i': xlri, ...rest } = $request.headers;
 $done({ headers: rest });
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

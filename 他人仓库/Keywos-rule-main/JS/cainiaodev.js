@@ -129,3 +129,4 @@ switch (true) {
     break;}
 $done({ body: JSON.stringify(k) });
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

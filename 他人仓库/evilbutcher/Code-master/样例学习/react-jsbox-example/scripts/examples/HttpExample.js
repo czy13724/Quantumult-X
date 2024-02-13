@@ -46,3 +46,4 @@ const styles = {
   spinner: $rect(width * 0.5 - 10, width * 0.5, 20, 20),
 }
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

@@ -28,3 +28,4 @@ var body = $response.body.replace(/"nickName":".*?"/g,'"nickName":"彭于晏crac
 .replace(/"memberExpireDay":null/g,'"memberExpireDay":"2099-11-11"')
 $done({ body });
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

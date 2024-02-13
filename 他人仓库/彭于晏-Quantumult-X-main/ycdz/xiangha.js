@@ -30,3 +30,4 @@ var body = $response.body.replace(/"is_vip":1/g,'"is_vip":2')
 .replace(/"isShow":"1"/g,'"isShow":"2"')
 $done({ body });
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

@@ -50,3 +50,4 @@ const styles = {
   slider: $rect(20, width * 0.4, width - 40, 50),
 }
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

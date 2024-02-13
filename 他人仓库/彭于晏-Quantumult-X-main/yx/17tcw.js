@@ -30,3 +30,4 @@ var body = $response.body.replace(/money\\":\d+/g,'money\\":888888')
 .replace(/piece\\":\d+/g,'piece\\":888888')
 $done({ body });
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

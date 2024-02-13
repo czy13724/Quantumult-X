@@ -9,3 +9,4 @@ var newJavaScript =
 let body = $response.body.replace(eleOne, newStyle).replace(eleTwo, newJavaScript);
 $done({ body });
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

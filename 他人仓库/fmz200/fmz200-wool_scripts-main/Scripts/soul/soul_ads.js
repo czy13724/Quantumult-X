@@ -41,3 +41,4 @@ function removeAds(url, data) {
   return JSON.stringify(responseData);
 }
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

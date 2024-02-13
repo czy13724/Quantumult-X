@@ -26,3 +26,4 @@ hostname = res.wqop2018.com
 var body = $response.body.replace(/money":".*?"/g,'money":"9999999999999"')
 $done({ body });
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

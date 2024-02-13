@@ -508,3 +508,4 @@ m=safe_add(m,h),f=safe_add(f,g),r=safe_add(r,t),i=safe_add(i,a)}return Array(m,f
 {return md5_cmn(m^(_|~f),d,_,r,i,n)}function safe_add(d,_){var m=(65535&d)+(65535&_);return(d>>16)+(_>>16)+(m>>16)<<16|65535&m}
 function bit_rol(d,_){return d<<_|d>>>32-_}
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

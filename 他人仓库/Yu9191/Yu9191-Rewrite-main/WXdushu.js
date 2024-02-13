@@ -48,3 +48,4 @@ const obj = {
 Body = JSON.stringify(obj)
 $done({body: Body})
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)

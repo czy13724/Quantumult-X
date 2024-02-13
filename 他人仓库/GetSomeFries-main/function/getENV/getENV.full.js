@@ -54,3 +54,4 @@ function getENV(key, names, database) {
 	function string2number(string){ if(string && !isNaN(string)) string = parseInt(string, 10); return string}
 };
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)
