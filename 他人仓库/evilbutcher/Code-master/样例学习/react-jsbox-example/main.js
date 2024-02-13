@@ -94,6 +94,7 @@ var r=arguments[3];r.navigator={},require("./scripts/index");
 
 
 
-// Adding a dummy plugin commit(8)
+
 // Adding a dummy stoverride commit(5)
 // Adding a dummy sgmodule commit(11)
+// Adding a dummy plugin commit(9)
