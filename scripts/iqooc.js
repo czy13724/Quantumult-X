@@ -18,13 +18,13 @@
 【 签到脚本使用教程 】:
 *************************
 1.远程引用重写开启抓包并打开小程序随意浏览，提示获取ck成功则可以使用该脚本。
-2.如无法获取ck请开启抓包随意浏览，抓包https://bbs-api.iqoo.com/api/...域名下的Authorization和userId。
+2.如无法获取ck请开启抓包随意浏览，抓包https://bbs-api.iqoo.com/api/...域名下的Authorization和userId。(如找不到Authorization则重放该记录就会提示获取ck成功)
 打开boxjs->我的->数据查看器->在数据键输入iqooc_data,点击VIEW->在数据内容输入抓取到的Authorization，点击保存。
 打开boxjs->我的->数据查看器->在数据键输入iqooc_userId,点击VIEW->在数据内容输入抓取到的userId，点击保存。
 如无法抓去userId则进入小程序，点击'我的'，查看消息上方的爱酷号，爱酷号等于userId。
 3.(可选)关闭获取cookie脚本，防止产生不必要的mitm
-4.若有多账号，用@分割，如Authorization1@Authorization2；userId1@userId2
-5.提示接口调用成功即为签到成功。不填写userId不影响签到功能只影响查询积分功能。
+4.暂不支持多账号，若用@分割多帐号，也会提示登录但无法签到，请知悉。等待增加。如Authorization1@Authorization2；userId1@userId2
+5.提示'接口调用成功'即为签到成功。不填写'userId'不影响签到功能只影响查询积分功能。
 ------------------------------------------
 ⚠️【免责声明】
 ------------------------------------------
@@ -56,8 +56,8 @@ hostname = bbs-api.iqoo.com
 
 [task_local]
 0 9 * * * https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/iqooc.js, tag=IQOO社区签到, img-url=https://raw.githubusercontent.com/czy13724/LeviIcons/main/leviicons/iqooc.png, enabled=true
-
 */
+
 // env.js 全局
 const $ = new Env("IQOO社区小程序");
 const ckName = "iqooc_data";
