@@ -269,5 +269,6 @@ function newRawBody({ header, body }, encoding = undefined) {
 // https://github.com/DualSubs/URL/blob/main/URLs.embedded.min.js
 
 function URLs(s){return new class{constructor(s=[]){this.name="URL v1.0.2",this.opts=s,this.json={scheme:"",host:"",path:"",params:{}}}parse(s){let t=s.match(/(?<scheme>.+):\/\/(?<host>[^/]+)\/?(?<path>[^?]+)?\??(?<params>.*)?/)?.groups??null;return t?.path||(t.path=""),t?.params&&(t.params=Object.fromEntries(t.params.split("&").map((s=>s.split("="))))),t}stringify(s=this.json){return s?.params?s.scheme+"://"+s.host+"/"+s.path+"?"+Object.entries(s.params).map((s=>s.join("="))).join("&"):s.scheme+"://"+s.host+"/"+s.path}}(s)}
-// Adding a dummy sgmodule commit(2)
+
 // Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(3)

@@ -32,5 +32,6 @@ https:\/\/bootpreload\.uve\.weibo\.com\/v1\/ad\/preload url reject-dict
 
 
 hostname =kde.qq.com, -consumer.fcbox.com, -*huami.com, -weather-data.apple.com, -*amemv.com, -*snssdk.com, -www.google.com,m.zhibo8.com，wx3.sinaimg.cn，bootpreload.uve.weibo.com，api.weibo.cn，mbmodule-openapi.paas.cmbchina.com,meituan.net,home.umetrip.com,acs.m.taobao.com,myfirday.cn,120.55.151.61:80,182.92.244.70,midc.cdn-static.abchina.com.cn,image.uczzd.cn,cdn.1rtb.com,s3plus.meituan.net,buy.itunes.apple.com,sdk.1rtb.net,image.uczzd.cn,pocketuni.net,acs.m.taobao.com,qemyapi.qiekj.com,userapi.qiekj.com
-// Adding a dummy sgmodule commit(2)
+
 // Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(3)

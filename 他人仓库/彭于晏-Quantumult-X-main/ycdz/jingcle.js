@@ -27,5 +27,6 @@ var body = $response.body.replace(/is_vip":\w+/g,'is_vip":true')
 .replace(/vip_type":".*?"/g,'vip_type":"终身会员"')
 .replace(/nickname":".*?"/g,'nickname":"彭于晏解锁"')
 $done({ body });
-// Adding a dummy sgmodule commit(2)
+
 // Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(3)

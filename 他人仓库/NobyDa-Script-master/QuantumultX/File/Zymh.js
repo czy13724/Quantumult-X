@@ -26,5 +26,6 @@ obj.data.isvip = 1;
 obj.data.coins = 6666;
 obj.data.Cgold = 6666;
 $done({body: JSON.stringify(obj)});
-// Adding a dummy sgmodule commit(2)
+
 // Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(3)

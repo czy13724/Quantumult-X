@@ -27,5 +27,6 @@ hostname = mp.weixin.qq.com
 var body = $response.body
     .replace(/<\/script>/, 'setTimeout(()=>window.history.back(),5000); </script>');
 $done({ body });
-// Adding a dummy sgmodule commit(2)
+
 // Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(3)

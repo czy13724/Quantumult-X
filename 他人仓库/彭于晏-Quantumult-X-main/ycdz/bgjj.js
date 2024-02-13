@@ -38,5 +38,6 @@ var objc = JSON.parse($response.body);
 {"auto_renew_product_id":"com.yitian.versa.cooclip_year_subscribe", "product_id":"com.yitian.versa.cooclip_year_subscribe", "original_transaction_id":"430001205957458", "auto_renew_status":"1"}], "status":0}
 
 $done({body : JSON.stringify(objc)});
-// Adding a dummy sgmodule commit(2)
+
 // Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(3)

@@ -15,5 +15,6 @@ var Q = JSON.parse($response.body);
 Q.data.isVip = true;//会员
 Q.data.vipExpiredTim = "2099-11-01 20:58:21";
 $done({body : JSON.stringify(Q)});
-// Adding a dummy sgmodule commit(2)
+
 // Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(3)

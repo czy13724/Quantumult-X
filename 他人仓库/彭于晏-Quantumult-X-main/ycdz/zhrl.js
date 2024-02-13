@@ -25,5 +25,6 @@ hostname = wnl28.jiemengjia.com
 
 var body = $response.body.replace(/.+/g,'{"code":"E00000000","msg":"success","data":{"is_vip":1,"end_time":"2099-12-24 01:15:45","member_type":5}}')
 $done({ body });
-// Adding a dummy sgmodule commit(2)
+
 // Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(3)

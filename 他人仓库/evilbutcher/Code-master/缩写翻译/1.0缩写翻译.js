@@ -28,5 +28,6 @@ var W = $clipboard.text
 //    console.log(newstr)
 //    var w = Search.exec(newstr)
 //    console.log(w)
-// Adding a dummy sgmodule commit(2)
+
 // Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(3)

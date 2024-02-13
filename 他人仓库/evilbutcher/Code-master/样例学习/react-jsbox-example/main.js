@@ -75,5 +75,6 @@ var r;!function(t,n){"object"==typeof exports&&"undefined"!=typeof module?module
 var global = arguments[3];
 var r=arguments[3];r.navigator={},require("./scripts/index");
 },{"./scripts/index":"g2Hq"}]},{},["epB2"], null)
-// Adding a dummy sgmodule commit(2)
+
 // Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(3)

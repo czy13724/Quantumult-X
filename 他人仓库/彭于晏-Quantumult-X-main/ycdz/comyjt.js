@@ -29,5 +29,6 @@ var body = $response.body.replace(/vip":"\d"/g,'vip":"1"')
 .replace(/group_id":"\d"/g,'group_id":"3"')
 .replace(/group":".*?"/g,'group":"彭于晏已破解"')
 $done({ body });
-// Adding a dummy sgmodule commit(2)
+
 // Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(3)

@@ -28,5 +28,6 @@ var body = $response.body.replace(/coin":\d+/g,'coin":999999')
 .replace(/deci_score":\d+/g,'deci_score":999999')
 .replace(/code":\d/g,'code":0')
 $done({ body });
-// Adding a dummy sgmodule commit(2)
+
 // Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(3)

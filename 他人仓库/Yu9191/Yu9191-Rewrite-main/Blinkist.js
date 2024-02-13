@@ -22,5 +22,6 @@ baby.user_access.type = "premium";
 baby.user_access.will_renew = true;
 baby.user_access.trial = "softpaywall";
 $done({body : JSON.stringify(baby)});
-// Adding a dummy sgmodule commit(2)
+
 // Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(3)

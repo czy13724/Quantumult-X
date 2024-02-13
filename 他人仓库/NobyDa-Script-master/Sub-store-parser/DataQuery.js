@@ -64,5 +64,6 @@ function parseInfo(resp) { //reference to https://github.com/KOP-XIAO/Quantumult
     }
     return { used: usd, free: left }
 }
-// Adding a dummy sgmodule commit(2)
+
 // Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(3)

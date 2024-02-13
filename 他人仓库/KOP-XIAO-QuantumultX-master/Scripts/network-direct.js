@@ -136,5 +136,6 @@ $configuration.sendMessage(message_Set1).then(resolve => {
     console.log("🔘 当前策略：\n"+Display(Cpolicy))
     $done()
 }
-// Adding a dummy sgmodule commit(2)
+
 // Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(3)

@@ -32,5 +32,6 @@ var body = $response.body.replace(/"isvip":"false"/g,'"isvip":"true"')
 .replace(/"ExpirationTimestamp":\d+/g,'"ExpirationTimestamp":1964683735')
 .replace(/"ExpirationTimestamp1":\d+/g,'"ExpirationTimestamp1":1961918431')
 $done({ body });
-// Adding a dummy sgmodule commit(2)
+
 // Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(3)

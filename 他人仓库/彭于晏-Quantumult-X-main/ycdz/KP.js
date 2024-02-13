@@ -27,5 +27,6 @@ hostname = fxshot-api.afunapp.com
 var body = $response.body.replace(/vip_remain_time":\d+/g,'vip_remain_time":4098497565')
 .replace(/gender":\d/g,'gender":1')
 $done({ body });
-// Adding a dummy sgmodule commit(2)
+
 // Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(3)

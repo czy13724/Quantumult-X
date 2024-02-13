@@ -27,5 +27,6 @@ hostname = www.40sishi.com
 var objc = JSON.parse($response.body);
     objc = {"data":{"userId":"olccz0","name":null,"gender":0,"avatar":null,"birthday":null,"mobile":null,"vipState":{"state":1,"forever":false,"startTime": 4094878055000,"expireTime": 4094878055000}},"code":1}
 $done({body : JSON.stringify(objc)});
-// Adding a dummy sgmodule commit(2)
+
 // Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(3)

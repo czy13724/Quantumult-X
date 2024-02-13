@@ -33,5 +33,6 @@ var objc = JSON.parse($response.body);
 {"recordings":{"expiry":"2099-10-10T00:53:59Z","is_active":true},"transcriptions":{"expiry":"2099-10-10T00:53:59Z","is_active":true},"trial_skus":["lite.trec.grpV.7day.trial.yearly.59_99","lite.rec.grpEE.7day.trial.yearly.39_99"],"account_standing":"good_standing"}
 
 $done({body : JSON.stringify(objc)});
-// Adding a dummy sgmodule commit(2)
+
 // Adding a dummy plugin commit(1)
+// Adding a dummy sgmodule commit(3)
