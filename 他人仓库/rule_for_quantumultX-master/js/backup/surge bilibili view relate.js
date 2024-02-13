@@ -8,3 +8,4 @@ body['data']['relates'].forEach((element, index)=> {
 delete body['data']['cms']
 body=JSON.stringify(body)
 $done({body})
+// Adding a dummy sgmodule commit(1)

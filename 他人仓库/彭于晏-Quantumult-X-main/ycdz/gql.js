@@ -26,3 +26,4 @@ hostname = expire.vanemu.com
 body = $response.body.replace(/\"user_is_pro":\w+/g, '\"user_is_pro":true').replace(/\"group_is_pro":\w+/g, '\"group_is_pro":true')
 
 $done({body});
+// Adding a dummy sgmodule commit(1)

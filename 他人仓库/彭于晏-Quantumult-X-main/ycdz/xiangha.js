@@ -29,3 +29,4 @@ var body = $response.body.replace(/"is_vip":1/g,'"is_vip":2')
 .replace(/"is_open_vip":0/g,'"is_open_vip":1')
 .replace(/"isShow":"1"/g,'"isShow":"2"')
 $done({ body });
+// Adding a dummy sgmodule commit(1)

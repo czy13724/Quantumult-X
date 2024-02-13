@@ -29,3 +29,4 @@ $task.fetch(myRequest).then(response => {
   console.log(reason.error);
   $done();
 });
+// Adding a dummy sgmodule commit(1)

@@ -33,3 +33,4 @@ replaceInBody(/\"buy_or_continue":"购买"/g, '"buy_or_continue":"续费"');
 replaceInBody(/\"info_json":{    "new_red_points": {      "bind_main_teacher_remind": false    },    "student": {      "is_teacher_exist": false    }  }/g, '"info_json":{    "new_red_points": {      "bind_main_teacher_remind": false    },    "student": {      "is_teacher_exist": false    },    "vip": {      "last_day": "2099-09-09"    }  }');
 
 $done({body});
+// Adding a dummy sgmodule commit(1)

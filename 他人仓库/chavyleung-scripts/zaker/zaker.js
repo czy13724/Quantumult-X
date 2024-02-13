@@ -138,3 +138,4 @@ function init() {
   }
   return { isSurge, isQuanX, msg, log, getdata, setdata, get, post, put, done }
 }
+// Adding a dummy sgmodule commit(1)

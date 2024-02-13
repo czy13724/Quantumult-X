@@ -13,3 +13,4 @@ hostname = tk.lanjiyin.com.cn
 var body=$response.body;
 body = body.replace(/is_unlock\":"\d"/g,'is_unlock":"1"');
 $done(body);
+// Adding a dummy sgmodule commit(1)

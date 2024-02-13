@@ -24,3 +24,4 @@ const ExampleView = ({ demo, code }) => {
 }
 
 export default memo(ExampleView)
+// Adding a dummy sgmodule commit(1)

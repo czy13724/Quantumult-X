@@ -24,6 +24,4 @@ if(/discover\/digestList/.test($request.url)){
 }
 
 $done({body:JSON.stringify(obj)})
-
-
-   
+// Adding a dummy sgmodule commit(1)

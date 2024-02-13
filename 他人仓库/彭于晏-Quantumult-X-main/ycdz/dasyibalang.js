@@ -32,3 +32,4 @@ var body = JSON.parse($response.body);
 body.data.VIP = 1;
 
 $done({ body: JSON.stringify(body) });
+// Adding a dummy sgmodule commit(1)

@@ -28,3 +28,4 @@ hostname = api.tipsoon.com
 body = $response.body.replace(/\"is_vip":\w+/g, '\"is_vip":true')
 
 $done({body});
+// Adding a dummy sgmodule commit(1)

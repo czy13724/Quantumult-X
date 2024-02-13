@@ -6,3 +6,4 @@ if (header && header['accept'] && header['accept'].includes('text/html')) {
 } else {
   $done($request);
 }
+// Adding a dummy sgmodule commit(1)

@@ -25,3 +25,4 @@ hostname = compass.xinzhi.space
 
 var body = $response.body.replace(/is_vip":\d/g,'is_vip":1')
 $done({ body });
+// Adding a dummy sgmodule commit(1)

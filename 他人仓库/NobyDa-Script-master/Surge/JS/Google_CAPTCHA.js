@@ -63,3 +63,4 @@ let ret = {};
 })()
     .catch((err) => console.log(`[ERROR]: ${(err && err.message) || err}`))
     .finally(() => $done(ret));
+// Adding a dummy sgmodule commit(1)

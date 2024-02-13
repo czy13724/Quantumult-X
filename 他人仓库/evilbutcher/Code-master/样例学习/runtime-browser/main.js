@@ -37,3 +37,4 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{"react":"n8MK","react-jsbox":"Y0SU","./App":"bl3G"}],"epB2":[function(require,module,exports) {
 require("./scripts/index");
 },{"./scripts/index":"g2Hq"}]},{},["epB2"], null)
+// Adding a dummy sgmodule commit(1)

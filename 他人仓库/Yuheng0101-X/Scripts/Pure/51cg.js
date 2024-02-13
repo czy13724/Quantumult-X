@@ -13,3 +13,4 @@ if (/html>/.test(body)) {
     body = document.documentElement.outerHTML
 }
 $done({ body })
+// Adding a dummy sgmodule commit(1)

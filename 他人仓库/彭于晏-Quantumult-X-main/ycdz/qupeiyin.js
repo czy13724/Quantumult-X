@@ -42,3 +42,4 @@ var body = $response.body.replace(/is_svip":"\d/g,'is_svip":"1')
 .replace(/vip_text":".*?"/g,'vip_text":"SVIP会员已开通"')
 .replace(/vip_button_text":".*?"/g,'vip_button_text":"已永久"')
 $done({ body });
+// Adding a dummy sgmodule commit(1)

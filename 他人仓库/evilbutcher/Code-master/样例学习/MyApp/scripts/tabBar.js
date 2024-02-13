@@ -120,3 +120,4 @@ exports.init = ({initialTab = 0, views}) => {
     }]
   };
 };
+// Adding a dummy sgmodule commit(1)

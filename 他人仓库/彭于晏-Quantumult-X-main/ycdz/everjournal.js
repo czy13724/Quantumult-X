@@ -28,3 +28,4 @@ var body = $response.body.replace(/pro":\d/g,'pro":1')
 .replace(/appUpdateType":\d/g,'appUpdateType":1')
 .replace(/membershipType":\d/g,'membershipType":1')
 $done({ body });
+// Adding a dummy sgmodule commit(1)

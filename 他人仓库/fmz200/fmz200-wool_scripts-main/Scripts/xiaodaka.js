@@ -19,3 +19,4 @@ let obj = JSON.parse($response.body);
 obj.data.endTime = 1867996357000;
 obj.data.hasOpenedMember = true;
 $done({body: JSON.stringify(obj)});
+// Adding a dummy sgmodule commit(1)

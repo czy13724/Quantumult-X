@@ -18,3 +18,4 @@ if (isYoudao) {
 }
 
 $done({ body })
+// Adding a dummy sgmodule commit(1)

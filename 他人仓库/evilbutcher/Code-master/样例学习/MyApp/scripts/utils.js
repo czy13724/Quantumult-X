@@ -30,3 +30,4 @@ module.exports = {
   statusBarOrientation,
   sizeThatFits
 };
+// Adding a dummy sgmodule commit(1)

@@ -26,3 +26,4 @@ hostname = app.cdmgkj.cn
 var body = $response.body.replace(/status":\d/g,'status":1')
 .replace(/expire_time":".*?"/g,'expire_time":"2099-09-09"')
 $done({ body });
+// Adding a dummy sgmodule commit(1)

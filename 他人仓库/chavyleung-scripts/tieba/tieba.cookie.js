@@ -62,3 +62,4 @@ function init() {
 }
 
 chavy.done()
+// Adding a dummy sgmodule commit(1)

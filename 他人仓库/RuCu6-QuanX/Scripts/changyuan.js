@@ -15,3 +15,4 @@ if (url.includes("/common/getReceipt")) {
 }
 
 $done({ body: JSON.stringify(obj) });
+// Adding a dummy sgmodule commit(1)

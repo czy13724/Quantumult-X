@@ -27,3 +27,4 @@ hostname = proxyweb.huikao8.com
 
 var body = $response.body.replace(/"tryBuy":\d/g,'"tryBuy":2')
 $done({ body });
+// Adding a dummy sgmodule commit(1)

@@ -501,3 +501,4 @@ function formdoiname(text) {
   var dire = text.replace(new RegExp("/", "g"), "_");
   name = dire + ".pdf";
 }
+// Adding a dummy sgmodule commit(1)

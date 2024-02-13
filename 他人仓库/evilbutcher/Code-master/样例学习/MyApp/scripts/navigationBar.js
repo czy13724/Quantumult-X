@@ -182,3 +182,4 @@ const changeLayout = (pageName, offsetY, animate = true) => {
 
 
 module.exports = {view, changeLayout};
+// Adding a dummy sgmodule commit(1)

@@ -233,3 +233,4 @@ const Settings = props => {
 }
 
 export default Settings
+// Adding a dummy sgmodule commit(1)

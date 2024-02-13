@@ -143,3 +143,4 @@ if ($.ql_config.is_pwd_jd2 === 'true') {
     noReady();
   }
 }
+// Adding a dummy sgmodule commit(1)

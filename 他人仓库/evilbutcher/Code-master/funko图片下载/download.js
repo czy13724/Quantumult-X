@@ -30,3 +30,4 @@ async function download(title, url) {
 for (var i = 0; i < dic.length; i++) {
   download(dic[i].title, dic[i].url);
 }
+// Adding a dummy sgmodule commit(1)

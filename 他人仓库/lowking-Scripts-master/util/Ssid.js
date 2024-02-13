@@ -24,3 +24,4 @@ function notify(mode) {
 }
 
 $done();
+// Adding a dummy sgmodule commit(1)

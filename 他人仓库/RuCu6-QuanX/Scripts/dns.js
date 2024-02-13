@@ -23,3 +23,4 @@ $configuration.sendMessage(message).then(
     $done();
   }
 );
+// Adding a dummy sgmodule commit(1)

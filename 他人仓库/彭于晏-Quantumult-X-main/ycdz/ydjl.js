@@ -30,3 +30,4 @@ var body = $response.body.replace(/member_type":\d/g,'member_type":4')
 .replace(/auto_renew_status":\d+/g,'auto_renew_status":2')
 .replace(/is_publish":\d/g,'is_publish":1')
 $done({ body });
+// Adding a dummy sgmodule commit(1)

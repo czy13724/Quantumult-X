@@ -65,3 +65,4 @@ function init() {
 }
 
 globalTools.done();
+// Adding a dummy sgmodule commit(1)

@@ -198,3 +198,4 @@ module.exports = {
     $cache.remove("searchHistory");
   }
 };
+// Adding a dummy sgmodule commit(1)

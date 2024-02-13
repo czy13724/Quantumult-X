@@ -27,3 +27,4 @@ var body = $response.body.replace(/finish_time":".*?"/g,'finish_time":"永久会
 .replace(/free_num":\d/g,'free_num":1')
 .replace(/type":\d/g,'type":2')
 $done({ body });
+// Adding a dummy sgmodule commit(1)

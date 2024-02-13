@@ -35,4 +35,4 @@ var objc = JSON.parse($response.body);
 {"auto_renew_product_id":"com.digitalpalette.mememachine.pro.annual", "product_id":"com.digitalpalette.mememachine.pro.annual", "original_transaction_id":"20001336395929", "auto_renew_status":"1"}], "status":0}
 
 $done({body : JSON.stringify(objc)});
-
+// Adding a dummy sgmodule commit(1)

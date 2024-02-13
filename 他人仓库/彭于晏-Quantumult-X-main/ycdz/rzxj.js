@@ -34,3 +34,4 @@ hostname = rzres86api.imendon.com,rzres86api.imendon.com,api-access.pangolin-sdk
 body = $response.body.replace(/\"isValid":\d+/g, '\"isValid":1')
 
 $done({body});
+// Adding a dummy sgmodule commit(1)

@@ -102,3 +102,4 @@ function fetchArticle(authData) {
     $done({rsp_body});
   });
 }
+// Adding a dummy sgmodule commit(1)

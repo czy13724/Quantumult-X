@@ -50,3 +50,4 @@ if (url.indexOf("/student/info/h5") != -1) {
 }
 
 $done({ body });
+// Adding a dummy sgmodule commit(1)

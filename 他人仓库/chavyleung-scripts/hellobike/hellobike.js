@@ -301,3 +301,4 @@ function RequestFailed(action = '', reason = '', isInvalidToken = false) {
 RequestFailed.prototype = {
   constructor: RequestFailed,
 }
+// Adding a dummy sgmodule commit(1)
