@@ -1,10 +1,10 @@
-
-
-
 // Quantumult X引用地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/AlohaVPNbrowser.js
-// Surge/Shadowrocket 模块地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Surge/AlohaVPNbrowser.sgmodule
-// Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/AlohaVPNbrowser.plugin
-// Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/AlohaVPNbrowser.stoverride
+// Surge/Shadowrocket 模块地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/surge/AlohaVPNbrowser.sgmodule
+// Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/loon/AlohaVPNbrowser.plugin
+// Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/stash/AlohaVPNbrowser.stoverride
+
+
+
 
 /*
 项目名称： Aloha Browser VPN: Surf internet with more privacy
