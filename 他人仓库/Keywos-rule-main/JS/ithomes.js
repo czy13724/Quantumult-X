@@ -6,5 +6,6 @@ const e="undefined"!=typeof $loon;let t=!0,n=!0;e&&(t="开启"===$persistentStor
 
 // Adding a dummy stoverride commit(1)
 
-// Adding a dummy plugin commit(3)
+
 // Adding a dummy sgmodule commit(5)
+// Adding a dummy plugin commit(4)
