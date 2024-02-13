@@ -1,15 +1,7 @@
-
-
-
-// Quantumult X引用地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/AlohaVPNbrowser.js
-// Surge/Shadowrocket 模块地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Surge/AlohaVPNbrowser.sgmodule
-// Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/AlohaVPNbrowser.plugin
-// Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/AlohaVPNbrowser.stoverride
-
 /*
 项目名称： Aloha Browser VPN: Surf internet with more privacy
 项目作者： David
-下载地址： https://apps.apple.com/us/app/aloha-browser-private-vpn/id1105317682?l=en-GB
+下载地址： https://apps.apple.com/app/id1105317682
 使用说明： You need to crate free account first and use the script
 使用声明： 仅供个人参考学习交流，勿用于其它用途
 
@@ -30,17 +22,6 @@ obj.profile._end_of_premium = "2096-09-09 17:07:45"
 
 body = JSON.stringify(obj);
 $done({body});
-
-
-
-
-
-
-
-
-
-
-
 // Adding a dummy sgmodule commit(20)
 // Adding a dummy plugin commit(19)
 // Adding a dummy stoverride commit(17)
