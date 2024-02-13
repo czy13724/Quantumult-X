@@ -1,9 +1,3 @@
-
-// Quantumult X引用地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/iqooc.js
-// Surge/Shadowrocket 模块地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Surge/iqooc.sgmodule
-// Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/iqooc.plugin
-// Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/iqooc.stoverride
-
 /*
 项目名称：IQOO社区
 项目作者：Levi(@czy13724)
@@ -47,13 +41,13 @@ IQOO社区签到 = type=cron, cronexp="0 9 * * *", script-path=https://raw.githu
 
 *********
 Quantumult X配置如下：
-#重写规则
+
 [rewrite_local]
 ^https:\/\/bbs-api\.iqoo\.com\/api\/v3\/sign$ url script-request-body https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/iqooc.js
 
 [mitm]
 hostname = bbs-api.iqoo.com
-#定时规则
+
 [task_local]
 0 9 * * * https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/iqooc.js, tag=IQOO社区签到, img-url=https://raw.githubusercontent.com/czy13724/LeviIcons/main/leviicons/iqooc.png, enabled=true
 
