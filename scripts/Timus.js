@@ -3,20 +3,6 @@
 // Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/Timus.plugin
 // Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/Timus.stoverride
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
 项目名称：Timus
 项目作者：Levi
@@ -24,13 +10,11 @@
 使用说明：无
 使用声明：仅供个人参考学习交流，勿用于其它用途
 
-
 [rewrite_local]
 ^https?:\/\/api\.revenuecat\.com\/v1\/(subscribers\/[^\/]+$|receipts$) url script-response-body https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/Timus.js
 
 [mitm]
-hostname = api.revenuecat.com
-  
+hostname = api.revenuecat.com  
 */
 let obj = {
   "request_date_ms": 1704664060864,
@@ -95,55 +79,3 @@ let obj = {
 }
 
 $done({ body: JSON.stringify(obj), status: 200 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Adding a dummy sgmodule commit(27)
-// Adding a dummy plugin commit(25)
-// Adding a dummy stoverride commit(22)
