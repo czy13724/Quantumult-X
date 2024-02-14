@@ -3,17 +3,7 @@
 // Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/FTzhongwenwang.plugin
 // Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/FTzhongwenwang.stoverride
 
-
-
-
-
-
-
-
-
-
-
-/******************************
+/*
 FT中文网 外区
 特别说明：微信登录
 @ios151
@@ -21,13 +11,12 @@ FT中文网 外区
 地址：https://www.icloud.com/shortcuts/652791ed6b8d45fb8f6ff4f43e525405获取文章内容
 加上这个参数?webview=ftcapp就能返回全文
 ***********************
-
 [rewrite_local]
 ^https:\/\/dqbam2jv6gg9m\.cloudfront\.net\/index\.php\/jsapi\/paywall url script-response-body https://raw.githubusercontent.com/Yu9191/Rewrite/main/FTzhongwenwang.js
 [mitm] 
 hostname = dqbam2jv6gg9m.cloudfront.net
+*/
 
-*******************************/
 var baby = JSON.parse($response.body);
 
 baby = {
@@ -42,45 +31,3 @@ baby = {
 };
 
 $done({ body: JSON.stringify(baby) });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Adding a dummy sgmodule commit(26)
-// Adding a dummy plugin commit(24)
-// Adding a dummy stoverride commit(21)
