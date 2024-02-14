@@ -3,18 +3,6 @@
 // Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/MimoPro.plugin
 // Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/MimoPro.stoverride
 
-
-
-
-
-
-
-
-
-
-
-
-
 /*
 项目名称： Mimo
 项目作者： David
@@ -27,8 +15,7 @@ https://api.getmimo.com/v1/subscriptions url script-response-body https://raw.gi
 
 [mitm]
 hostname = api.getmimo.com
-
-*****************************/
+*/
 
 var obj = JSON.parse($response.body);
 
@@ -59,52 +46,3 @@ obj = {
   "canceledAt": "2024-02-12T09:25:22.380735+00:00"
 }
 $done({body: JSON.stringify(obj)});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Adding a dummy sgmodule commit(27)
-// Adding a dummy plugin commit(25)
-// Adding a dummy stoverride commit(22)
