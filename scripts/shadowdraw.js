@@ -3,27 +3,6 @@
 // Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/shadowdraw.plugin
 // Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/shadowdraw.stoverride
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
 项目名称： ShadowDraw: Learn How to Draw（only iPad）
 项目作者： Levi
@@ -81,72 +60,3 @@ Levi= {
     }
   };
 $done({body: JSON.stringify(Levi)});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Adding a dummy sgmodule commit(26)
-// Adding a dummy plugin commit(24)
-// Adding a dummy stoverride commit(21)
