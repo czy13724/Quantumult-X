@@ -3,6 +3,27 @@
 // Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/transcribeAI.plugin
 // Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/transcribeAI.stoverride
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 项目名称： transcribeAI
 项目作者： Levi
@@ -63,3 +84,66 @@ Levi= {
 };
      
 $done({body: JSON.stringify(Levi)});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Adding a dummy sgmodule commit(27)
+// Adding a dummy plugin commit(25)
+// Adding a dummy stoverride commit(22)
