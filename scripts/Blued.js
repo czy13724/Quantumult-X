@@ -3,11 +3,6 @@
 // Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/Blued.plugin
 // Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/Blued.stoverride
 
-
-
-
-
-
 /*************************************
 项目名称：blued
 下载地址：https://too.st/7vj
@@ -17,11 +12,6 @@
 失效请反馈
 群组：https://t.me/IPAs_Dd
 频道：https://t.me/IPAs_share
-不生效就退出后台重新打开
-不生效就退出后台重新打开
-不生效就退出后台重新打开
-不生效就退出后台重新打开
-不生效就退出后台重新打开
 不生效就退出后台重新打开
 blued功能脚本  悄悄查看消息  地图无需展示头像即可查看全部头像   聊天界面查看会员隐藏的距离
 **************************************
@@ -56,29 +46,3 @@ if (vip3.test($request.url) && anye.data && anye.data.length > 0) {
     anye.data[0].is_hide_distance = 0;
 }
 $done({ body: JSON.stringify(anye) });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Adding a dummy sgmodule commit(25)
-// Adding a dummy plugin commit(24)
-// Adding a dummy stoverride commit(22)
