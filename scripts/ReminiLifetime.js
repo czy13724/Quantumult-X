@@ -3,19 +3,6 @@
 // Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/ReminiLifetime.plugin
 // Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/ReminiLifetime.stoverride
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
 项目名称：Remini
 项目作者：David
@@ -23,14 +10,11 @@
 使用说明：无
 使用声明：仅供个人参考学习交流，勿用于其它用途
 
-
-
 [rewrite_local]
 ^https?:\/\/.*\.oracle\.bendingspoonsapps\.com\/v\d\/(users\/.+|purchases\/verify) url script-response-body https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/ReminiLifetime.js
 
 [mitm]
 hostname = *.oracle.bendingspoonsapps.com
-
 */
 
 if ($response.body != 'undefined'){
@@ -48,52 +32,3 @@ mgmdev["me"]["active_bundle_subscriptions"] = [{
 mgmdev["settings"]["__identity__"]["expiration"] = "2080-08-08T08:08:08+00:00";
 $done({body : JSON.stringify(mgmdev)});
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Adding a dummy sgmodule commit(27)
-// Adding a dummy plugin commit(25)
-// Adding a dummy stoverride commit(22)
