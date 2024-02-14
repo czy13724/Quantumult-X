@@ -195,7 +195,7 @@ async function getCookie() {
 //免责声明
 async function getNotice() {
     try {
-        const urls = ["https://raw.githubusercontent.com/czy13724/Quantumult-X/main/NAvailable/Description.json", "https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Declaration.json"];
+        const urls = ["https://raw.githubusercontent.com/czy13724/Quantumult-X/main/NAvailable/Declaration.json", "https://raw.githubusercontent.com/czy13724/Quantumult-X/main/NAvailable/Description.json"];
         for (const url of urls) {
             const options = {
                 url,
