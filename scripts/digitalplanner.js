@@ -3,25 +3,6 @@
 // Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/digitalplanner.plugin
 // Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/digitalplanner.stoverride
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
 项目名称： digitalplanner
 项目作者： Levi
@@ -113,68 +94,3 @@ Levi= {
     "status": 0
 };
 $done({body: JSON.stringify(Levi)});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Adding a dummy sgmodule commit(23)
-// Adding a dummy plugin commit(22)
-// Adding a dummy stoverride commit(21)
