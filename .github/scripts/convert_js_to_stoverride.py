@@ -210,19 +210,24 @@ def update_file_commit_count(file_path):
         file.write(content)
         file.truncate()
 
-# Process all adapter files in the directory
-def process_directory(directory):
-    for root, dirs, files in os.walk(directory):
-        for file_name in files:
+# Process only files in the `scripts` directory
+def process_scripts_directory(directory):
+    scripts_dir_path = os.path.join(directory, 'scripts')
+    if os.path.exists(scripts_dir_path) and os.path.isdir(scripts_dir_path):
+        for file_name in os.listdir(scripts_dir_path):
             if file_name.endswith(('.js', '.conf', '.snippet')):
-                file_path = os.path.join(root, file_name)
+                file_path = os.path.join(scripts_dir_path, file_name)
                 update_file_commit_count(file_path)
+    else:
+        print("'scripts' 目录不存在.")
 
 def main():
-    process_directory('.')
-   # Add all changes to git
+    # Call the function to process files in 'scripts' directory
+    process_scripts_directory('.')
+
+    # Add all changes to git
     subprocess.run(['git', 'add', '.'])
-  # Submit these changes
+    # Commit these changes
     subprocess.run(['git', 'commit', '-m', 'Update commit counts'])
 
 if __name__ == "__main__":
