@@ -3,10 +3,6 @@
 // Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/BeautyPlus.plugin
 // Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/BeautyPlus.stoverride
 
-
-
-
-
 /*
 项目名称： BeautyPlus
 项目作者： David
@@ -19,10 +15,7 @@ https:\/\/(api\.mr\.pixocial\.com\/v1\/manual_unlock|newbeee-api\.beautyplus\.co
 
 [mitm]
 hostname = api.mr.pixocial.com, newbeee-api.beautyplus.com
-
-*****************************/
-
-
+*/
 var objc = JSON.parse($response.body);
 
     objc = {
@@ -39,24 +32,3 @@ var objc = JSON.parse($response.body);
 }
 
 $done({body : JSON.stringify(objc)});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Adding a dummy sgmodule commit(25)
-// Adding a dummy plugin commit(24)
-// Adding a dummy stoverride commit(22)
