@@ -3,25 +3,6 @@
 // Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/headway.plugin
 // Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/headway.stoverride
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
 项目名称： headway
 项目作者： Levi
@@ -30,7 +11,6 @@
 使用声明： 仅供个人参考学习交流，勿用于其它用途
 
 [rewrite_local]
-
 
 ^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt url script-response-body https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/headway.js
 
@@ -117,70 +97,3 @@ Levi= {
 };
      
 $done({body: JSON.stringify(Levi)});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Adding a dummy sgmodule commit(24)
-// Adding a dummy plugin commit(23)
-// Adding a dummy stoverride commit(21)
