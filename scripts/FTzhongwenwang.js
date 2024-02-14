@@ -12,7 +12,7 @@ FT中文网 外区
 加上这个参数?webview=ftcapp就能返回全文
 ***********************
 [rewrite_local]
-^https:\/\/dqbam2jv6gg9m\.cloudfront\.net\/index\.php\/jsapi\/paywall url script-response-body https://raw.githubusercontent.com/Yu9191/Rewrite/main/FTzhongwenwang.js
+^https:\/\/dqbam2jv6gg9m\.cloudfront\.net\/index\.php\/jsapi\/paywall url script-response-body https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/FTzhongwenwang.js
 [mitm] 
 hostname = dqbam2jv6gg9m.cloudfront.net
 */
