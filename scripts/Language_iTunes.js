@@ -3,19 +3,7 @@
 // Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/Language_iTunes.plugin
 // Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/Language_iTunes.stoverride
 
-
-
-
-
-
-
-
-
-
-
-
-/*************************************
-
+/*
 项目名称：语言类iTunes合集（此合集只包含learn xx with flashcards）
 软件版本：截止2024.2.2最新版（每一个下载地址对应一个uaProductMapping）
 下载地址：Learn Italian https://apps.apple.com/app/id1513029876
@@ -35,7 +23,6 @@
 下载地址：Learn German https://apps.apple.com/app/id1397752797
 使用说明：先开脚本再重新进入一次应用，即可解锁订阅；未解锁需要点击菜单恢复购买。下载链接请通过script-path链接获取。
 使用声明：⚠️仅供参考，🈲️转载与售卖！
-
 **************************************
 
 [rewrite_local]
@@ -43,9 +30,7 @@
 
 [mitm]
 hostname = buy.itunes.apple.com
-
-*************************************/
-
+*/
 
 var Levi = {};
 var Levi01 = JSON.parse(typeof $response != "undefined" && $response.body || null);
@@ -119,46 +104,3 @@ for (var uaKey in uaProductMapping) {
 }
 Levi = Levi01;
 $done({ body: JSON.stringify(Levi) });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Adding a dummy sgmodule commit(27)
-// Adding a dummy plugin commit(25)
-// Adding a dummy stoverride commit(22)
