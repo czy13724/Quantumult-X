@@ -46,6 +46,9 @@ jobs:
         run: |
           git status
           git diff-index --quiet HEAD || echo "::set-output name=changes_exist::true"
+          if [ -n "$(git ls-files --others --exclude-standard)" ]; then
+            echo "::set-output name=untracked_files_exist::true"
+          fi
 
       - name: Sync with remote
         if: steps.check_changes.outputs.changes_exist == 'true'
@@ -55,8 +58,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Commit and push if changes exist
-        if: steps.check_changes.outputs.changes_exist == 'true'
+      - name: Commit and push if changes or untracked files exist
+        if: steps.check_changes.outputs.changes_exist == 'true' || steps.check_changes.outputs.untracked_files_exist == 'true'
         run: |
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
@@ -64,7 +67,7 @@ jobs:
           git commit -m "已转换为sgmodule文件"
           git push --force origin HEAD:main
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}          
 
       - name: Trigger next workflow convert_js_to_plugin
         uses: benc-uk/workflow-dispatch@v1
