@@ -45,25 +45,23 @@ jobs:
         id: check_changes
         run: |
           git status
-          git diff-index --quiet HEAD || echo "::set-output name=changes_exist::true"
-          if [ -n "$(git ls-files --others --exclude-standard)" ]; then
+          if git status --porcelain | grep '^??'; then
+            echo "Untracked files found."
             echo "::set-output name=untracked_files_exist::true"
           fi
+          if [ -n "$(git diff --name-only)" ]; then
+            echo "::set-output name=changes_exist::true"
+          fi
 
-      - name: Sync with remote
-        if: steps.check_changes.outputs.changes_exist == 'true'
-        run: |
-          git fetch origin
-          git reset --soft origin/main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Add untracked files if any
+        if: steps.check_changes.outputs.untracked_files_exist == 'true'
+        run: git add .
 
-      - name: Commit and push if changes or untracked files exist
+      - name: Commit and push if changes exist
         if: steps.check_changes.outputs.changes_exist == 'true' || steps.check_changes.outputs.untracked_files_exist == 'true'
         run: |
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
-          git add .
           git commit -m "已转换为sgmodule文件"
           git push --force origin HEAD:main
         env:
