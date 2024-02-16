@@ -46,26 +46,18 @@ jobs:
         run: |
           git status
           git diff-index --quiet HEAD || echo "::set-output name=changes_exist::true"
-
-      - name: Sync with remote
-        if: steps.check_changes.outputs.changes_exist == 'true'
-        run: |
-          git fetch origin
-          git reset --soft origin/main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    
-          
+    
       - name: Commit and push if changes exist
         if: steps.check_changes.outputs.changes_exist == 'true'
         run: |
-          set -x
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
           git add .
           git commit -m "已转换为plugin文件"
-          git push --force origin HEAD:main
+          git push origin HEAD:main --force
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
       - name: Trigger next workflow convert_js_to_stoverride
         uses: benc-uk/workflow-dispatch@v1
