@@ -40,34 +40,20 @@ jobs:
         with:
           name: plugin-artifacts
           path: ${{ github.workspace }}/Loon
-        
-      - name: Check for changes
-        id: check_changes
+
+      - name: Add and commit changes
         run: |
-          git status
-          git diff-index --quiet HEAD || echo "::set-output name=changes_exist::true"
-          if [ -n "$(git ls-files --others --exclude-standard)" ]; then
-            echo "::set-output name=untracked_files_exist::true"
+          git add -A
+          if [ -n "$(git diff --staged --name-only)" ]; then
+              git config user.name "${{ github.actor }}"
+              git config user.email "${{ github.actor }}@users.noreply.github.com"
+              git commit -m "自动提交: 已转换为plugin文件"
+              git push origin HEAD:main
+          else
+              echo "没有变动，跳过提交和推送步骤。"
           fi
-
-      - name: Sync with remote
-        if: steps.check_changes.outputs.changes_exist == 'true'
-        run: |
-          git fetch origin
-          git reset --soft origin/main
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    
-
-      - name: Commit and push if changes or untracked files exist
-        if: steps.check_changes.outputs.changes_exist == 'true' || steps.check_changes.outputs.untracked_files_exist == 'true'
-        run: |
-          git config user.name "${{ github.actor }}"
-          git config user.email "${{ github.actor }}@users.noreply.github.com"
-          git add .
-          git commit -m "已转换为plugin文件"
-          git push --force origin HEAD:main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}          
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}              
 
       - name: Trigger next workflow convert_js_to_stoverride
         uses: benc-uk/workflow-dispatch@v1
