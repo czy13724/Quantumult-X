@@ -1,5 +1,5 @@
 # author:Levi
-# 搭配convert_js_to_plugin.py使用。可将qx的js/conf/snippet文件转换为plugin文件。使用方法见博客。
+# 搭配convert_js_to_plugin.py使用。可将qx的js/conf/snippet文件转换为plugin文件。
 
 name: convert_js_to_plugin
 
