@@ -41,35 +41,29 @@ jobs:
           name: sgmodule-artifacts
           path: ${{ github.workspace }}/Surge
 
+      - name: Download artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: sgmodule-artifacts
+          path: ${{ github.workspace }}/Surge
 
 
-
-      # 在添加更改前打印出所有未跟踪的文件，确认生成的 sgmodule 文件是否出现
-      - name: List all untracked files
+      - name: Add and commit changes
         run: |
-          echo "List of all untracked files:"
-          git status --porcelain
-
-      # 添加所有变更到暂存区
-      - name: Add all changes
-        run: |
+          cd Surge
           git add -A
-
-      # 提交变更，如果有的话
-      - name: Commit and push changes
-        run: |
+          git diff --staged --name-only
           if [ -n "$(git diff --staged --name-only)" ]; then
-              echo "There are changes to commit."
+              echo "存在变动，进行提交。"
               git config user.name "${{ github.actor }}"
               git config user.email "${{ github.actor }}@users.noreply.github.com"
-              git commit -m "自动提交: 已转换为sgmodule文件"
-              git push origin HEAD:main
+              git commit -m "自动生成并添加 sgmodule 文件"
+              git push
           else
-              echo "No changes to commit.没有变动，跳过提交和推送步骤。"
+              echo "没有新的变动，不进行提交。"
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
 
 
 
