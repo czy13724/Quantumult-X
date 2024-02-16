@@ -57,10 +57,7 @@ jobs:
           git config user.email "${{ github.actor }}@users.noreply.github.com"
           git add .
           git commit -m "自动提交: 已转换为plugin文件"
-          git push --force origin HEAD:main 
-          else
-              echo "没有变动，跳过提交和推送步骤。"
-          fi
+          git push --force origin HEAD:main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
