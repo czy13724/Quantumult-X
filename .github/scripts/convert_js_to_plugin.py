@@ -4,7 +4,6 @@
 import os
 import re
 
-
 def task_local_to_plugin(js_content):
     from typing import Optional  # Import the Optional type
 
@@ -133,6 +132,8 @@ def main():
                     # Skip files without the required sections
                     print(f"跳过 {file_name} 由于文件缺失匹配内容，请仔细检查.")
 
+                os.system(f'git add {file_path}')
+                os.system('git commit -m "Trigger update"')
 
 if __name__ == "__main__":
     main()
