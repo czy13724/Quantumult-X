@@ -44,3 +44,4 @@ $done({body : JSON.stringify(mgmdev)});
 // Add plugin commit(6)
 // Adding stoverride commit(5)
 // Adding a dummy sgmodule commit(1)
+// Adding a dummy plugin commit(1)
