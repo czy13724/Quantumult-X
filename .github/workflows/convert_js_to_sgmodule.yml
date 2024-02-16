@@ -41,19 +41,37 @@ jobs:
           name: sgmodule-artifacts
           path: ${{ github.workspace }}/Surge
 
-      - name: Add and commit changes
+
+
+
+      # 在添加更改前打印出所有未跟踪的文件，确认生成的 sgmodule 文件是否出现
+      - name: List all untracked files
+        run: |
+          echo "List of all untracked files:"
+          git status --porcelain
+
+      # 添加所有变更到暂存区
+      - name: Add all changes
         run: |
           git add -A
+
+      # 提交变更，如果有的话
+      - name: Commit and push changes
+        run: |
           if [ -n "$(git diff --staged --name-only)" ]; then
+              echo "There are changes to commit."
               git config user.name "${{ github.actor }}"
               git config user.email "${{ github.actor }}@users.noreply.github.com"
               git commit -m "自动提交: 已转换为sgmodule文件"
               git push origin HEAD:main
           else
-              echo "没有变动，跳过提交和推送步骤。"
+              echo "No changes to commit.没有变动，跳过提交和推送步骤。"
           fi
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}          
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
+
 
       - name: Trigger next workflow convert_js_to_plugin
         uses: benc-uk/workflow-dispatch@v1
