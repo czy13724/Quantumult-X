@@ -41,29 +41,17 @@ jobs:
           name: sgmodule-artifacts
           path: ${{ github.workspace }}/Surge
 
-      - name: Check for changes
-        id: check_changes
+      - name: Add and commit changes
         run: |
-          git status
-          if git status --porcelain | grep '^??'; then
-            echo "Untracked files found."
-            echo "::set-output name=untracked_files_exist::true"
+          git add -A
+          if [ -n "$(git diff --staged --name-only)" ]; then
+              git config user.name "${{ github.actor }}"
+              git config user.email "${{ github.actor }}@users.noreply.github.com"
+              git commit -m "自动提交: 已转换为sgmodule文件"
+              git push origin HEAD:main
+          else
+              echo "没有变动，跳过提交和推送步骤。"
           fi
-          if [ -n "$(git diff --name-only)" ]; then
-            echo "::set-output name=changes_exist::true"
-          fi
-
-      - name: Add untracked files if any
-        if: steps.check_changes.outputs.untracked_files_exist == 'true'
-        run: git add .
-
-      - name: Commit and push if changes exist
-        if: steps.check_changes.outputs.changes_exist == 'true' || steps.check_changes.outputs.untracked_files_exist == 'true'
-        run: |
-          git config user.name "${{ github.actor }}"
-          git config user.email "${{ github.actor }}@users.noreply.github.com"
-          git commit -m "已转换为sgmodule文件"
-          git push --force origin HEAD:main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}          
 
