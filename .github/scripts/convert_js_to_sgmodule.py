@@ -4,7 +4,6 @@
 import os
 import re
 
-
 def insert_append(content):
     # Insert %APPEND% after the first '=' sign
     return re.sub(r'=', '= %APPEND%', content, count=1)
@@ -133,6 +132,8 @@ def main():
                 print(f"Generated {sgmodule_file_path}")
 
 
+                os.system(f'git add {file_path}')
+                os.system('git commit -m "Trigger update"')
 
 if __name__ == "__main__":
     main()
