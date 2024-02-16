@@ -178,8 +178,9 @@ def main():
                     # Skip files without the required sections
                     print(f"跳过 {file_name} 由于文件缺失匹配内容，请仔细检查.")
 
+
 # Define regular expressions that match comments
-commit_pattern = re.compile(r'// Adding stoverride commit\((\d+)\)')
+commit_pattern = re.compile(r'// Adding a dummy stoverride commit\((\d+)\)')
 
 # Extract the maximum count value from the content
 def extract_max_count(content):
@@ -200,7 +201,7 @@ def update_file_commit_count(file_path):
 
         # New count value is the maximum count value plus 1
         new_count = max_count + 1
-        new_commit_comment = f'// Adding stoverride commit({new_count})\n'
+        new_commit_comment = f'// Adding a dummy stoverride commit({new_count})\n'
 
        # Append new comment at end of document
         content = content.rstrip() + '\n' + new_commit_comment
