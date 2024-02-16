@@ -133,7 +133,7 @@ def main():
                 print(f"Generated {sgmodule_file_path}")
 
 # Define regular expressions that match comments
-commit_pattern = re.compile(r'// Adding sgmodule commit\((\d+)\)')
+commit_pattern = re.compile(r'// Adding a dummy sgmodule commit\((\d+)\)')
 
 # Extract the maximum count value from the content
 def extract_max_count(content):
@@ -154,7 +154,7 @@ def update_file_commit_count(file_path):
 
         # New count value is the maximum count value plus 1
         new_count = max_count + 1
-        new_commit_comment = f'// Adding sgmodule commit({new_count})\n'
+        new_commit_comment = f'// Adding a dummy sgmodule commit({new_count})\n'
 
        # Append new comment at end of document
         content = content.rstrip() + '\n' + new_commit_comment
@@ -181,6 +181,7 @@ def main():
 
     # Add all changes to git
     subprocess.run(['git', 'add', '.'])
+
     # Commit these changes
     subprocess.run(['git', 'commit', '-m', 'Update commit counts'])
 
