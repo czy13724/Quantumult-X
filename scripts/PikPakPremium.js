@@ -48,5 +48,6 @@ if (url.indexOf(URL3) != -1) {
   objc.apple = {"subscribed":true,"purchased":true,"status":"trial","interval":"year","product":"sub.year","past_due_deadline":"","pay_type":"","region":"regional"};
 };
 $done({body:JSON.stringify(objc)});
-// Add plugin commit(1)
+
 // Adding stoverride commit(1)
+// Add plugin commit(2)

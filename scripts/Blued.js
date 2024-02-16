@@ -46,5 +46,6 @@ if (vip3.test($request.url) && anye.data && anye.data.length > 0) {
     anye.data[0].is_hide_distance = 0;
 }
 $done({ body: JSON.stringify(anye) });
-// Add plugin commit(1)
+
 // Adding stoverride commit(1)
+// Add plugin commit(2)

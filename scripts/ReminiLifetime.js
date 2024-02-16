@@ -32,5 +32,6 @@ mgmdev["me"]["active_bundle_subscriptions"] = [{
 mgmdev["settings"]["__identity__"]["expiration"] = "2080-08-08T08:08:08+00:00";
 $done({body : JSON.stringify(mgmdev)});
 }
-// Add plugin commit(1)
+
 // Adding stoverride commit(1)
+// Add plugin commit(2)
