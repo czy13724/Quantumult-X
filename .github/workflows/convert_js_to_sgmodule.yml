@@ -45,7 +45,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: sgmodule-artifacts
-          path: ${{ github.workspace }}/Surge
+          path: Surge
 
 
       - name: Add and commit changes
