@@ -37,13 +37,13 @@ jobs:
 
       - name: List contents of Surge directory
         run: |
-          ls -la Surge/ || echo "Directory Surge is empty or does not exist."
+          ls -la ${{ github.workspace }}/Surge || echo "Directory Surge is empty or does not exist."
 
       - name: Archive artifacts
         uses: actions/upload-artifact@v2
         with:
           name: sgmodule-artifacts
-          path: Surge
+          path: ${{ github.workspace }}/Surge
  
       - name: Check for changes
         id: check_changes
