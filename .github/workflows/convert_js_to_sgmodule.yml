@@ -58,7 +58,7 @@ jobs:
               git config user.name "${{ github.actor }}"
               git config user.email "${{ github.actor }}@users.noreply.github.com"
               git commit -m "自动生成并添加 sgmodule 文件"
-              git push
+              git push --force
           else
               echo "没有新的变动，不进行提交。"
           fi
