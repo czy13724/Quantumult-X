@@ -41,34 +41,16 @@ jobs:
           name: sgmodule-artifacts
           path: ${{ github.workspace }}/Surge
 
-      - name: Download artifacts
-        uses: actions/download-artifact@v2
-        with:
-          name: sgmodule-artifacts
-          path: Surge
-
-      - name: List files in Surge directory and check status
+      - name: Push to Quantumult-X Repository
         run: |
-          ls -la Surge
-          git status
-
-      - name: Add files to Git
-        run: |
-          git add Surge/*  # 指定目录添加文件
-          git status       # 再次检查状态
-
-      - name: Commit and push if changes exist
-        run: |
+          set -x
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
-          if git diff --cached --quiet; then
-              echo "No changes to commit."
-          else
-              git commit -m "Add or update sgmodule files"
-              git push origin HEAD:main
-          fi
-      
-
+          git add .
+          git commit -m "已转换为sgmodule文件"
+          git push --force origin HEAD:main 
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Trigger next workflow convert_js_to_plugin
         uses: benc-uk/workflow-dispatch@v1
