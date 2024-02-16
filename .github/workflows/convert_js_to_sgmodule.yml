@@ -30,38 +30,22 @@ jobs:
           python -m pip install --upgrade pip
           pip install PyGithub
 
-      - name: Print current working directory
-        run: pwd    
-
       - name: Run script
-        run: python .github/scripts/convert_js_to_stoverride.py
+        run: python .github/scripts/convert_js_to_sgmodule.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: List contents of Surge directory
-        run: |
-          ls -la ${{ github.workspace }}/Surge || echo "Directory Surge is empty or does not exist."
 
       - name: Archive artifacts
         uses: actions/upload-artifact@v2
         with:
           name: sgmodule-artifacts
           path: ${{ github.workspace }}/Surge
- 
+        
       - name: Check for changes
         id: check_changes
         run: |
           git status
           git diff-index --quiet HEAD || echo "::set-output name=changes_exist::true"
-
-      - name: Sync with remote
-        if: steps.check_changes.outputs.changes_exist == 'true'
-        run: |
-          git fetch origin
-          git reset --soft origin/main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Commit and push if changes exist
         if: steps.check_changes.outputs.changes_exist == 'true'
         run: |
@@ -69,12 +53,6 @@ jobs:
           git config user.email "${{ github.actor }}@users.noreply.github.com"
           git add .
           git commit -m "已转换为sgmodule文件"
-          git push --force origin HEAD:main
+          git push --force origin HEAD:main 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Trigger next workflow convert_js_to_plugin
-        uses: benc-uk/workflow-dispatch@v1
-        with:
-          workflow: convert_js_to_plugin.yml
-          token: ${{ secrets.GITHUB_TOKEN }}    
