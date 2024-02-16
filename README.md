@@ -43,11 +43,12 @@ Plz Do Not FORK!!! Plz Do Not FORK!!! Plz Do Not FORK!!! If u like it, plz click
 
 ---
 
-<span style="color:green;"> * 请用qx中http请求功能添加 </span> [levi.gallery.json](https://raw.githubusercontent.com/czy13724/quantmultx/main/levi.gallery.json)
-<span style="color:green;"> * 请用boxjs添加以下订阅 </span> [levi.boxjs.json](https://raw.githubusercontent.com/czy13724/quantmultx/main/levi.boxjs.json)
-<span style="color:green;"> * 请用Quantumult X, Loon等App添加图标订阅 </span> [levi.icons.json](https://raw.githubusercontent.com/czy13724/LeviIcons/main/levi.icons.json)
-<span style="color:green;"> * 完成上述操作后再按照各个脚本的说明操作即可。 </span>
-<span style="color:green;"> * 他人仓库文件夹仅做备份学习，不建议在本处查看，之后也会随之删除。 </span>
+* 请用qx中http请求功能添加 [levi.gallery.json](https://raw.githubusercontent.com/czy13724/quantmultx/main/levi.gallery.json)
+* 请用boxjs添加以下订阅 [levi.boxjs.json](https://raw.githubusercontent.com/czy13724/quantmultx/main/levi.boxjs.json)
+* 请用Quantumult X, Loon等App添加图标订阅 [levi.icons.json](https://raw.githubusercontent.com/czy13724/LeviIcons/main/levi.icons.json)
+* 完成上述操作后再按照各个脚本的说明操作即可。
+  
+* 他人仓库文件夹仅做备份学习，不建议在本处查看，之后也会随之删除。
 
 ---
 
