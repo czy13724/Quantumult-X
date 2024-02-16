@@ -55,8 +55,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   
       
-      - name: Commit and push if changes exist
-        if: steps.check_changes.outputs.changes_exist == 'true'- name: Add and commit changes
+      - name: Add and commit changes
+        if: steps.check_changes.outputs.changes_exist == 'true'
         run: |
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
@@ -70,4 +70,4 @@ jobs:
         uses: benc-uk/workflow-dispatch@v1
         with:
           workflow: generate_desc.yml
-          token: ${{ secrets.GITHUB_TOKEN }}   
+          token: ${{ secrets.GITHUB_TOKEN }}
