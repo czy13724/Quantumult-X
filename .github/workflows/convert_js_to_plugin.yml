@@ -41,7 +41,6 @@ jobs:
           name: plugin-artifacts
           path: ${{ github.workspace }}/Loon
 
-
       - name: Check for changes
         id: check_changes
         run: |
@@ -63,11 +62,10 @@ jobs:
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
           git add .
-          git commit -m "自动提交: 已转换为plugin文件"
+          git commit -m "已转换为plugin文件"
           git push --force origin HEAD:main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
 
       - name: Trigger next workflow convert_js_to_stoverride
         uses: benc-uk/workflow-dispatch@v1
