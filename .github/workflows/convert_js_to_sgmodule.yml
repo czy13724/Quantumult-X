@@ -40,13 +40,12 @@ jobs:
         with:
           name: sgmodule-artifacts
           path: ${{ github.workspace }}/Surge
-
  
       - name: Commit and push if changes exist
         if: steps.check_changes.outputs.changes_exist == 'true'
         run: |
-          git config user.name "${{ github.actor }}"
-          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"    
           git add .
           git commit -m "已转换为sgmodule文件"
           git push --force origin HEAD:main 
