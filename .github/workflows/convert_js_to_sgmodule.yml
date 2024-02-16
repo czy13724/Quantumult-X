@@ -57,6 +57,7 @@ jobs:
               echo "存在变动，进行提交。"
               git config user.name "${{ github.actor }}"
               git config user.email "${{ github.actor }}@users.noreply.github.com"
+              git fetch
               git commit -m "自动生成并添加 sgmodule 文件"
               git push --force
           else
