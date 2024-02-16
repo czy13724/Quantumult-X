@@ -181,7 +181,6 @@ def main():
 
     # Add all changes to git
     subprocess.run(['git', 'add', '.'])
-
     # Commit these changes
     subprocess.run(['git', 'commit', '-m', 'Update commit counts'])
 
