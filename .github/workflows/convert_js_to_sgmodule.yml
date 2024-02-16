@@ -31,9 +31,13 @@ jobs:
           pip install PyGithub
 
       - name: Run script
-        run: python .github/scripts/convert_js_to_sgmodule.py
+        run: python .github/scripts/convert_js_to_stoverride.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: List contents of Surge directory
+        run: |
+          ls -la Surge/ || echo "Directory Surge is empty or does not exist."
 
       - name: Archive artifacts
         uses: actions/upload-artifact@v2
