@@ -3,20 +3,11 @@
 // Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/CerealTrans.plugin
 // Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/CerealTrans.stoverride
 
-
-
-
-
-
-
-
-
-
 /*
 项目名称：cereal-translator
-作者：David
+项目作者：David
 使用说明：先开脚本再重新进入，未成功点击recharge栏恢复。
-下载地址：https://apps.apple.com/us/app/cereal-translator/id6466264767
+下载地址：https://apps.apple.com/app/id6466264767
 
 [rewrite_local]
 ^https:\/\/youxifanyizhushou\.com\/ios\/api\/product\/user\/remain\/ios$ url script-response-body https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/CerealTrans.js
@@ -40,41 +31,3 @@ objc.data.forEach(item => {
   item.productPayType = "Apple";
 });
 $done({ body: JSON.stringify(objc) });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Adding a dummy sgmodule commit(25)
-// Adding a dummy plugin commit(24)
-// Adding a dummy stoverride commit(22)
