@@ -177,3 +177,58 @@ def main():
                 else:
                     # Skip files without the required sections
                     print(f"跳过 {file_name} 由于文件缺失匹配内容，请仔细检查.")
+
+# Define regular expressions that match comments
+commit_pattern = re.compile(r'// Adding stoverride commit\((\d+)\)')
+
+# Extract the maximum count value from the content
+def extract_max_count(content):
+    counts = commit_pattern.findall(content)
+    max_count = max(map(int, counts)) if counts else 0
+    return max_count
+
+# Update the comment count in the file
+def update_file_commit_count(file_path):
+    with open(file_path, 'r+', encoding='utf-8') as file:
+        content = file.read()
+
+     # Extract the maximum count value in an existing comment
+        max_count = extract_max_count(content)
+
+       # Remove all existing count annotations
+        content = re.sub(commit_pattern, '', content)
+
+        # New count value is the maximum count value plus 1
+        new_count = max_count + 1
+        new_commit_comment = f'// Adding stoverride commit({new_count})\n'
+
+       # Append new comment at end of document
+        content = content.rstrip() + '\n' + new_commit_comment
+
+       # Write new file contents
+        file.seek(0)
+        file.write(content)
+        file.truncate()
+
+# Process only files in the `scripts` directory
+def process_scripts_directory(directory):
+    scripts_dir_path = os.path.join(directory, 'scripts')
+    if os.path.exists(scripts_dir_path) and os.path.isdir(scripts_dir_path):
+        for file_name in os.listdir(scripts_dir_path):
+            if file_name.endswith(('.js', '.conf', '.snippet')):
+                file_path = os.path.join(scripts_dir_path, file_name)
+                update_file_commit_count(file_path)
+    else:
+        print("'scripts' 目录不存在.")
+
+def main():
+    # Call the function to process files in 'scripts' directory
+    process_scripts_directory('.')
+
+    # Add all changes to git
+    subprocess.run(['git', 'add', '.'])
+    # Commit these changes
+    subprocess.run(['git', 'commit', '-m', 'Update commit counts'])
+
+if __name__ == "__main__":
+    main()
