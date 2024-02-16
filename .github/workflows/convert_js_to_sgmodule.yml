@@ -47,25 +47,27 @@ jobs:
           name: sgmodule-artifacts
           path: Surge
 
-
-      - name: Add and commit changes
+      - name: List files in Surge directory and check status
         run: |
-          cd Surge
-          git add -A
-          git diff --staged --name-only
-          if [ -n "$(git diff --staged --name-only)" ]; then
-              echo "存在变动，进行提交。"
-              git config user.name "${{ github.actor }}"
-              git config user.email "${{ github.actor }}@users.noreply.github.com"
-              git fetch
-              git commit -m "自动生成并添加 sgmodule 文件"
-              git push --force
-          else
-              echo "没有新的变动，不进行提交。"
-          fi
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ls -la Surge
+          git status
 
+      - name: Add files to Git
+        run: |
+          git add Surge/*  # 指定目录添加文件
+          git status       # 再次检查状态
+
+      - name: Commit and push if changes exist
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          if git diff --cached --quiet; then
+              echo "No changes to commit."
+          else
+              git commit -m "Add or update sgmodule files"
+              git push origin HEAD:main
+          fi
+      
 
 
       - name: Trigger next workflow convert_js_to_plugin
