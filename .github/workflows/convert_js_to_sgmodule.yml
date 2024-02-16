@@ -39,7 +39,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: sgmodule-artifacts
-          path: ${{ github.workspace }}/Surge
+          path: Surge
  
       - name: Check for changes
         id: check_changes
