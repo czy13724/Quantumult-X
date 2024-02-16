@@ -30,6 +30,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install PyGithub
 
+      - name: Print current working directory
+        run: pwd    
+
       - name: Run script
         run: python .github/scripts/convert_js_to_stoverride.py
         env:
