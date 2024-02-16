@@ -42,13 +42,12 @@ jobs:
           path: ${{ github.workspace }}/Loon
 
 
-      - name: Push to Quantumult-X Repository
       - name: Check for changes
         id: check_changes
         run: |
           git status
           git diff-index --quiet HEAD || echo "::set-output name=changes_exist::true"
-  
+
       - name: Sync with remote
         if: steps.check_changes.outputs.changes_exist == 'true'
         run: |
@@ -56,20 +55,21 @@ jobs:
           git reset --soft origin/main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    
-    
-      - name: Add and commit changes
+          
+      - name: Commit and push if changes exist
+        if: steps.check_changes.outputs.changes_exist == 'true'
         run: |
-          git add -A
-          if [ -n "$(git diff --staged --name-only)" ]; then
-              git config user.name "${{ github.actor }}"
-              git config user.email "${{ github.actor }}@users.noreply.github.com"
-              git commit -m "自动提交: 已转换为plugin文件"
-              git push origin HEAD:main
+          set -x
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          git add .
+          git commit -m "自动提交: 已转换为plugin文件"
+          git push --force origin HEAD:main
           else
               echo "没有变动，跳过提交和推送步骤。"
           fi
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}                    
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
       - name: Trigger next workflow convert_js_to_stoverride
