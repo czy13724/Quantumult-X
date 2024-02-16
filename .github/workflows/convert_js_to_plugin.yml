@@ -53,7 +53,6 @@ jobs:
         if: steps.check_changes.outputs.changes_exist == 'true'
         run: |
           set -x
-          if [ -n "$(git diff --staged --name-only)" ]; then
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
           git add .
