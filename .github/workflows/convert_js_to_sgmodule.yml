@@ -33,11 +33,7 @@ jobs:
       - name: Run script
         run: python .github/scripts/convert_js_to_sgmodule.py
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    # 调试查看是否生成文件
-    #  - name: Confirm Surge directory contents
-    #    run: ls -la Surge          
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}       
 
       - name: Archive artifacts
         uses: actions/upload-artifact@v2
@@ -49,10 +45,10 @@ jobs:
         id: check_changes
         run: |
           if [ -z "$(git status --porcelain)" ]; then
-            echo "未监测到变动"
+            echo "未监测到变动，跳过提交"
           else
             echo "::set-output name=changes_exist::true"
-            echo "已监测到变动"
+            echo "已监测到变动，执行下一步骤"
           fi
       
       - name: Commit and push if changes exist
