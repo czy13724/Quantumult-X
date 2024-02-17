@@ -26,26 +26,3 @@ obj.profile._end_of_premium = "2096-09-09 17:07:45"
 
 body = JSON.stringify(obj);
 $done({body});
-
-
-
-
-
-
-
-
-// Adding sgmodule commit(1)
-// Add plugin commit(6)
-// Adding stoverride commit(5)
-
-
-
-// Adding a dummy sgmodule commit(2)
-
-
-
-
-
-
-// Adding a dummy plugin commit(5)
-// Adding a dummy stoverride commit(7)
