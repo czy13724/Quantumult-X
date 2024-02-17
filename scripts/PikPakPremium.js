@@ -3,10 +3,6 @@
 // Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/PikPakPremium.plugin
 // Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/PikPakPremium.stoverride
 
-
-
-
-
 /*
 项目名称： PikPak
 项目作者： David
@@ -48,26 +44,3 @@ if (url.indexOf(URL3) != -1) {
   objc.apple = {"subscribed":true,"purchased":true,"status":"trial","interval":"year","product":"sub.year","past_due_deadline":"","pay_type":"","region":"regional"};
 };
 $done({body:JSON.stringify(objc)});
-
-
-
-
-
-
-
-
-// Adding sgmodule commit(1)
-// Add plugin commit(6)
-// Adding stoverride commit(5)
-
-
-
-// Adding a dummy sgmodule commit(2)
-
-
-
-
-
-
-// Adding a dummy plugin commit(5)
-// Adding a dummy stoverride commit(7)
