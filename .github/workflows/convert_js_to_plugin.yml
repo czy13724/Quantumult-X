@@ -48,7 +48,6 @@ jobs:
           git diff-index --quiet HEAD || echo "::set-output name=changes_exist::true"
     
       - name: Commit and push if changes exist
-        if: steps.check_changes.outputs.changes_exist == 'true'
         run: |
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
