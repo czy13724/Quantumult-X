@@ -35,6 +35,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Confirm Surge directory contents
+        run: ls -la Surge          
+
       - name: Archive artifacts
         uses: actions/upload-artifact@v2
         with:
