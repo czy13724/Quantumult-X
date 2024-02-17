@@ -18,7 +18,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -46,13 +46,13 @@ jobs:
         run: |
           git status
           git diff-index --quiet HEAD || echo "::set-output name=changes_exist::true"
+     
       - name: Commit and push if changes exist
-        if: steps.check_changes.outputs.changes_exist == 'true'
         run: |
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
           git add .
-          git commit -m "已转换为stoverride文件"
+          git commit -m "自动更新：已转换为stoverride文件"
           git push origin HEAD:main --force
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}                 
