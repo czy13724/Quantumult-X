@@ -22,9 +22,9 @@ Plz Do Not FORK!!! Plz Do Not FORK!!! Plz Do Not FORK!!! If u like it, plz click
     <img src="https://img.shields.io/static/v1?message=Telegram&logo=telegram&label=&color=2CA5E0&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="telegram logo"  />
   </a>
   </div>
-如是@David请联系
+如是@David请通过群组联系
 <div align="left">
-  <a href="https://t.me/David_Hex01" target="_blank">
+  <a href="https://t.me/IPAs_Dd" target="_blank">
     <img src="https://img.shields.io/static/v1?message=Telegram&logo=telegram&label=&color=2CA5E0&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="telegram logo"  />
   </a>
     <a href="https://github.com/Cody005" target="_blank">
