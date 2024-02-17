@@ -5,6 +5,7 @@
 
 /*
 项目名称：语言类iTunes合集（此合集只包含learn xx with flashcards）
+项目作者：Levi
 软件版本：截止2024.2.2最新版（每一个下载地址对应一个uaProductMapping）
 下载地址：Learn Italian https://apps.apple.com/app/id1513029876
 下载地址：Learn English https://apps.apple.com/app/id1324697387
@@ -104,26 +105,3 @@ for (var uaKey in uaProductMapping) {
 }
 Levi = Levi01;
 $done({ body: JSON.stringify(Levi) });
-
-
-
-
-
-
-
-
-// Adding sgmodule commit(1)
-// Add plugin commit(6)
-// Adding stoverride commit(5)
-
-
-
-// Adding a dummy sgmodule commit(2)
-
-
-
-
-
-
-// Adding a dummy plugin commit(5)
-// Adding a dummy stoverride commit(7)
