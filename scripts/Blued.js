@@ -3,7 +3,7 @@
 // Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/Blued.plugin
 // Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/Blued.stoverride
 
-/*************************************
+/*
 项目名称：blued
 下载地址：https://too.st/7vj
 更新日期：2024-01-15
@@ -22,7 +22,7 @@ blued功能脚本  悄悄查看消息  地图无需展示头像即可查看全�
 ^https:\/\/social\.blued\.cn\/users\/.*\/basi url script-response-body https://raw.githubusercontent.com/anyehttp/quantumult-x/main/Adguard/blued.js
 [mitm]
 hostname = social.blued.cn
-*************************************/
+*/
 var anye = JSON.parse($response.body);
 const vip1 = /^https:\/\/social\.blued\.cn\/users\/.*\/setting/;
 const vip2 = /^https:\/\/social\.blued\.cn\/users\/shadow/;
@@ -46,26 +46,3 @@ if (vip3.test($request.url) && anye.data && anye.data.length > 0) {
     anye.data[0].is_hide_distance = 0;
 }
 $done({ body: JSON.stringify(anye) });
-
-
-
-
-
-
-
-
-// Adding sgmodule commit(1)
-// Add plugin commit(6)
-// Adding stoverride commit(5)
-
-
-
-// Adding a dummy sgmodule commit(2)
-
-
-
-
-
-
-// Adding a dummy plugin commit(5)
-// Adding a dummy stoverride commit(7)
