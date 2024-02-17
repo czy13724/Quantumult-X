@@ -48,8 +48,12 @@ jobs:
       - name: Check for changes
         id: check_changes
         run: |
-          git status
-          git diff-index --quiet HEAD || echo "::set-output name=changes_exist::true"
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "未监测到变动"
+          else
+            echo "::set-output name=changes_exist::true"
+            echo "已监测到变动"
+          fi
       
       - name: Commit and push if changes exist
         run: |
