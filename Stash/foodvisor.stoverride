@@ -10,7 +10,7 @@ http:
 
   script:  
   - match: ^https?:\/\/api\.revenuecat\.com\/v1\/(subscribers\/[^\/]+$|receipts$)
-    name: Foodvisor_79
+    name: Foodvisor_8
     type: response
     require-body: true
     max-size: -1
@@ -18,7 +18,7 @@ http:
 
 
 script-providers:
-  "Foodvisor_79":
+  "Foodvisor_8":
     url: https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/foodvisor.js
     interval: 86400
 
