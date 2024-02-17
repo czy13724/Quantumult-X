@@ -55,6 +55,7 @@ jobs:
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
           git add .
+          git status
           git commit -m "已转换为sgmodule文件"
           git push origin HEAD:main --force
         env:
