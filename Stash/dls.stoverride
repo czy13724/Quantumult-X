@@ -1,0 +1,24 @@
+name: |-
+  杜蕾斯签到
+desc: |-
+  获取ck即可使用，如无法获取，请自行抓包Access-Token并填入boxjs中的dls_data
+
+http:
+
+  mitm:
+    - "vip.ixiliu.cn"
+
+  script:  
+  - match: ^https:\/\/vip\.ixiliu\.cn\/mp\/sign\/applyV2$
+    name: 杜蕾斯签到_50
+    type: request
+    require-body: true
+    max-size: -1
+    timeout: 60
+
+
+script-providers:
+  "杜蕾斯签到_50":
+    url: https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/dls.js
+    interval: 86400
+
