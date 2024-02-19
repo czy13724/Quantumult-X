@@ -1,4 +1,4 @@
-#!name=杜蕾斯签到
+#!name=杜蕾斯会员中心小程序签到
 #!desc=获取ck即可使用，如无法获取，请自行抓包Access-Token并填入boxjs中的dls_data
 #!====================================
 #!⚠️【免责声明】
@@ -14,4 +14,4 @@
 [MITM]
 hostname = vip.ixiliu.cn
 [Script]
-http-request ^https:\/\/vip\.ixiliu\.cn\/mp\/sign\/applyV2$,script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/dls.js, requires-body=true, timeout=60, tag=杜蕾斯签到
+http-request ^https:\/\/vip\.ixiliu\.cn\/mp\/sign\/applyV2$,script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/dls.js, requires-body=true, timeout=60, tag=杜蕾斯会员中心小程序签到
