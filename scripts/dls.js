@@ -5,13 +5,14 @@
 
 /**************************************
 项目名称：杜蕾斯会员中心小程序签到
-使用说明：获取ck即可使用，如无法获取，请自行抓包Access-Token并填入boxjs中的dls_data
+使用说明：手动签到提示获取ck即可使用，建议开启抓包再签到。自行抓包Access-Token并填入boxjs中的dls_data。
 项目作者：@Levi
+积分用处：购买会用积分折扣
 反馈群组：https://t.me/IPAs_Dd
 
 感谢樱花佬的脚本框架@sliverkiss https://t.me/sliverkiss
 
-@Date:2024-02-18完成脚本
+@Date:2024-02-18完成脚本 优化使用说明
 
 
 脚本默认 上午9:30
@@ -23,11 +24,6 @@
 ****************
 *    LanceX    *
 ****************
-
-远程-模块(包括获取Cookie和定时任务)
-https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Surge/dls.sgmodule
-
-本地-Script定时任务
 [Script]
 # （默认上午9:30 执行，如需更改请自行修改cron表达式）
 杜蕾斯签到 = type=cron, cronexp="30 9 * * *", script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/dls.js
@@ -42,16 +38,16 @@ https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Surge/dls.sgmodule
 hostname = vip.ixiliu.cn
 
 [task_local]
-30 9 * * * https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/dls.js, tag=杜蕾斯签到, img-url=https://raw.githubusercontent.com/czy13724/LeviIcons/main/leviicons/dls.png, enabled=true
+30 9 * * * https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/dls.js, tag=杜蕾斯会员中心签到, img-url=https://raw.githubusercontent.com/czy13724/LeviIcons/main/leviicons/dls.png, enabled=true
 -----------------------------------------------
 *************************
 【 签到脚本使用教程 】:
 *************************
 单账号：
 1.将签到脚本拉取到本地
-2.打开小程序，随便逛逛，提示获取cookie成功则可以使用该脚本
+2.打开小程序，随便逛逛，不提示消息则手动签到一次提示获取cookie成功则可以使用该脚本
 3.关闭获取cookie脚本，防止产生不必要的mitm
-如获取不到ck可通过自行抓包获取
+建议开启抓包再手动签到如获取不到ck可通过自行抓包获取
 多账号：
 1.抓包https://vip.ixiliu.cn任意域名下的Access-Token
 2.打开boxjs->我的->数据查看器->在数据键输入dls_data,点击VIEW->在数据内容输入抓取到的Access-Token，点击保存。
