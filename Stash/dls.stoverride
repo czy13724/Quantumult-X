@@ -1,7 +1,7 @@
 name: |-
   杜蕾斯会员中心小程序签到
 desc: |-
-  获取ck即可使用，如无法获取，请自行抓包Access-Token并填入boxjs中的dls_data
+  手动签到提示获取ck即可使用，建议开启抓包再签到。自行抓包Access-Token并填入boxjs中的dls_data。
 
 http:
 
@@ -10,7 +10,7 @@ http:
 
   script:  
   - match: ^https:\/\/vip\.ixiliu\.cn\/mp\/sign\/applyV2$
-    name: 杜蕾斯会员中心小程序签到_54
+    name: 杜蕾斯会员中心小程序签到_68
     type: request
     require-body: true
     max-size: -1
@@ -18,7 +18,7 @@ http:
 
 
 script-providers:
-  "杜蕾斯会员中心小程序签到_54":
+  "杜蕾斯会员中心小程序签到_68":
     url: https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/dls.js
     interval: 86400
 
