@@ -4,7 +4,7 @@
 // Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/dls.stoverride
 
 /**************************************
-项目名称：杜蕾斯签到
+项目名称：杜蕾斯会员中心小程序签到
 使用说明：获取ck即可使用，如无法获取，请自行抓包Access-Token并填入boxjs中的dls_data
 项目作者：@Levi
 反馈群组：https://t.me/IPAs_Dd
@@ -49,7 +49,7 @@ hostname = vip.ixiliu.cn
 *************************
 单账号：
 1.将签到脚本拉取到本地
-2.打开网站，随便逛逛，提示获取cookie成功则可以使用该脚本
+2.打开小程序，随便逛逛，提示获取cookie成功则可以使用该脚本
 3.关闭获取cookie脚本，防止产生不必要的mitm
 如获取不到ck可通过自行抓包获取
 多账号：
