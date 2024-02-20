@@ -2,7 +2,7 @@
 // Surge/Shadowrocket 模块地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Surge/mnmy.sgmodule
 // Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/mnmy.plugin
 // Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/mnmy.stoverride
-// ⚠️以上链接由脚本自动生成，可能已失效。⚠️
+// ⚠️Qx可能不可用！以上链接由脚本自动生成，可能已失效。⚠️
 /**************************************
 项目名称：蒙牛母婴官方自营店签到
 使用说明：获取到ck即可使用。如无法获取请开启抓包手动签到一次将x-wx-token并填入boxjs中的mnmy_data
@@ -26,13 +26,16 @@
 
 [Script]
 # （默认上午9:35 执行，如需更改请自行修改cron表达式）
-杜蕾斯签到 = type=cron, cronexp="35 9 * * *", script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/mnmy.js
+蒙牛母婴签到 = type=cron, cronexp="35 9 * * *", script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/mnmy.js
 -----------------------------------------------
 **************
 *Quantumult X*
 **************
 [rewrite_local]
+# 签到
 ^https:\/\/xapi\.weimob\.com\/api3\/onecrm\/mactivity\/sign\/misc\/sign\/activity\/core\/c\/sign$ url script-request-body https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/mnmy.js
+# 获取ck
+https:\/\/xapi\.weimob\.com\/api3(?:\/.*)?$ url script-request-header https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/mnmy.js
 
 [mitm]
 hostname = xapi.weimob.com
