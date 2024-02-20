@@ -10,7 +10,7 @@ http:
 
   script:  
   - match: https://api.getmimo.com/v1/subscriptions
-    name: Mimo_68
+    name: Mimo_89
     type: response
     require-body: true
     max-size: -1
@@ -18,7 +18,7 @@ http:
 
 
 script-providers:
-  "Mimo_68":
+  "Mimo_89":
     url: https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/MimoPro.js
     interval: 86400
 
