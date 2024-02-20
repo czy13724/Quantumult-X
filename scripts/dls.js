@@ -25,8 +25,8 @@
 [Script]
 # （默认上午9:30 执行，如需更改请自行修改cron表达式）
 杜蕾斯签到 = type=cron, cronexp="30 9 * * *", script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/dls.js
-杜蕾斯获取token = type=http-request,pattern=^https:\/\/vip\.ixiliu\.cn\/mp\/sign\/applyV2$,requires-body=0,max-size=0,script-path= https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/dls.js
------------------------------------------------
+杜蕾斯获取token = type=http-request,pattern=^https:\/\/vip\.ixiliu\.cn\/mp\/user\/info$,requires-body=0,max-size=0,script-path= https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/dls.js
+----------------------------------------------
 **************
 *Quantumult X*
 **************
@@ -34,7 +34,10 @@
 30 9 * * * https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/dls.js, tag=杜蕾斯会员中心签到, img-url=https://raw.githubusercontent.com/czy13724/LeviIcons/main/leviicons/dls.png, enabled=true
 
 [rewrite_local]
+# 签到
 ^https:\/\/vip\.ixiliu\.cn\/mp\/sign\/applyV2$ url script-request-body https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/dls.js
+#获取ck
+^https:\/\/vip\.ixiliu\.cn\/mp\/user\/info$ url script-request-header https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/dls.js
 
 [mitm]
 hostname = vip.ixiliu.cn
