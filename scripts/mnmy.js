@@ -2,11 +2,12 @@
 // Surge/Shadowrocket 模块地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Surge/mnmy.sgmodule
 // Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/mnmy.plugin
 // Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/mnmy.stoverride
-// ⚠️Qx可能不可用！以上链接由脚本自动生成，可能已失效。⚠️
+// ⚠️Qx可能不可查询积分！以上链接由脚本自动生成，可能已失效。⚠️
 /**************************************
 项目名称：蒙牛母婴官方自营店签到
 使用说明：获取到ck即可使用。如无法获取请开启抓包手动签到一次将x-wx-token并填入boxjs中的mnmy_data
 项目作者：@Levi
+积分用途：可在“我的”～“积分商城”兑换实物商品。
 反馈群组：https://t.me/IPAs_Dd
 
 感谢樱花佬的脚本框架@sliverkiss https://t.me/sliverkiss
