@@ -43,7 +43,7 @@ Plz Do Not FORK!!! Plz Do Not FORK!!! Plz Do Not FORK!!! If u like it, plz click
 
 ---
 
-* 请用qx中http请求功能添加 [levi.gallery.json](https://raw.githubusercontent.com/czy13724/quantmultx/main/levi.gallery.json)
+* 请用qx中http请求功能添加 [levi.gallery.json](https://gist.githubusercontent.com/czy13724/e5caaa812632bfb15ab31c7953976b26/raw/levi.gallery.json)
 * 请用boxjs添加以下订阅 [levi.boxjs.json](https://raw.githubusercontent.com/czy13724/quantmultx/main/levi.boxjs.json)
 * 请用Quantumult X, Loon等App添加图标订阅 [levi.icons.json](https://raw.githubusercontent.com/czy13724/LeviIcons/main/levi.icons.json)
 * 完成上述操作后再按照各个脚本的说明操作即可。
