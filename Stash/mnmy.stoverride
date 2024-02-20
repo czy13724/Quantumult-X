@@ -10,7 +10,7 @@ http:
 
   script:  
   - match: ^https:\/\/xapi\.weimob\.com\/api3\/onecrm\/mactivity\/sign\/misc\/sign\/activity\/core\/c\/sign$
-    name: 蒙牛母婴官方自营店签到_2
+    name: 蒙牛母婴官方自营店签到_32
     type: request
     require-body: true
     max-size: -1
@@ -18,7 +18,7 @@ http:
 
 
 script-providers:
-  "蒙牛母婴官方自营店签到_2":
+  "蒙牛母婴官方自营店签到_32":
     url: https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/mnmy.js
     interval: 86400
 
