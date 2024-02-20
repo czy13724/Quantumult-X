@@ -27,18 +27,19 @@
 [Script]
 # （默认上午9:35 执行，如需更改请自行修改cron表达式）
 蒙牛母婴签到 = type=cron, cronexp="35 9 * * *", script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/mnmy.js
+蒙牛母婴获取token = type=http-request,pattern=^https:\/\/xapi\.weimob\.com\/api3\/,requires-body=0,max-size=0,script-path= https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/mnmy.js
 -----------------------------------------------
 **************
 *Quantumult X*
 **************
+[task_local]
+35 9 * * * https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/mnmy.js, tag=蒙牛母婴签到, img-url=https://raw.githubusercontent.com/czy13724/LeviIcons/main/leviicons/mnmy.png, enabled=true
+
 [rewrite_local]
 ^https:\/\/xapi\.weimob\.com\/api3\/onecrm\/mactivity\/sign\/misc\/sign\/activity\/core\/c\/sign$ url script-request-body https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/mnmy.js
 
 [mitm]
 hostname = xapi.weimob.com
-
-[task_local]
-35 9 * * * https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/mnmy.js, tag=蒙牛母婴签到, img-url=https://raw.githubusercontent.com/czy13724/LeviIcons/main/leviicons/mnmy.png, enabled=true
 -----------------------------------------------
 *************************
 【 签到脚本使用教程 】:
@@ -47,9 +48,9 @@ hostname = xapi.weimob.com
 1.将签到脚本拉取到本地
 2.打开小程序，随便逛逛，提示获取cookie成功则可以使用该脚本
 3.关闭获取cookie脚本，防止产生不必要的mitm
-⚠️如获取不到ck建议开启抓包手动签到一次获取。
+⚠️如获取不到ck建议开启抓包，抓https://xapi.weimob.com/任意域名下的x-wx-token填入mnmy_data。
 多账号：
-1.抓包https://xapi.weimob.com/域名下的x-wx-token
+1.抓包https://xapi.weimob.com/任意域名下的x-wx-token
 2.打开boxjs->我的->数据查看器->在数据键输入mnmy_data,点击VIEW->在数据内容输入抓取到的x-wx-token，点击保存。
 3.若有多账号，用@分割，如x-wx-token1@x-wx-token2
 
