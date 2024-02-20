@@ -26,7 +26,7 @@
 
 [Script]
 # （默认上午9:35 执行，如需更改请自行修改cron表达式）
-杜蕾斯签到 = type=cron, cronexp="35 9 * * *", script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/mnmy.js
+蒙牛母婴签到 = type=cron, cronexp="35 9 * * *", script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/mnmy.js
 -----------------------------------------------
 **************
 *Quantumult X*
