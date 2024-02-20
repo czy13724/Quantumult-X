@@ -15,3 +15,4 @@
 hostname = %APPEND% vip.ixiliu.cn
 [Script]
 杜蕾斯会员中心小程序签到 = type=http-request, pattern=^https:\/\/vip\.ixiliu\.cn\/mp\/sign\/applyV2$, script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/dls.js, requires-body=true, max-size=-1, timeout=60
+杜蕾斯会员中心小程序签到 = type=http-request, pattern=^https:\/\/vip\.ixiliu\.cn\/mp\/user\/info$, script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/dls.js, requires-body=true, max-size=-1, timeout=60
