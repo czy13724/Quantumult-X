@@ -1,3 +1,8 @@
+// Quantumult X引用地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/mnmy.js
+// Surge/Shadowrocket 模块地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Surge/mnmy.sgmodule
+// Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/mnmy.plugin
+// Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/mnmy.stoverride
+
 /*
 项目名称：蒙牛母婴官方自营店签到
 使用说明：获取ck即可使用，如无法获取，请开启抓包手动签到一次将x-wx-token并填入boxjs中的mnmy_data
