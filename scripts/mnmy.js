@@ -1,8 +1,3 @@
-// Quantumult X引用地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/mnmy.js
-// Surge/Shadowrocket 模块地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Surge/mnmy.sgmodule
-// Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/mnmy.plugin
-// Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/mnmy.stoverride
-
 /*
 项目名称：蒙牛母婴官方自营店签到
 使用说明：获取ck即可使用，如无法获取，请开启抓包手动签到一次将x-wx-token并填入boxjs中的mnmy_data
@@ -12,10 +7,29 @@
 感谢樱花佬的脚本框架@sliverkiss https://t.me/sliverkiss
 
 @Date:2024-02-18完成脚本
+
+
+脚本默认 上午9:35 执行
+-----------------------------------------------
+****************
+*    Surge     *
+****************
+* ShadowRocket *
+****************
+*    LanceX    *
+****************
+
+[Script]
+# （默认上午9:35 执行，如需更改请自行修改cron表达式）
+蒙牛母婴签到 = type=cron, cronexp="35 9 * * *", script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/mnmy.js
+蒙牛获取ck = type=http-request,pattern=https:\/\/xapi\.weimob\.com\/api3(?:\/.*)?$,requires-body=0,max-size=0,script-path= https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/mnmy.js
 -----------------------------------------------
 **************
 *Quantumult X*
 **************
+[task_local]
+35 9 * * * https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/mnmy.js, tag=蒙牛母婴签到, img-url=https://raw.githubusercontent.com/czy13724/LeviIcons/main/leviicons/mnmy.png, enabled=true
+
 [rewrite_local]
 # 签到
 ^https:\/\/xapi\.weimob\.com\/api3\/onecrm\/mactivity\/sign\/misc\/sign\/activity\/core\/c\/sign$ url script-request-body https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/mnmy.js
@@ -24,9 +38,6 @@ https:\/\/xapi\.weimob\.com\/api3(?:\/.*)?$ url script-request-header https://ra
 
 [mitm]
 hostname = xapi.weimob.com
-
-[task_local]
-35 9 * * * https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/mnmy.js, tag=蒙牛母婴签到, img-url=https://raw.githubusercontent.com/czy13724/LeviIcons/main/leviicons/mnmy.png, enabled=true
 -----------------------------------------------
 *************************
 【 签到脚本使用教程 】:
@@ -50,13 +61,14 @@ hostname = xapi.weimob.com
 4、此脚本涉及应用与本人无关，本人对因此引起的任何隐私泄漏或其他后果不承担任何责任。
 5、本人对任何脚本引发的问题概不负责，包括但不限于由脚本错误引起的任何损失和损害。
 6、如果任何单位或个人认为此脚本可能涉嫌侵犯其权利，应及时通知并提供身份证明，所有权证明，我们将在收到认证文件确认后删除此脚本。
-7、所有直接或间接使用、查看此脚本的人均应该仔细阅读此声明。本人保留随时更改或补充此声明的权利。一旦您使用或复制了此脚本，即视为您已接受此免责声明。
-******************************************/
+7、所有直接或间接使用、查看此脚本的人均应该仔细阅读此声明。本人保留随时更改或补充此声明的权利。一旦您使用或复制了此脚本，即视为您已接受此免责
+*/
+
 // env.js 全局
 const $ = new Env("蒙牛母婴小程序");
 const ckName = "mnmy_data";
 //-------------------- 一般不动变量区域 -------------------------------------
-const Notify = 1; //0为关闭通知,1为打开通知,默认为1
+const Notify = 1;//0为关闭通知,1为打开通知,默认为1
 const notify = $.isNode() ? require('./sendNotify') : '';
 let envSplitor = ["@"]; //多账号分隔符
 let userCookie = ($.isNode() ? process.env[ckName] : $.getdata(ckName)) || '';
@@ -72,8 +84,7 @@ $.barkKey = ($.isNode() ? process.env["bark_key"] : $.getdata("bark_key")) || ''
 //---------------------- 自定义变量区域 -----------------------------------
 
 // 脚本入口函数main()
-async
-function main() {
+async function main() {
     await getNotice()
     console.log('\n================== 任务 ==================\n');
     // 签到
@@ -104,8 +115,8 @@ class UserInfo {
     }
 
 
-    //签到
-    async signin() {
+//签到
+async signin() {
         try {
             const options = {
                 //签到任务调用签到接口
@@ -114,152 +125,163 @@ class UserInfo {
                 headers: {
                     "content-type": "application/json",
                     "user-agent": "Mozilla/5.0 (iPad; CPU OS 16_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.47(0x18002f28) NetType/WIFI Language/zh_CN",
-                    "x-wx-token": this.token,
+                    "x-wx-token":this.token,
                 },
                 body: JSON.stringify({
-                    "pid": "",
-                    "extendInfo": {
-                        "youshu": {
-                            "enable": false
-                        },
-                        "quickdeliver": {
-                            "enable": false
-                        },
-                        "source": 1,
-                        "mpScene": 1106,
-                        "channelsource": 5,
-                        "analysis": [],
-                        "wxTemplateId": 7516,
-                        "childTemplateIds": [{
-                            "customId": 90004,
-                            "version": "crm@0.1.14-bigger"
-                        }, {
-                            "customId": 90002,
-                            "version": "ec@43.4"
-                        }, {
-                            "customId": 90006,
-                            "version": "hudong@0.0.202"
-                        }, {
-                            "customId": 90008,
-                            "version": "cms@0.0.422"
-                        }],
-                        "refer": "onecrm-signgift",
-                        "bosTemplateId": 1000001402
-                    },
-                    "i18n": {
-                        "timezone": "8",
-                        "language": "zh"
-                    },
-                    "customInfo": {
-                        "wid": 11002646337,
-                        "source": 0
-                    },
-                    "queryParameter": null,
-                    "storeId": "",
-                    "appid": "wx704de26b0d945f1e",
-                    "basicInfo": {
-                        "vidType": 2,
-                        "productInstanceId": 10635072513,
-                        "bosId": 4021699576513,
-                        "vid": 6016162554513,
-                        "productId": 146,
-                        "merchantId": 2000259035513,
-                        "tcode": "weimob",
-                        "productVersionId": "10003",
-                        "cid": 587535513
-                    }
-                })
+  "pid": "",
+  "extendInfo": {
+    "youshu": {
+      "enable": false
+    },
+    "quickdeliver": {
+      "enable": false
+    },
+    "source": 1,
+    "mpScene": 1106,
+    "channelsource": 5,
+    "analysis": [
+    ],
+    "wxTemplateId": 7516,
+    "childTemplateIds": [
+      {
+        "customId": 90004,
+        "version": "crm@0.1.14-bigger"
+      },
+      {
+        "customId": 90002,
+        "version": "ec@43.4"
+      },
+      {
+        "customId": 90006,
+        "version": "hudong@0.0.202"
+      },
+      {
+        "customId": 90008,
+        "version": "cms@0.0.422"
+      }
+    ],
+    "refer": "onecrm-signgift",
+    "bosTemplateId": 1000001402
+  },
+  "i18n": {
+    "timezone": "8",
+    "language": "zh"
+  },
+  "customInfo": {
+    "wid": 11002646337,
+    "source": 0
+  },
+  "queryParameter": null,
+  "storeId": "",
+  "appid": "wx704de26b0d945f1e",
+  "basicInfo": {
+    "vidType": 2,
+    "productInstanceId": 10635072513,
+    "bosId": 4021699576513,
+    "vid": 6016162554513,
+    "productId": 146,
+    "merchantId": 2000259035513,
+    "tcode": "weimob",
+    "productVersionId": "10003",
+    "cid": 587535513
+  }
+})
             };
             //post方法
             let result = await httpRequest(options);
             console.log(result)
-            if (result ? .data === null) {
-                $.log(`❌重复签到`);
-                $.signMsg = `❌重复签到`;
-            } else {
-                $.log(`✅签到成功！`);
-                $.signMsg = `✅签到成功,获得${result.data?.fixedReward?.points}积分`;
-            }
-
+                if(result?.data === null){
+                    $.log(`❌重复签到`);
+                    $.signMsg = `❌重复签到`;
+                } else{
+                    $.log(`✅签到成功！`);
+                    $.signMsg = `✅签到成功,获得${result.data?.fixedReward?.points}积分`;
+                }
+            
         } catch (e) {
             console.log(e);
         }
     }
 
 
-    //积分查询
-    async point() {
+//积分查询
+async point() {
         try {
             const options = {
                 //签到任务调用签到接口
                 url: `https://xapi.weimob.com/api3/onecrm/point/myPoint/get`,
-
                 //请求头, 所有接口通用
                 headers: {
                     "content-type": "application/json",
                     "user-agent": "Mozilla/5.0 (iPad; CPU OS 16_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.47(0x18002f28) NetType/WIFI Language/zh_CN",
-                    "x-wx-token": this.token,
+                    "x-wx-token":this.token,
                 },
                 body: JSON.stringify({
-                    "pid": "",
-                    "extendInfo": {
-                        "youshu": {
-                            "enable": false
-                        },
-                        "quickdeliver": {
-                            "enable": false
-                        },
-                        "source": 1,
-                        "mpScene": 1106,
-                        "channelsource": 5,
-                        "analysis": [],
-                        "wxTemplateId": 7516,
-                        "childTemplateIds": [{
-                            "customId": 90004,
-                            "version": "crm@0.1.14-bigger"
-                        }, {
-                            "customId": 90002,
-                            "version": "ec@43.4"
-                        }, {
-                            "customId": 90006,
-                            "version": "hudong@0.0.202"
-                        }, {
-                            "customId": 90008,
-                            "version": "cms@0.0.422"
-                        }],
-                        "refer": "onecrm-user-point-detail",
-                        "bosTemplateId": 1000001402
-                    },
-                    "i18n": {
-                        "timezone": "8",
-                        "language": "zh"
-                    },
-                    "request": {
-                        "isQueryAllAccount": true,
-                        "isNeedRecordDisplay": true
-                    },
-                    "queryParameter": null,
-                    "storeId": "",
-                    "appid": "wx704de26b0d945f1e",
-                    "basicInfo": {
-                        "vidType": 2,
-                        "productInstanceId": 10635072513,
-                        "bosId": 4021699576513,
-                        "vid": 6016162554513,
-                        "productId": 146,
-                        "merchantId": 2000259035513,
-                        "tcode": "weimob",
-                        "productVersionId": "10003",
-                        "cid": 587535513
-                    }
-                })
+  "pid": "",
+  "extendInfo": {
+    "youshu": {
+      "enable": false
+    },
+    "quickdeliver": {
+      "enable": false
+    },
+    "source": 1,
+    "mpScene": 1106,
+    "channelsource": 5,
+    "analysis": [
+    ],
+    "wxTemplateId": 7516,
+    "childTemplateIds": [
+      {
+        "customId": 90004,
+        "version": "crm@0.1.14-bigger"
+      },
+      {
+        "customId": 90002,
+        "version": "ec@43.4"
+      },
+      {
+        "customId": 90006,
+        "version": "hudong@0.0.202"
+      },
+      {
+        "customId": 90008,
+        "version": "cms@0.0.422"
+      }
+    ],
+    "refer": "onecrm-user-point-detail",
+    "bosTemplateId": 1000001402
+  },
+  "i18n": {
+    "timezone": "8",
+    "language": "zh"
+  },
+  "request": {
+    "isQueryAllAccount": true,
+    "isNeedRecordDisplay": true
+  },
+  "queryParameter": null,
+  "storeId": "",
+  "appid": "wx704de26b0d945f1e",
+  "basicInfo": {
+    "vidType": 2,
+    "productInstanceId": 10635072513,
+    "bosId": 4021699576513,
+    "vid": 6016162554513,
+    "productId": 146,
+    "merchantId": 2000259035513,
+    "tcode": "weimob",
+    "productVersionId": "10003",
+    "cid": 587535513
+  }
+})
             };
             //post方法
             let result = await httpRequest(options);
             console.log(result)
-            if (result ? .data !== null) {
-                $.log(`✅查询成功！`);
-                $.pointMsg = `✅可用积分:${result?.data?.availablePoint}个`;
+            if (result?.data !== null) {
+                    $.log(`✅查询成功！`);
+                    $.pointMsg = `✅可用积分:${result?.data?.availablePoint}个`;
             } else {
                 $.log(`❌查询失败！`);
                 $.pointMsg = `❌查询失败`;
@@ -272,14 +294,18 @@ class UserInfo {
 
 
 
+
 }
 
 
 
 
+
+
+
+
 //获取Cookie
-async
-function getCookie() {
+async function getCookie() {
     if ($request && $request.method != 'OPTIONS') {
         const tokenValue = $request.headers['x-wx-token'] || $request.headers['X-WX-Token'];
         if (tokenValue) {
@@ -293,10 +319,9 @@ function getCookie() {
 
 
 //免责声明
-async
-function getNotice() {
+async function getNotice() {
     try {
-        const urls = ["https://raw.githubusercontent.com/czy13724/Quantumult-X/main/NAvailable/Description.json", "https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Declaration.json"];
+        const urls = ["https://raw.githubusercontent.com/czy13724/Quantumult-X/main/NAvailable/Declaration.json", "https://raw.githubusercontent.com/czy13724/Quantumult-X/main/NAvailable/Description.json"];
         for (const url of urls) {
             const options = {
                 url,
@@ -315,17 +340,17 @@ function getNotice() {
 
 
 
+
+
 //主程序执行入口
-!(async() => {
+!(async () => {
     //没有设置变量,执行Cookie获取
     if (typeof $request != "undefined") {
         await getCookie();
         return;
     }
     //未检测到ck，退出
-    if (!(await checkEnv())) {
-        throw new Error(`❌未检测到ck，请添加环境变量`)
-    };
+    if (!(await checkEnv())) { throw new Error(`❌未检测到ck，请添加环境变量`) };
     if (userList.length > 0) {
         await main();
     }
@@ -333,9 +358,9 @@ function getNotice() {
         await BarkNotify($, $.barkKey, $.name, $.notifyMsg.join('\n')); //推送Bark通知
     };
 })()
-.catch((e) => $.notifyMsg.push(e.message || e)) //捕获登录函数等抛出的异常, 并把原因添加到全局变量(通知)
-    .finally(async() => {
-        await SendMsg($.notifyMsg.join('\n')) //带上总结推送通知
+    .catch((e) => $.notifyMsg.push(e.message || e))//捕获登录函数等抛出的异常, 并把原因添加到全局变量(通知)
+    .finally(async () => {
+        await SendMsg($.notifyMsg.join('\n'))//带上总结推送通知
         $.done(); //调用Surge、QX内部特有的函数, 用于退出脚本执行
     });
 
@@ -343,43 +368,40 @@ function getNotice() {
 
 // 双平台log输出
 function DoubleLog(data) {
-        if ($.isNode()) {
-            if (data) {
-                console.log(`${data}`);
-                $.notifyMsg.push(`${data}`);
-            }
-        } else {
+    if ($.isNode()) {
+        if (data) {
             console.log(`${data}`);
             $.notifyMsg.push(`${data}`);
         }
+    } else {
+        console.log(`${data}`);
+        $.notifyMsg.push(`${data}`);
     }
-    // DEBUG
-
+}
+// DEBUG
 function debug(text, title = 'debug') {
-        if ($.is_debug === 'true') {
-            if (typeof text == "string") {
-                console.log(`\n-----------${title}------------\n`);
-                console.log(text);
-                console.log(`\n-----------${title}------------\n`);
-            } else if (typeof text == "object") {
-                console.log(`\n-----------${title}------------\n`);
-                console.log($.toStr(text));
-                console.log(`\n-----------${title}------------\n`);
-            }
+    if ($.is_debug === 'true') {
+        if (typeof text == "string") {
+            console.log(`\n-----------${title}------------\n`);
+            console.log(text);
+            console.log(`\n-----------${title}------------\n`);
+        } else if (typeof text == "object") {
+            console.log(`\n-----------${title}------------\n`);
+            console.log($.toStr(text));
+            console.log(`\n-----------${title}------------\n`);
         }
     }
-    //把json 转为以 ‘&’ 连接的字符串
-
+}
+//把json 转为以 ‘&’ 连接的字符串
 function toParams(body) {
-    var params = Object.keys(body).map(function(key) {
+    var params = Object.keys(body).map(function (key) {
         return encodeURIComponent(key) + "=" + encodeURIComponent(body[key]);
     }).join("&");
     return params;
 }
 
 //检查变量
-async
-function checkEnv() {
+async function checkEnv() {
     if (userCookie) {
         // console.log(userCookie);
         let e = envSplitor[0];
@@ -394,18 +416,17 @@ function checkEnv() {
         console.log("未找到CK");
         return;
     }
-    return console.log(`共找到${userCount}个账号`), true; //true == !0
+    return console.log(`共找到${userCount}个账号`), true;//true == !0
 }
 
 /**
  * 随机整数生成
  */
 function randomInt(min, max) {
-        return Math.round(Math.random() * (max - min) + min);
-    }
-    // 发送消息
-async
-function SendMsg(message) {
+    return Math.round(Math.random() * (max - min) + min);
+}
+// 发送消息
+async function SendMsg(message) {
     if (!message) return;
     if (Notify > 0) {
         if ($.isNode()) {
@@ -419,7 +440,7 @@ function SendMsg(message) {
 }
 
 
-/** ---------------------------------固定/** ---------------------------------固定不动区域----------------------------------------- */
+/** ---------------------------------固定不动区域----------------------------------------- */
 // prettier-ignore
 
 //请求函数函数二次封装
