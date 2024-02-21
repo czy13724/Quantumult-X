@@ -17,21 +17,12 @@
 
 脚本默认 上午9:35 执行
 -----------------------------------------------
-****************
-*    Surge     *
-****************
-* ShadowRocket *
-****************
-*    LanceX    *
-****************
-
-[Script]
-# （默认上午9:35 执行，如需更改请自行修改cron表达式）
-蒙牛母婴签到 = type=cron, cronexp="35 9 * * *", script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/mnmy.js
------------------------------------------------
 **************
 *Quantumult X*
 **************
+[task_local]
+35 9 * * * https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/mnmy.js, tag=蒙牛母婴签到, img-url=https://raw.githubusercontent.com/czy13724/LeviIcons/main/leviicons/mnmy.png, enabled=true
+
 [rewrite_local]
 # 签到
 ^https:\/\/xapi\.weimob\.com\/api3\/onecrm\/mactivity\/sign\/misc\/sign\/activity\/core\/c\/sign$ url script-request-body https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/mnmy.js
@@ -41,8 +32,6 @@ https:\/\/xapi\.weimob\.com\/api3(?:\/.*)?$ url script-request-header https://ra
 [mitm]
 hostname = xapi.weimob.com
 
-[task_local]
-35 9 * * * https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/mnmy.js, tag=蒙牛母婴签到, img-url=https://raw.githubusercontent.com/czy13724/LeviIcons/main/leviicons/mnmy.png, enabled=true
 -----------------------------------------------
 *************************
 【 签到脚本使用教程 】:
