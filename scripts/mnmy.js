@@ -18,9 +18,9 @@
 **************
 [rewrite_local]
 # 签到
-^https:\/\/xapi\.weimob\.com\/api3\/onecrm\/mactivity\/sign\/misc\/sign\/activity\/core\/c\/sign$ url script-request-body xbackvpn.js
+^https:\/\/xapi\.weimob\.com\/api3\/onecrm\/mactivity\/sign\/misc\/sign\/activity\/core\/c\/sign$ url script-request-body https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/mnmy.js
 # 获取ck
-https:\/\/xapi\.weimob\.com\/api3(?:\/.*)?$ url script-request-header xbackvpn.js
+https:\/\/xapi\.weimob\.com\/api3(?:\/.*)?$ url script-request-header https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/mnmy.js
 
 [mitm]
 hostname = xapi.weimob.com
