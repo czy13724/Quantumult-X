@@ -132,7 +132,7 @@ async signin() {
                     "sid": "10006",
                     "Access-Token":this.token,
                 },
-                body: JSON.stringify({})
+               // body: JSON.stringify({})
             };
             //post方法
             let result = await httpRequest(options);
