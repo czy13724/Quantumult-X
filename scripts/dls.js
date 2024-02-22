@@ -132,7 +132,7 @@ async signin() {
                     "sid": "10006",
                     "Access-Token":this.token,
                 },
-                body: {}
+                body: JSON.stringify({})
             };
             //post方法
             let result = await httpRequest(options);
@@ -163,7 +163,7 @@ async point() {
                     "Access-Token":this.token,
                     "sid": "10006",
                 },
-                //body: {}
+                //body: JSON.stringify({})
             };
             //post方法
             let result = await httpRequest(options);
