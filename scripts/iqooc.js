@@ -8,10 +8,10 @@
 项目作者：Levi(@czy13724)
 使用说明：微信小程序IQOO社区签到，获取到ck可用。
 感谢樱花佬的脚本框架@sliverkiss https://t.me/sliverkiss
-脚本功能：积分可用于用于抽奖和兑换虚拟勋章，实际价值为零。详情参考小程序。
-更新日期：02/12/2024
+脚本功能：积分可用于用于抽奖和兑换实物商品或虚拟勋章，商品不定期更新 详情参考小程序。
+更新日期：02/12/2024签到任务 02/23/2024增加每日点赞任务 每日浏览帖子任务
 反馈群组：https://t.me/IPAs_Dd
-⚠️可复制本脚本头部链接进行远程引用，无需借助Script-Hub进行转换。其他应用请参考上述头部配置cron表达式即可。
+⚠️可复制本脚本头部链接进行远程引用，无需借助Script-Hub进行转换。其他应用请参考头部配置cron表达式即可。
 ------------------------------------------
 *************************
 【 签到脚本使用教程 】:
@@ -23,7 +23,8 @@
 如无法抓去userId则进入小程序，点击'我的'，查看消息上方的爱酷号，爱酷号等于userId。
 3.(可选)关闭获取cookie脚本，防止产生不必要的mitm
 4.暂不支持多账号，若用@分割多帐号，也会提示登录但无法签到，请知悉。等待增加。如Authorization1@Authorization2；userId1@userId2
-5.提示'接口调用成功'即为签到成功。不填写'userId'不影响签到功能只影响查询积分功能。
+5.提示'接口调用成功'即为签到成功。
+⚠️自动获取ck指iqooc_data，不会抓取iqooc_userId，需要手动填入到boxjs，不填写'iqooc_userId'不影响签到功能只影响查询积分功能。
 ------------------------------------------
 ⚠️【免责声明】
 ------------------------------------------
@@ -39,22 +40,26 @@
 ***************
 
 Surge, ShadowRocket配置如下：
-# 本地-Script定时任务
+
 [Script]
 # （默认上午9点 执行，如需更改请自行修改cron表达式）
 IQOO社区签到 = type=cron, cronexp="0 9 * * *", script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/iqooc.js, timeout=60, script-update-interval=-1
-
+IQOO社区获取ck = type=http-request,pattern=^https:\/\/bbs-api\.iqoo\.com\/api\/v3(?:\/.*)?$,script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/iqooc.js
 *********
 Quantumult X配置如下：
 
+[task_local]
+0 9 * * * https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/iqooc.js, tag=IQOO社区签到, img-url=https://raw.githubusercontent.com/czy13724/LeviIcons/main/leviicons/iqooc.png, enabled=true
+
 [rewrite_local]
+# 签到
 ^https:\/\/bbs-api\.iqoo\.com\/api\/v3\/sign$ url script-request-body https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/iqooc.js
+# 获取ck
+https:\/\/bbs-api\.iqoo\.com\/api\/v3(?:\/.*)?$ url script-request-header https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/iqooc.js
 
 [mitm]
 hostname = bbs-api.iqoo.com
 
-[task_local]
-0 9 * * * https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/iqooc.js, tag=IQOO社区签到, img-url=https://raw.githubusercontent.com/czy13724/LeviIcons/main/leviicons/iqooc.png, enabled=true
 */
 
 // env.js 全局
@@ -76,6 +81,9 @@ $.notifyMsg = [];
 //bark推送
 $.barkKey = ($.isNode() ? process.env["bark_key"] : $.getdata("bark_key")) || '';
 //---------------------- 自定义变量区域 -----------------------------------
+const threadIds = [
+ "2064039", "2063978", "2029605", "2026651", "2053784", "2057143", "2060947", "2025633", "2032512", "2054035", "2040343", "2058821", "2031946", "2051936", "2054436", "2058848", "2040461", "2053953", "2031202", "2025830", "2057010", "2051796", "2032418", "2025336", "2037692", "2026093",];
+
 
 // 脚本入口函数main()
 async function main() {
@@ -93,6 +101,8 @@ async function main() {
             // 将ck过期消息存入消息数组
             $.notifyMsg.push(`❌账号${user.index} >> CK已过期，请重新抓取!`)
         }
+        await user.toggleLike();
+        await user.visitPostsAndGetTips(threadIds);
     }
 }
 
@@ -107,6 +117,18 @@ class UserInfo {
     getRandomTime() {
         return randomInt(1000, 3000)
     }
+    // 随机选取子数组
+    getRandomSubarray(arr, size) {
+      let shuffled = arr.slice(0), i = arr.length, min = i - size, temp, index;
+      while (i-- > min) {
+        index = Math.floor((i + 1) * Math.random());
+        temp = shuffled[index];
+        shuffled[index] = shuffled[i];
+        shuffled[i] = temp;
+      }
+      return shuffled.slice(min);
+    }
+
 
 
 //签到
@@ -121,7 +143,7 @@ async signin() {
                 "User-Agent": "Mozilla/5.0 (iPad; CPU OS 16_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.47(0x18002f28) NetType/WIFI Language/zh_CN",
                 "Authorization":this.token,
             },
-            body: {}
+            body: JSON.stringify({})
         };
         //post方法
         let result = await httpRequest(options);
@@ -142,6 +164,73 @@ async signin() {
         console.log(e);
     }
 }
+
+
+//4次点赞任务(每日合计20积分)
+async toggleLike() {
+    try {
+        for (let i = 0; i < 4; i++) {
+            const favourite = {
+                id: 2062759,
+                postId: 8718480,
+                data: {
+                    attributes: {
+                        isLiked: i % 2 === 0
+                    }
+                }
+            };
+            const options = {
+                url: 'https://bbs-api.iqoo.com/api/v3/posts.update',
+                method: 'POST',
+                headers: {
+                "content-type": "application/json",
+                "User-Agent": "Mozilla/5.0 (iPad; CPU OS 16_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.47(0x18002f28) NetType/WIFI Language/zh_CN",
+                "Authorization":this.token,
+            },
+                
+                body: JSON.stringify(favourite),
+            };
+
+            let favour = await httpRequest(options);
+            if (favour?.Code === 0) {
+                console.log(`✅ 第${i + 1}次点赞并取消成功，获得5积分`);
+            } else {
+                console.log(`❌ 第${i + 1}次点赞并取消失败`);
+            }
+        } console.log(`✅点赞任务完成4次共获得20积分`);
+    } catch (e) {
+        console.error(`请求异常: ${e}`);
+    }
+}
+
+
+
+// 访问选定的帖子并获取积分(每日合计10积分)
+  async visitPostsAndGetTips(threadIds) {
+    // 从 threadIds 中随机选取 2 个 ID
+    let selectedThreadIds = this.getRandomSubarray(threadIds, 2);
+    console.log('随机访问帖子任务:', selectedThreadIds);
+
+    for (let threadId of selectedThreadIds) {
+      console.log(`访问帖子: ${threadId}`);
+
+        try{
+            let detailResult = await httpRequest({
+                url: `https://bbs-api.iqoo.com/api/v3/thread.detail?threadId=${threadId}`,
+                headers: {
+                    "content-type": "application/json",
+                    "User-Agent": "Mozilla/5.0 (iPad; CPU OS 16_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.47(0x18002f28) NetType/WIFI Language/zh_CN",
+                    "Authorization": this.token,
+                }
+            }); 
+        console.log(`✅访问 ${threadId} 帖子成功`, detailResult);
+      } catch (error) {
+        console.error(`❌访问 ${threadId}帖子失败`, error);
+        }         
+    }
+console.log('⏏️结束访问帖子任务');
+}
+
 
 
 // 积分查询
