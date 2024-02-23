@@ -130,7 +130,6 @@ class UserInfo {
     }
 
 
-
 //签到
 async signin() {
     try {
@@ -186,8 +185,7 @@ async toggleLike() {
                 "content-type": "application/json",
                 "User-Agent": "Mozilla/5.0 (iPad; CPU OS 16_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.47(0x18002f28) NetType/WIFI Language/zh_CN",
                 "Authorization":this.token,
-            },
-                
+            },               
                 body: JSON.stringify(favourite),
             };
 
@@ -204,7 +202,6 @@ async toggleLike() {
 }
 
 
-
 // 访问选定的帖子并获取积分(每日合计10积分)
   async visitPostsAndGetTips(threadIds) {
     // 从 threadIds 中随机选取 2 个 ID
@@ -213,7 +210,6 @@ async toggleLike() {
 
     for (let threadId of selectedThreadIds) {
       console.log(`访问帖子: ${threadId}`);
-
         try{
             let detailResult = await httpRequest({
                 url: `https://bbs-api.iqoo.com/api/v3/thread.detail?threadId=${threadId}`,
@@ -230,7 +226,6 @@ async toggleLike() {
     }
 console.log('⏏️结束访问帖子任务');
 }
-
 
 
 // 积分查询
@@ -265,7 +260,6 @@ console.log('⏏️结束访问帖子任务');
  }
 
 
-
 //获取Cookie
 async function getCookie() {
     if ($request && $request.method != 'OPTIONS') {
@@ -278,7 +272,6 @@ async function getCookie() {
         }
     }
 }
-
 
 
 //免责声明
