@@ -1,3 +1,8 @@
+// Quantumult X引用地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/autoCAD.js
+// Surge/Shadowrocket 模块地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Surge/autoCAD.sgmodule
+// Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/autoCAD.plugin
+// Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/autoCAD.stoverride
+
 /*
 项目名称： AutoCAD
 项目作者： David
