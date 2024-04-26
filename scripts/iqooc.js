@@ -3,6 +3,9 @@
 // Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/iqooc.plugin
 // Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/iqooc.stoverride
 
+⚠️⚠️该脚本暂不可用，等待修复…
+⚠️该脚本暂不可用，等待修复…
+
 /*
 项目名称：IQOO社区
 项目作者：Levi(@czy13724)
