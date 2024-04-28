@@ -3,8 +3,6 @@
 // Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/iqooc.plugin
 // Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/iqooc.stoverride
 
-⚠️⚠️该脚本暂不可用，等待修复…
-⚠️该脚本暂不可用，等待修复…
 
 /*
 项目名称：IQOO社区
@@ -12,7 +10,7 @@
 使用说明：微信小程序IQOO社区签到，获取到ck可用。
 感谢樱花佬的脚本框架@sliverkiss https://t.me/sliverkiss
 脚本功能：积分可用于用于抽奖和兑换实物商品或虚拟勋章，商品不定期更新 详情参考小程序。
-更新日期：02/12/2024签到任务 02/23/2024增加每日点赞任务 每日浏览帖子任务
+更新日期：02/12/2024签到任务 02/23/2024增加每日点赞任务 每日浏览帖子任务 04/28/2024修复脚本
 反馈群组：https://t.me/IPAs_Dd
 ⚠️可复制本脚本头部链接进行远程引用，无需借助Script-Hub进行转换。其他应用请参考头部配置cron表达式即可。
 ------------------------------------------
@@ -20,14 +18,13 @@
 【 签到脚本使用教程 】:
 *************************
 1.远程引用重写开启抓包并打开小程序随意浏览，提示获取ck成功则可以使用该脚本。
-2.如无法获取ck请开启抓包随意浏览，抓包https://bbs-api.iqoo.com/api/...域名下的Authorization和userId。(如找不到Authorization则重放该记录就会提示获取ck成功)
-打开boxjs->我的->数据查看器->在数据键输入iqooc_data,点击VIEW->在数据内容输入抓取到的Authorization，点击保存。
+2.ck包含sign和authorization部分。
 打开boxjs->我的->数据查看器->在数据键输入iqooc_userId,点击VIEW->在数据内容输入抓取到的userId，点击保存。
 如无法抓去userId则进入小程序，点击'我的'，查看消息上方的爱酷号，爱酷号等于userId。
 3.(可选)关闭获取cookie脚本，防止产生不必要的mitm
-4.暂不支持多账号，若用@分割多帐号，也会提示登录但无法签到，请知悉。等待增加。如Authorization1@Authorization2；userId1@userId2
+4.暂不支持多账号，若用@分割多帐号，也会提示登录但无法签到，请知悉。等待增加。
 5.提示'接口调用成功'即为签到成功。
-⚠️自动获取ck指iqooc_data，不会抓取iqooc_userId，需要手动填入到boxjs，不填写'iqooc_userId'不影响签到功能只影响查询积分功能。
+⚠️自动获取ck指iqooc_data，不会抓取iqooc_userId，需要手动填入到boxjs，不填写'iqooc_userId'不影响签到功能会影响查询积分功能。
 ------------------------------------------
 ⚠️【免责声明】
 ------------------------------------------
@@ -110,9 +107,11 @@ async function main() {
 }
 
 class UserInfo {
-    constructor(str) {
+    constructor(tokenValue) {
+		const str = JSON.parse(tokenValue);
         this.index = ++userIdx;
-        this.token = str;
+        this.token = str.token;
+		this.sign = str.sign;
         this.ckStatus = true;
         this.drawStatus = true;
     }
@@ -144,6 +143,7 @@ async signin() {
                 "content-type": "application/json",
                 "User-Agent": "Mozilla/5.0 (iPad; CPU OS 16_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.47(0x18002f28) NetType/WIFI Language/zh_CN",
                 "Authorization":this.token,
+                "SIGN":this.sign,
             },
             body: JSON.stringify({})
         };
@@ -188,6 +188,7 @@ async toggleLike() {
                 "content-type": "application/json",
                 "User-Agent": "Mozilla/5.0 (iPad; CPU OS 16_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.47(0x18002f28) NetType/WIFI Language/zh_CN",
                 "Authorization":this.token,
+                "SIGN":this.sign,
             },               
                 body: JSON.stringify(favourite),
             };
@@ -217,9 +218,10 @@ async toggleLike() {
             let detailResult = await httpRequest({
                 url: `https://bbs-api.iqoo.com/api/v3/thread.detail?threadId=${threadId}`,
                 headers: {
-                    "content-type": "application/json",
-                    "User-Agent": "Mozilla/5.0 (iPad; CPU OS 16_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.47(0x18002f28) NetType/WIFI Language/zh_CN",
-                    "Authorization": this.token,
+                "content-type": "application/json",
+                "User-Agent": "Mozilla/5.0 (iPad; CPU OS 16_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.47(0x18002f28) NetType/WIFI Language/zh_CN",
+                "Authorization":this.token,
+                "SIGN":this.sign,
                 }
             }); 
         console.log(`✅访问 ${threadId} 帖子成功`, detailResult);
@@ -242,6 +244,7 @@ console.log('⏏️结束访问帖子任务');
                      "content-type": "application/json",
                      "User-Agent": "Mozilla/5.0 (iPad; CPU OS 16_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.47(0x18002f28) NetType/WIFI Language/zh_CN",
                      "Authorization":this.token,
+					 "SIGN":this.sign,
                  },
                  // body: {}
              };
@@ -266,9 +269,16 @@ console.log('⏏️结束访问帖子任务');
 //获取Cookie
 async function getCookie() {
     if ($request && $request.method != 'OPTIONS') {
-        const tokenValue = $request.headers['access-token'] || $request.headers['authorization'] || $request.headers['Authorization'];
-        if (tokenValue) {
-            $.setdata(tokenValue, ckName);
+        // 尝试从Header中捕获 Authorization 和 sign
+        const authValue = $request.headers['Authorization'] || $request.headers['authorization'];
+        const signValue = $request.headers['sign'] || $request.headers['Sign'] || $request.headers['SIGN']; 
+
+        //检查两个关键值是否都已捕获
+        if (authValue && signValue) {
+            // 如果两个值都捕获到了，则进行存储
+            const tokenValue = { token: authValue, sign: signValue }; 
+            // 用JSON.stringify将对象转换成字符串进行保存
+            $.setdata(JSON.stringify(tokenValue), ckName);
             $.msg($.name, "", "🎉获取签到Cookie成功");
         } else {
             $.msg($.name, "", "❌获取签到Cookie失败");
