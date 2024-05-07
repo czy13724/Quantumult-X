@@ -10,7 +10,7 @@ http:
 
   script:  
   - match: ^https?:\/\/api\.revenuecat\.com\/v1\/(subscribers\/[^\/]+$|receipts$)
-    name: whisper memos_46
+    name: whisper memos_69
     type: response
     require-body: true
     max-size: -1
@@ -18,7 +18,7 @@ http:
 
 
 script-providers:
-  "whisper memos_46":
+  "whisper memos_69":
     url: https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/Whispermemos.js
     interval: 86400
 

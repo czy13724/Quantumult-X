@@ -10,7 +10,7 @@ http:
 
   script:  
   - match: ^https:\/\/api\.mondlylanguages\.com\/v3\/ios\/user\/sync
-    name: MondlyPremium_46
+    name: MondlyPremium_69
     type: response
     require-body: true
     max-size: -1
@@ -18,7 +18,7 @@ http:
 
 
 script-providers:
-  "MondlyPremium_46":
+  "MondlyPremium_69":
     url: https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/MondlyPremium.js
     interval: 86400
 
