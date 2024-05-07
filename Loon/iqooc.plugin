@@ -1,5 +1,5 @@
 #!name=IQOO社区
-#!desc=微信小程序IQOO社区签到，获取到ck可用。
+#!desc=微信小程序IQOO社区签到，进入小程序后点击‘我的’，提示获取到Token可用。
 #!====================================
 #!⚠️【免责声明】
 #!------------------------------------------
@@ -15,4 +15,4 @@
 hostname = bbs-api.iqoo.com
 [Script]
 http-request ^https:\/\/bbs-api\.iqoo\.com\/api\/v3\/sign$,script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/iqooc.js, requires-body=true, timeout=60, tag=IQOO社区
-http-request https:\/\/bbs-api\.iqoo\.com\/api\/v3(?:\/.*)?$,script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/iqooc.js, requires-body=true, timeout=60, tag=IQOO社区
+http-response ^https:\/\/bbs-api\.iqoo\.com\/api\/v3\/user\?userId=,script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/iqooc.js, requires-body=true, timeout=60, tag=IQOO社区
