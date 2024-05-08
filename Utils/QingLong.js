@@ -11,7 +11,7 @@ QL:{
 }
 
 const $ = new Env("青龙自动同步");//脚本名称
-let QL = $.getjson("SAKURA_QL") || {};
+let QL = $.getjson("LEVI_QL") || {};
 
 //加载青龙模块
 async function loadQingLong() {
