@@ -1,8 +1,8 @@
 /**************************************
 LeviUtil
-        by Levi
+        by 感谢樱花佬的脚本工具箱
 ----------------------------------------
-//Sakura多功能工具模块，引入模块方法如下：
+//Levi多功能工具模块，引入模块方法如下：
 async function loadLeviUtils() {
     let code = ($.isNode() ? process.env['LeviUtil_code'] : $.getdata('LeviUtil_code')) || '';
     if (code && Object.keys(code).length) {
