@@ -11,7 +11,7 @@ http:
 
   script:  
   - match: https:\/\/(api\.mr\.pixocial\.com\/v1\/manual_unlock|newbeee-api\.beautyplus\.com\/api\/v1\/asset\/balance)
-    name: BeautyPlus_69
+    name: BeautyPlus_4
     type: response
     require-body: true
     max-size: -1
@@ -19,7 +19,7 @@ http:
 
 
 script-providers:
-  "BeautyPlus_69":
+  "BeautyPlus_4":
     url: https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/BeautyPlus.js
     interval: 86400
 

@@ -10,14 +10,14 @@ http:
 
   script:  
   - match: ^https:\/\/bbs-api\.iqoo\.com\/api\/v3\/sign$
-    name: IQOO社区_69
+    name: IQOO社区_4
     type: request
     require-body: true
     max-size: -1
     timeout: 60
   
   - match: ^https:\/\/bbs-api\.iqoo\.com\/api\/v3\/user\?userId=
-    name: IQOO社区_69
+    name: IQOO社区_4
     type: response
     require-body: true
     max-size: -1
@@ -25,7 +25,7 @@ http:
 
 
 script-providers:
-  "IQOO社区_69":
+  "IQOO社区_4":
     url: https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/iqooc.js
     interval: 86400
 
