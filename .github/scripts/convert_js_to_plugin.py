@@ -48,7 +48,7 @@ def js_to_plugin(js_content):
         if last_part_match:
             project_name = os.path.splitext(os.path.basename(last_part_match.group(1).strip()))[0]
         else:
-            raise ValueError("文件内容匹配错误，请按照要求修改，详情请按照levifree.tech文章内容修改")
+            raise ValueError("文件内容匹配错误，请按照要求修改，详情请按照blog.levifree.us.kg文章内容修改")
 
         project_desc = f"{project_name} is automatically converted by LEVI SCRIPT; if not available plz use Script-Hub."
 
@@ -96,7 +96,7 @@ def js_to_plugin(js_content):
         script_path = match.group(3).strip()
 
         # Append the rewrite rule to the plugin content
-        plugin_content += f"http-{script_type} {pattern},script-path={script_path}, requires-body=true, timeout=60, tag={project_name}\n"
+        plugin_content += f"http-{script_type} {pattern} script-path={script_path}, requires-body=true, timeout=60, tag={project_name}\n"
 
     return plugin_content
 
