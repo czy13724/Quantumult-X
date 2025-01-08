@@ -137,13 +137,13 @@ async signin() {
             //post方法
             let result = await httpRequest(options);
             console.log(result)
-                if(result?.code === -1){
-                    $.log(`❌重复签到！`);
-                    $.signMsg = `❌重复签到`;
-                } else{
-                    $.log(`✅签到成功!请勿重复签到!!`);
-                    $.signMsg = `✅签到成功!请勿重复签到!!`;
-                } 
+            if(result?.data=== null){
+                $.log(`${result?.message}`);
+                $.signMsg = `${result?.message}`;
+            } else{
+                $.log(`${result?.message}`);
+                $.signMsg = `${result?.message}`
+            } 
         } catch (e) {
             console.log(e);
         }
@@ -181,18 +181,7 @@ async point() {
         }
     }
 
-
-
-
-
 }
-
-
-
-
-
-
-
 
 //获取Cookie
 async function getCookie() {
@@ -226,11 +215,6 @@ async function getNotice() {
         console.log(e);
     }
 }
-
-
-
-
-
 
 //主程序执行入口
 !(async () => {
