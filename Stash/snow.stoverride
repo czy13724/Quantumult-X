@@ -10,7 +10,7 @@ http:
 
   script:  
   - match: ^https:\/\/user-snow-api\.snow\.me\/v1\/purchase\/subscription\/subscriber\/status$
-    name: SNOW-Ai写真  +  EPIK AI 两个软件_64
+    name: SNOW-Ai写真  +  EPIK AI 两个软件_44
     type: response
     require-body: true
     max-size: -1
@@ -18,7 +18,7 @@ http:
 
 
 script-providers:
-  "SNOW-Ai写真  +  EPIK AI 两个软件_64":
+  "SNOW-Ai写真  +  EPIK AI 两个软件_44":
     url: https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/snow.js
     interval: 86400
 
