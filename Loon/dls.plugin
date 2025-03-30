@@ -14,5 +14,5 @@
 [MITM]
 hostname = vip.ixiliu.cn
 [Script]
-http-request ^https:\/\/vip\.ixiliu\.cn\/mp\/sign\/applyV2$,script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/dls.js, requires-body=true, timeout=60, tag=杜蕾斯会员中心小程序签到
-http-request ^https:\/\/vip\.ixiliu\.cn\/mp\/user\/info$,script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/dls.js, requires-body=true, timeout=60, tag=杜蕾斯会员中心小程序签到
+http-request ^https:\/\/vip\.ixiliu\.cn\/mp\/sign\/applyV2$ script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/dls.js, requires-body=true, timeout=60, tag=杜蕾斯会员中心小程序签到
+http-request ^https:\/\/vip\.ixiliu\.cn\/mp\/user\/info$ script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/dls.js, requires-body=true, timeout=60, tag=杜蕾斯会员中心小程序签到

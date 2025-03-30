@@ -13,4 +13,4 @@
 [MITM]
 hostname = *.snow.me
 [Script]
-http-response ^https:\/\/user-snow-api\.snow\.me\/v1\/purchase\/subscription\/subscriber\/status$,script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/snow.js, requires-body=true, timeout=60, tag=SNOW-Ai写真  +  EPIK AI 两个软件
+http-response ^https:\/\/user-snow-api\.snow\.me\/v1\/purchase\/subscription\/subscriber\/status$ script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/snow.js, requires-body=true, timeout=60, tag=SNOW-Ai写真  +  EPIK AI 两个软件

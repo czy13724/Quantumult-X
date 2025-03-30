@@ -13,4 +13,4 @@
 [MITM]
 hostname = api.revenuecat.com
 [Script]
-http-response ^https?:\/\/api\.revenuecat\.com\/v1\/(subscribers\/[^\/]+$|receipts$),script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/imprint.js, requires-body=true, timeout=60, tag=imprint
+http-response ^https?:\/\/api\.revenuecat\.com\/v1\/(subscribers\/[^\/]+$|receipts$) script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/imprint.js, requires-body=true, timeout=60, tag=imprint

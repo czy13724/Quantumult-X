@@ -13,5 +13,5 @@
 [MITM]
 hostname = api.revenuecat.com
 [Script]
-http-response ^https?:\/\/api\.revenuecat\.com\/v1\/(subscribers\/[^\/]+$|receipts$),script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/Revenuecat.js, requires-body=true, timeout=60, tag=revenuecat合集 （此合集只包含10.5及以后的软件）
-http-request ^https?:\/\/api\.revenuecat\.com\/v1\/(subscribers\/[^\/]+$|receipts$),script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/Revenuecat.js, requires-body=true, timeout=60, tag=revenuecat合集 （此合集只包含10.5及以后的软件）
+http-response ^https?:\/\/api\.revenuecat\.com\/v1\/(subscribers\/[^\/]+$|receipts$) script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/Revenuecat.js, requires-body=true, timeout=60, tag=revenuecat合集 （此合集只包含10.5及以后的软件）
+http-request ^https?:\/\/api\.revenuecat\.com\/v1\/(subscribers\/[^\/]+$|receipts$) script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/Revenuecat.js, requires-body=true, timeout=60, tag=revenuecat合集 （此合集只包含10.5及以后的软件）

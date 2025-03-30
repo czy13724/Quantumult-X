@@ -13,4 +13,4 @@
 [MITM]
 hostname = api.getmimo.com
 [Script]
-http-response https://api.getmimo.com/v1/subscriptions,script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/MimoPro.js, requires-body=true, timeout=60, tag=Mimo
+http-response https://api.getmimo.com/v1/subscriptions script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/MimoPro.js, requires-body=true, timeout=60, tag=Mimo

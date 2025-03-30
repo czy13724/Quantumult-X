@@ -13,4 +13,4 @@
 [MITM]
 hostname = *.camera360.com
 [Script]
-http-response https:\/\/(?:cdn-bm\.camera360\.com\/api\/iap\/check-receipt|phototask-api\.360in\.com\/user\/profile|cdn-bm\.camera360\.com\/api\/pay\/recovery),script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/camera360.js, requires-body=true, timeout=60, tag=camera360
+http-response https:\/\/(?:cdn-bm\.camera360\.com\/api\/iap\/check-receipt|phototask-api\.360in\.com\/user\/profile|cdn-bm\.camera360\.com\/api\/pay\/recovery) script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/camera360.js, requires-body=true, timeout=60, tag=camera360

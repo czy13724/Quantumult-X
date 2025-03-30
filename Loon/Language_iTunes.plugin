@@ -13,4 +13,4 @@
 [MITM]
 hostname = buy.itunes.apple.com
 [Script]
-http-response ^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$,script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/Language_iTunes.js, requires-body=true, timeout=60, tag=语言类iTunes合集（此合集只包含learn xx with flashcards）
+http-response ^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$ script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/Language_iTunes.js, requires-body=true, timeout=60, tag=语言类iTunes合集（此合集只包含learn xx with flashcards）
