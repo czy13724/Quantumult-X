@@ -1,0 +1,24 @@
+name: |-
+  adapty-合集
+desc: |-
+  You need to crate free account first and use the script
+
+http:
+
+  mitm:
+    - "api.adapty.io"
+
+  script:  
+  - match: ^https?:\/\/api\.adapty\.io\/api\/v\d\/sdk\/(analytics\/profiles|in-apps\/(apple\/receipt\/validate|purchase-containers)|purchase\/app-store)
+    name: adapty-合集_64
+    type: response
+    require-body: true
+    max-size: -1
+    timeout: 60
+
+
+script-providers:
+  "adapty-合集_64":
+    url: https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/adatpy.js
+    interval: 86400
+

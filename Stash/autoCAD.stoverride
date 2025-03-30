@@ -10,7 +10,7 @@ http:
 
   script:  
   - match: ^https:\/\/app\.autocad360\.com\/entitlements\/v2\/me\/status
-    name: AutoCAD_4
+    name: AutoCAD_64
     type: response
     require-body: true
     max-size: -1
@@ -18,7 +18,7 @@ http:
 
 
 script-providers:
-  "AutoCAD_4":
+  "AutoCAD_64":
     url: https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/autoCAD.js
     interval: 86400
 
