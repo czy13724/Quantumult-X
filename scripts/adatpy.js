@@ -9,7 +9,7 @@
 更新日期：2025-03-29
 项目作者：ddm1023
 电报频道：https://t.me/ddm1023
-使用说明： You need to crate free account first and use the script
+使用说明： You need to create free account first and use the script
 使用声明： 仅供个人参考学习交流，勿用于其它用途
 
 **************************************
