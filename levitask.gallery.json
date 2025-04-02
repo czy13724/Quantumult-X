@@ -3,7 +3,7 @@
     "description": "如有侵权请联系@PMLevibot删除。tg机器人：https://t.me/PMLevibot",
     "task": [
         {
-            "config": "0 23 * * * https://gist.githubusercontent.com/czy13724/fe5faca64d0a2202fe61335025446dad/raw/919219c9344c98ed6ee67e9e222716bcb3c554a4/nflst.js, tag=nflst, enabled=false"
+            "config": "12 1 * * * https://gist.githubusercontent.com/czy13724/fe5faca64d0a2202fe61335025446dad/raw/919219c9344c98ed6ee67e9e222716bcb3c554a4/nflst.js, tag=nflst, enabled=false"
         }
     ]
 }
