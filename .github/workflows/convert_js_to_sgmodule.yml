@@ -1,0 +1,72 @@
+# author:Levi
+# 搭配convert js to sgmodule.py使用。可将qx的js/conf/snippet文件转换为sgmodule文件。使用方法见博客。
+
+name: convert js to sgmodule
+
+on:
+  push:
+    paths:
+      - 'scripts/**' # Trigger on changes in scripts folder
+  pull_request:
+    paths:
+      - 'Surge/**' # Trigger on changes in surge folder
+  workflow_dispatch:
+
+jobs:
+  generate_sgmodule:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.8
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install PyGithub
+
+      - name: Run script
+        run: python .github/scripts/convert_js_to_sgmodule.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}       
+
+      - name: Archive artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: sgmodule-artifacts
+          path: ${{ github.workspace }}/Surge
+        
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "未监测到变动，跳过提交"
+          else
+            echo "::set-output name=changes_exist::true"
+            echo "已监测到变动，执行下一步骤"
+          fi
+      
+      - name: Commit and push if changes exist
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          git add .
+          if git diff --staged --quiet; then
+            echo "未监测到变动，跳过提交"
+          else
+            git commit -m "自动更新：已转换为sgmodule文件"
+            git push origin HEAD:main --force
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Trigger next workflow convert_js_to_plugin
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: convert_js_to_plugin.yml
+          token: ${{ secrets.GITHUB_TOKEN }}          

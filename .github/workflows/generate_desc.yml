@@ -1,0 +1,67 @@
+# 需要搭配generate_desc.py使用。
+# author: Levi
+
+# 给qx的文件在文件开头增加综合链接注释，如下所示：
+# // Quantumult X引用地址
+# // Surge/Shadowrocket 模块地址
+# // Loon 插件地址
+# // Stash 覆写地址
+
+name: generate_desc
+
+on: # 注释内容默认关闭，如单一使用工作流取消#并删除工作流最后一部分即可
+ # push:
+   # branches:
+     # - main
+   # paths:
+     # - 'scripts/**'
+  workflow_dispatch: # 这是手动触发
+
+jobs:
+  generate-desc:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout the code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.9' 
+
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests
+
+    - name: Run script
+      run: python .github/scripts/generate_desc.py
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Check for changes
+      id: check_changes
+      run: |
+        if git diff --quiet; then 
+          echo "No changes in the commit."
+        else 
+          echo "::set-output name=changes_exist::true"
+        fi
+
+    - name: Sync with remote
+      if: steps.check_changes.outputs.changes_exist == 'true'
+      run: |
+        git fetch origin
+        git reset --soft origin/main
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   
+    
+    - name: Commit and push if changes exist
+      if: steps.check_changes.outputs.changes_exist == 'true'
+      run: |
+        git config user.name "${{ github.actor }}"
+        git config user.email "${{ github.actor }}@users.noreply.github.com"
+        git add -A
+        git commit -m "为js/conf/snippet增加综合注释"
+        git push --force origin HEAD:main
