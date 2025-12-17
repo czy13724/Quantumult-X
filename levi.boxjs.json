@@ -314,7 +314,6 @@
                     "desc": "开启后，运行日志会输出更多调试细节"
                 }
             ],
-            "script": "https://script.levifree.qzz.io/topspace.js",
             "name": "TopSpace",
             "icons": [
                 "https://fastly.jsdelivr.net/gh/czy13724/LeviIcons@main/leviicons/topspace.png",

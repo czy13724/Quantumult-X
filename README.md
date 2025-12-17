@@ -37,7 +37,7 @@ DO NOT FORK!!! If you like the repo, please click star✨
   </div>
 
 ---
-* 🔍使用[该工具](https://scripts.levifree.qzz.io)查询脚本。
+* 🔍使用[该工具](https://script.levifree.qzz.io)查询脚本。
 * 请用Quantumult X中http请求功能添加 [点击安装](https://quantumult.app/x/open-app/ui?module=gallery&type=task&action=add&content=%5B%0A%20%20%20%20%22https%3A%2F%2Fgist.githubusercontent.com%2Fczy13724%2Fe5caaa812632bfb15ab31c7953976b26%2Fraw%2Flevi.gallery.json%22%0A%5D),手动添加 [该链接](https://gist.githubusercontent.com/czy13724/e5caaa812632bfb15ab31c7953976b26/raw/levi.gallery.json)
 * 请用boxjs添加以下订阅 [levi.boxjs.json](https://raw.githubusercontent.com/czy13724/quantmultx/main/levi.boxjs.json)
 * 请用Quantumult X, Surge, Loon等App添加图标订阅 [levi.icons.json](https://raw.githubusercontent.com/czy13724/LeviIcons/main/levi.icons.json)
