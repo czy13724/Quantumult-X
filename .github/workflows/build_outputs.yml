@@ -77,9 +77,18 @@ jobs:
           if git diff --staged --quiet; then
             echo "未监测到变动，跳过提交"
           else
-            names=$(git diff --cached --name-only -- 'scripts/*.js' 'scripts/*.conf' 'scripts/*.snippet' | awk -F/ '{print $2}' | sed -e 's/\\.[^.]*$//' | sort -u | paste -sd ', ' -)
-            if [ -z "$names" ]; then
+            names_list=$(git diff --cached --name-only -- 'scripts/*.js' 'scripts/*.conf' 'scripts/*.snippet' | awk -F/ '{print $2}' | sed -e 's/\\.[^.]*$//' | sort -u)
+            if [ -z "$names_list" ]; then
               names="scripts"
+            else
+              count=$(echo "$names_list" | wc -l | tr -d ' ')
+              if [ "$count" -le 3 ]; then
+                names=$(echo "$names_list" | paste -sd ', ' -)
+              else
+                top3=$(echo "$names_list" | head -n 3 | paste -sd ', ' -)
+                rest=$((count - 3))
+                names="${top3} +${rest}"
+              fi
             fi
             git commit --author "czy13724 <support@levifree.qzz.io>" -m "自动更新（${names}）生成模块与描述"
             git push origin HEAD:main
