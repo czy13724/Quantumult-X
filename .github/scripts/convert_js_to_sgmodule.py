@@ -37,8 +37,7 @@ def js_to_sgmodule(js_content):
     # Extract information from the JS content
     name_match = re.search(r'项目名称：(.*?)\n', js_content)
     desc_match = re.search(r'使用说明：(.*?)\n', js_content)
-    mitm_match = re.search(r'\[mitm\]\s*([^=\n]+=[^\n]+)\s*', js_content, re.DOTALL | re.IGNORECASE)
-    hostname_match = re.search(r'hostname\s*=\s*([^=\n]+=[^\n]+)\s*', js_content, re.DOTALL | re.IGNORECASE)
+    mitm_match = re.search(r'\[mitm\](.*?)(?:\n\[|$)', js_content, re.DOTALL | re.IGNORECASE)
 
     # If there is no project name and description, use the last part of the matched URL as the project name
     if not (name_match and desc_match):
@@ -56,10 +55,16 @@ def js_to_sgmodule(js_content):
         project_desc = desc_match.group(1).strip()
 
     mitm_content = mitm_match.group(1).strip() if mitm_match else ''
-    hostname_content = hostname_match.group(1).strip() if hostname_match else ''
+    mitm_content_line = ''
+    if mitm_content:
+        hostname_line_match = re.search(r'^\s*hostname\s*=\s*(.+)$', mitm_content, re.MULTILINE | re.IGNORECASE)
+        if hostname_line_match:
+            mitm_content_line = f"hostname = {hostname_line_match.group(1).strip()}"
+        else:
+            mitm_content_line = mitm_content.strip()
 
-    # Insert %APPEND% into mitm and hostname content
-    mitm_content_with_append = insert_append(mitm_content)
+    # Insert %APPEND% into mitm content if present
+    mitm_content_with_append = insert_append(mitm_content_line) if mitm_content_line else ''
 
     # Generate sgmodule content
     sgmodule_content = f"""#!name={project_name}
@@ -130,10 +135,5 @@ def main():
                     sgmodule_file.write(sgmodule_content)
 
                 print(f"Generated {sgmodule_file_path}")
-
-
-                os.system(f'git add {file_path}')
-                os.system('git commit -m "Trigger update"')
-
 if __name__ == "__main__":
     main()

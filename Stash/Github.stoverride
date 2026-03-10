@@ -10,15 +10,16 @@ http:
 
   script:  
   - match: https://api.github.com/graphql
-    name: GitHub 1.142.1_62
+    name: GitHub 1.142.1_1
     type: response
     require-body: true
     max-size: -1
     timeout: 60
+    script: GitHub 1.142.1_1
 
 
 script-providers:
-  "GitHub 1.142.1_62":
+  "GitHub 1.142.1_1":
     url: https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/Github.js
     interval: 86400
 

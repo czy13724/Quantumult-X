@@ -15,6 +15,7 @@ http:
     require-body: true
     max-size: -1
     timeout: 60
+    script: MondlyPremium_62
 
 
 script-providers:

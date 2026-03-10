@@ -10,15 +10,16 @@ http:
 
   script:  
   - match: ^https?:\/\/nicegram\.cloud\/api\/v\d\/(ai-assistant\/purchase-list|user\/info|telegram\/auth)
-    name: nicegram_62
+    name: nicegram_88
     type: response
     require-body: true
     max-size: -1
     timeout: 60
+    script: nicegram_88
 
 
 script-providers:
-  "nicegram_62":
+  "nicegram_88":
     url: https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/nicegram.js
     interval: 86400
 

@@ -1,3 +1,7 @@
+// Quantumult X引用地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/revenuecat.js
+// Surge/Shadowrocket 模块地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Surge/revenuecat.sgmodule
+// Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/revenuecat.stoverride
+
 /*************************************
 
 项目名称：revenuecat合集

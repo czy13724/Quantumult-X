@@ -10,15 +10,16 @@ http:
 
   script:  
   - match: ^https:\/\/iap\.etm\.tech\/receipts
-    name: Al Photo Generator-Collart AI_62
+    name: Al Photo Generator-Collart AI_24
     type: response
     require-body: true
     max-size: -1
     timeout: 60
+    script: Al Photo Generator-Collart AI_24
 
 
 script-providers:
-  "Al Photo Generator-Collart AI_62":
+  "Al Photo Generator-Collart AI_24":
     url: https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/Al
     interval: 86400
 

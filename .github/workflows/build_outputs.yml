@@ -1,0 +1,86 @@
+# author: Levi
+# 统一执行脚本转换与描述生成（自动触发，单次提交）
+
+name: build outputs
+
+on:
+  push:
+    paths:
+      - 'scripts/**'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: build-outputs
+      cancel-in-progress: true
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install PyGithub requests
+
+      - name: Convert to sgmodule
+        run: python .github/scripts/convert_js_to_sgmodule.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Convert to stoverride
+        run: python .github/scripts/convert_js_to_stoverride.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate descriptions
+        run: python .github/scripts/generate_desc.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Archive Surge artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: sgmodule-artifacts
+          path: ${{ github.workspace }}/Surge
+
+      - name: Archive Stash artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: stoverride-artifacts
+          path: ${{ github.workspace }}/Stash
+
+      - name: Detect changes
+        id: changes
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "changes=false" >> "$GITHUB_OUTPUT"
+            echo "未监测到变动，跳过提交"
+          else
+            echo "changes=true" >> "$GITHUB_OUTPUT"
+            echo "已监测到变动，执行提交"
+          fi
+
+      - name: Commit and push if changes exist
+        if: steps.changes.outputs.changes == 'true'
+        run: |
+          git config user.name "czy13724"
+          git config user.email "support@levifree.qzz.io"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "未监测到变动，跳过提交"
+          else
+            names=$(git diff --cached --name-only -- 'scripts/*.js' 'scripts/*.conf' 'scripts/*.snippet' | awk -F/ '{print $2}' | sed -e 's/\\.[^.]*$//' | sort -u | paste -sd ', ' -)
+            if [ -z "$names" ]; then
+              names="scripts"
+            fi
+            git commit --author "czy13724 <support@levifree.qzz.io>" -m "自动更新（${names}）生成模块与描述"
+            git push origin HEAD:main
+          fi

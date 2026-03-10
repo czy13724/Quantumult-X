@@ -10,15 +10,16 @@ http:
 
   script:  
   - match: ^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$
-    name: 语言类iTunes合集（此合集只包含learn xx with flashcards）_62
+    name: 语言类iTunes合集（此合集只包含learn xx with flashcards）_55
     type: response
     require-body: true
     max-size: -1
     timeout: 60
+    script: 语言类iTunes合集（此合集只包含learn xx with flashcards）_55
 
 
 script-providers:
-  "语言类iTunes合集（此合集只包含learn xx with flashcards）_62":
+  "语言类iTunes合集（此合集只包含learn xx with flashcards）_55":
     url: https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/Language_iTunes.js
     interval: 86400
 

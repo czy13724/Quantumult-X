@@ -10,15 +10,16 @@ http:
 
   script:  
   - match: https:\/\/(?:cdn-bm\.camera360\.com\/api\/iap\/check-receipt|phototask-api\.360in\.com\/user\/profile|cdn-bm\.camera360\.com\/api\/pay\/recovery)
-    name: camera360_62
+    name: camera360_11
     type: response
     require-body: true
     max-size: -1
     timeout: 60
+    script: camera360_11
 
 
 script-providers:
-  "camera360_62":
+  "camera360_11":
     url: https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/camera360.js
     interval: 86400
 

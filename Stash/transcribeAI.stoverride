@@ -10,15 +10,16 @@ http:
 
   script:  
   - match: ^https?:\/\/api\.revenuecat\.com\/v1\/(subscribers\/[^\/]+$|receipts$)
-    name: transcribeAI_62
+    name: transcribeAI_92
     type: response
     require-body: true
     max-size: -1
     timeout: 60
+    script: transcribeAI_92
 
 
 script-providers:
-  "transcribeAI_62":
+  "transcribeAI_92":
     url: https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/transcribeAI.js
     interval: 86400
 

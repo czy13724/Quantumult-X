@@ -3,13 +3,14 @@
 
 import os
 import re
-import random
+import zlib
 
-# Generate a random number at the beginning to maintain consistency in usage
-random_number = random.randint(0, 99)
+def stable_suffix(value):
+    # Stable 0-99 suffix derived from content, avoids changing each run
+    return zlib.crc32(value.encode('utf-8')) % 100
 
 
-def task_local_to_stoverride(js_content, project_name, random_number):
+def task_local_to_stoverride(js_content, project_name, suffix):
     task_local_content = ''
     # Check if [task_local] section exists
     task_local_block_match = re.search(r'\[task_local\](.*?)\n\[', js_content, re.DOTALL | re.IGNORECASE)
@@ -23,8 +24,16 @@ def task_local_to_stoverride(js_content, project_name, random_number):
             script_url = script_url.split(',')[0]
             # Extract the file name from the link to use as the tag
             tag = os.path.splitext(os.path.basename(script_url))[0]
+            provider_name = f"{project_name}_{suffix}"
             # Construct the stoverride cron task section
-            task_local_content = f'cron: \n  script: \n      - name: "{project_name}_{random_number}"\n      cron: "{cronexp}"\n      timeout: 60\n'
+            task_local_content = (
+                "cron:\n"
+                "  script:\n"
+                f"    - name: \"{provider_name}\"\n"
+                f"      cron: \"{cronexp}\"\n"
+                f"      script: {provider_name}\n"
+                "      timeout: 60\n"
+            )
     # Return the task_local section content, if any
     return task_local_content
 
@@ -45,8 +54,9 @@ def mitm_to_stoverride(js_content):
     # Returns the processed MITM string
     return mitm_content
 
-def script_to_stoverride(js_content, project_name, random_number):
+def script_to_stoverride(js_content, project_name, suffix):
     script_content = ''
+    provider_name = f"{project_name}_{suffix}"
     # match rewrite_local part
     rewrite_matches = re.finditer(
         r'^(.*?)(?:\s*url\s+script-(response|request)-(body|header)\s+(.*))$', 
@@ -58,23 +68,23 @@ def script_to_stoverride(js_content, project_name, random_number):
         stoverride_method = 'request' if method == 'request' else 'response'
       # kind is not used for the time being, the actual process may need to change the script path according to 'body' and 'header'.
         script_content += f'  \n  - match: {pattern.strip()}\n'
-        script_content += f'    name: {project_name}_{random_number}\n'
+        script_content += f'    name: {provider_name}\n'
         script_content += f'    type: {stoverride_method}\n'
         script_content += f'    require-body: true\n'
         script_content += f'    max-size: -1\n'
         script_content += f'    timeout: 60\n'  
+        script_content += f'    script: {provider_name}\n'
     
     return script_content
 
-def script_providers_to_stoverride(project_name, script_path):
-    # Use the same random_number for consistency
-    name = f"{project_name}_{random_number}"
+def script_providers_to_stoverride(project_name, script_path, suffix):
+    provider_name = f"{project_name}_{suffix}"
     # Use the correct script_path as url
     url = script_path.strip()
     interval = 86400  
     script_providers_content = (
         f'script-providers:\n'
-        f'  "{project_name}_{random_number}":\n'
+        f'  "{provider_name}":\n'
         f'    url: {url}\n'
         f'    interval: {interval}\n'
     )
@@ -107,6 +117,8 @@ def js_to_stoverride(js_content):
         project_name = name_match.group(1).strip()
         project_desc = desc_match.group(1).strip()
 
+    suffix = stable_suffix(project_name)
+
     # Create the final stoverride content string
     stoverride_content = (
         f"name: |-\n  {project_name}\ndesc: |-\n  {project_desc}\n\n"
@@ -119,7 +131,7 @@ def js_to_stoverride(js_content):
         stoverride_content += f"  mitm:\n{mitm_section}\n"
 
     # Extract the script section
-    script_section = script_to_stoverride(js_content, project_name, random_number)
+    script_section = script_to_stoverride(js_content, project_name, suffix)
     if script_section:
         stoverride_content += f"\n  script:{script_section}\n"
 
@@ -134,11 +146,11 @@ def js_to_stoverride(js_content):
     script_path = url_match.group(1).strip()
 
     # Add the script-providers section with the project name and the extracted script path
-    script_providers_section = script_providers_to_stoverride(project_name, script_path)
+    script_providers_section = script_providers_to_stoverride(project_name, script_path, suffix)
     stoverride_content += f"\n{script_providers_section}\n"
 
     # Process task_local section
-    task_local_section = task_local_to_stoverride(js_content, project_name, random_number)
+    task_local_section = task_local_to_stoverride(js_content, project_name, suffix)
     if task_local_section:
         stoverride_content += f"\n{task_local_section}\n"
 
@@ -176,9 +188,5 @@ def main():
                 else:
                     # Skip files without the required sections
                     print(f"跳过 {file_name} 由于文件缺失匹配内容，请仔细检查.")
-
-                os.system(f'git add {file_path}')
-                os.system('git commit -m "Trigger update"')
-
 if __name__ == "__main__":
     main()

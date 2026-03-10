@@ -10,15 +10,16 @@ http:
 
   script:  
   - match: ^https:\/\/gw\.aoscdn\.com\/base\/vip\/v2\/vips$
-    name: 傲软投屏_62
+    name: 傲软投屏_86
     type: response
     require-body: true
     max-size: -1
     timeout: 60
+    script: 傲软投屏_86
 
 
 script-providers:
-  "傲软投屏_62":
+  "傲软投屏_86":
     url: https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/artp.js
     interval: 86400
 

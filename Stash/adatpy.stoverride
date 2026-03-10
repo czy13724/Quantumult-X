@@ -10,15 +10,16 @@ http:
 
   script:  
   - match: ^https?:\/\/api\.adapty\.io\/api\/v\d\/sdk\/(analytics\/profiles|in-apps\/(apple\/receipt\/validate|purchase-containers)|purchase\/app-store)
-    name: adapty-合集_62
+    name: adapty-合集_54
     type: response
     require-body: true
     max-size: -1
     timeout: 60
+    script: adapty-合集_54
 
 
 script-providers:
-  "adapty-合集_62":
+  "adapty-合集_54":
     url: https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/adatpy.js
     interval: 86400
 
