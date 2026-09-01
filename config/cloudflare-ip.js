@@ -146,8 +146,17 @@ function md5(s) {
   return hex(md51(s));
 }
 
+// 密钥不再硬编码在源码中，需通过 Quantumult X 的 argument 或
+// $persistentStore 自行配置（例如在模块参数中传入 cf_api_secret=xxx）
+const apiSecret = (typeof $argument !== "undefined" && $argument) ||
+  ($persistentStore && $persistentStore.read("cf_api_secret")) || "";
+if (!apiSecret) {
+  $notify("未配置 API 密钥", "", "请在模块参数或持久化存储中配置 cf_api_secret");
+  $done();
+}
+
 const time = Date.now().toString();
-const key = md5(md5("DdlTxtN0sUOu") + "70cloudflareapikey" + time);
+const key = md5(md5(apiSecret) + "70cloudflareapikey" + time);
 
 const url = `https://api.uouin.com/index.php/index/Cloudflare?key=${key}&time=${time}`;
 
