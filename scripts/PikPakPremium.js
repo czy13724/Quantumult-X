@@ -1,8 +1,3 @@
-// Quantumult X引用地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/PikPakPremium.js
-// Surge/Shadowrocket 模块地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Surge/PikPakPremium.sgmodule
-// Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/PikPakPremium.plugin
-// Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/PikPakPremium.stoverride
-
 /*
 项目名称： PikPak
 项目作者： David
@@ -17,30 +12,38 @@
 hostname = *.mypikpak.com
 */
 
-var url = $request.url;
-var objc = JSON.parse($response.body);
-const URL1 = '/vip/info';
-const URL2 = '/about';
-const URL3 = '/allSubscriptionStatus';
-if (url.indexOf(URL1) != -1) {
+const url = $request.url;
+let objc = JSON.parse($response.body || '{}');
+
+if (url.includes('/vip/info')) {
+  objc.data = objc.data || {};
   objc.data.expire = "2099-09-09T00:00:00+09:00";
   objc.data.status = "ok";
   objc.data.type = "platinum";
   objc.data.vipItem = [
-      {
-        "status" : "ok",
-        "expire" : "2099-09-09T00:00:00+09:00",
-        "type" : "regional",
-        "description" : "Regional members",
-        "surplus_day" : 747364014
-      }
-    ];
-};
-if (url.indexOf(URL2) != -1) {
+    {
+      "status": "ok",
+      "expire": "2099-09-09T00:00:00+09:00",
+      "type": "regional",
+      "description": "Regional members",
+      "surplus_day": 747364014
+    }
+  ];
+} else if (url.includes('/about')) {
+  objc.quota = objc.quota || {};
   objc.quota.limit = "10999166278790";
-	objc.quota.is_unlimited = true;
-};
-if (url.indexOf(URL3) != -1) {
-  objc.apple = {"subscribed":true,"purchased":true,"status":"trial","interval":"year","product":"sub.year","past_due_deadline":"","pay_type":"","region":"regional"};
-};
-$done({body:JSON.stringify(objc)});
+  objc.quota.is_unlimited = true;
+} else if (url.includes('/allSubscriptionStatus')) {
+  objc.apple = {
+    "subscribed": true,
+    "purchased": true,
+    "status": "trial",
+    "interval": "year",
+    "product": "sub.year",
+    "past_due_deadline": "",
+    "pay_type": "",
+    "region": "regional"
+  };
+}
+
+$done({ body: JSON.stringify(objc) });

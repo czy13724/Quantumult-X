@@ -1,8 +1,3 @@
-// Quantumult X引用地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/transcribeAI.js
-// Surge/Shadowrocket 模块地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Surge/transcribeAI.sgmodule
-// Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/transcribeAI.plugin
-// Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/transcribeAI.stoverride
-
 /*
 项目名称： transcribeAI
 项目作者： Levi
@@ -17,8 +12,7 @@
 hostname = api.revenuecat.com
 */
 
-var Levi = JSON.parse($response.body);
-Levi= {
+const Levi = {
   "request_date_ms": 1707323487257,
   "request_date": "2024-02-07T16:31:27Z",
   "subscriber": {
@@ -42,9 +36,8 @@ Levi= {
         "purchase_date": "2024-01-10T05:35:24Z"
       }
     },
-    "management_url": https://t.me/plbyjl,
-    "subscriptions": {
-    },
+    "management_url": "https://t.me/plbyjl",
+    "subscriptions": {},
     "entitlements": {
       "pro": {
         "ownership_type": "PURCHASED",
@@ -53,7 +46,7 @@ Levi= {
         "grace_period_expires_date": null,
         "purchase_date": "2024-01-10T05:35:24Z",
         "product_identifier": "voicenotes_0_lifetime",
-        "expires_date": "2099-12-31T01:01:01Z",
+        "expires_date": "2099-12-31T01:01:01Z"
       }
     },
     "original_purchase_date": "2024-01-10T05:35:24Z",
@@ -61,5 +54,5 @@ Levi= {
     "last_seen": "2024-02-07T16:21:59Z"
   }
 };
-     
-$done({body: JSON.stringify(Levi)});
+
+$done({ body: JSON.stringify(Levi) });

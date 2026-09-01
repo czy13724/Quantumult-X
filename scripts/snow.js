@@ -1,8 +1,3 @@
-// Quantumult X引用地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/snow.js
-// Surge/Shadowrocket 模块地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Surge/snow.sgmodule
-// Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/snow.plugin
-// Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/snow.stoverride
-
 /*
 项目名称： SNOW-Ai写真  +  EPIK AI 两个软件
 项目作者： David
@@ -16,25 +11,24 @@
 [mitm]
 hostname = *.snow.me
 */
-if ($response.body !== 'undefined') {
-  var mgmdev = JSON.parse($response.body);
-  const url = $request.url;
-  var ids;
-  var packageName;
 
-  if (url.indexOf('EPIK') !== -1) {
+if ($response.body) {
+  const mgmdev = JSON.parse($response.body);
+  const url = $request.url;
+  let ids = "com.campmobile.snow.subscribe.oneyear";
+
+  if (url.includes('EPIK')) {
     ids = "com.snowcorp.epik.subscribe.plan.oneyear";
-    packageName = "com.snowcorp.epik";
-  } else if (url.indexOf('SNOW') !== -1) {
-    ids = "com.campmobile.snow.subscribe.oneyear";
-    packageName = "com.snowcorp.snow";
   }
 
-  mgmdev["result"]["products"].forEach(product => {
-    product.productId = ids;
-  });
-
-  mgmdev["result"]["activated"] = true;
+  if (mgmdev.result && Array.isArray(mgmdev.result.products)) {
+    mgmdev.result.products.forEach(product => {
+      product.productId = ids;
+    });
+    mgmdev.result.activated = true;
+  }
 
   $done({ body: JSON.stringify(mgmdev) });
+} else {
+  $done({});
 }

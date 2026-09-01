@@ -1,8 +1,3 @@
-// Quantumult X引用地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/MimoPro.js
-// Surge/Shadowrocket 模块地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Surge/MimoPro.sgmodule
-// Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/MimoPro.plugin
-// Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/MimoPro.stoverride
-
 /*
 项目名称： Mimo
 项目作者： David
@@ -11,15 +6,13 @@
 使用声明： 仅供个人参考学习交流，勿用于其它用途
 
 [rewrite_local]
-https://api.getmimo.com/v1/subscriptions url script-response-body https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/MimoPro.js
+https:\/\/api\.getmimo\.com\/v1\/subscriptions url script-response-body https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/MimoPro.js
 
 [mitm]
 hostname = api.getmimo.com
 */
 
-var obj = JSON.parse($response.body);
-
-obj = {
+const obj = {
   "isActive": true,
   "source": "ios",
   "status": "active",
@@ -44,5 +37,6 @@ obj = {
   "createdAt": "2024-02-12T10:04:09+00:00",
   "clientSecret": "",
   "canceledAt": "2024-02-12T09:25:22.380735+00:00"
-}
-$done({body: JSON.stringify(obj)});
+};
+
+$done({ body: JSON.stringify(obj) });

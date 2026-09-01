@@ -1,8 +1,3 @@
-// Quantumult X引用地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/artp.js
-// Surge/Shadowrocket 模块地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Surge/artp.sgmodule
-// Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/artp.plugin
-// Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/artp.stoverride
-
 /*
 项目名称： 傲软投屏
 项目作者： David
@@ -16,8 +11,8 @@
 [mitm]
 hostname = gw.aoscdn.com
 */
-var objc = JSON.parse($response.body);
-objc = {
+
+const objc = {
   "status": 200,
   "message": "success",
   "data": {
@@ -35,12 +30,13 @@ objc = {
     "ai_quota": 999999999,
     "license_type": "vip",
     "quota": 9999999999,
-  "selected": 1,
-  "product_desc": "Flash sale",
+    "selected": 1,
+    "product_desc": "Flash sale",
     "vip_quantity": 6,
-  "enable": 1,
+    "enable": 1,
     "status": 1,
     "coin": 9999999999
   }
-}
-$done({ body: JSON.stringify(objc)});
+};
+
+$done({ body: JSON.stringify(objc) });

@@ -1,8 +1,3 @@
-// Quantumult X引用地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/AlPhotoGenerator.js
-// Surge/Shadowrocket 模块地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Surge/AlPhotoGenerator.sgmodule
-// Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/AlPhotoGenerator.plugin
-// Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/AlPhotoGenerator.stoverride
-
 /*
 项目名称： Al Photo Generator-Collart AI
 项目作者： David
@@ -11,14 +6,14 @@
 使用声明： 仅供个人参考学习交流，勿用于其它用途
 
 [rewrite_local]
-^https:\/\/iap\.etm\.tech\/receipts url script-response-body https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/Al Photo Generator.js
+^https:\/\/iap\.etm\.tech\/receipts url script-response-body https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/AlPhotoGenerator.js
 
 [mitm]
-hostname = hostname = iap.etm.tech
-
+hostname = iap.etm.tech
 */
-var objc = JSON.parse($response.body);
-objc = {
+
+const objc = {
+  "is_valid": true,
   "entitlements": [
     {
       "redeem": {},
@@ -31,8 +26,7 @@ objc = {
       "is_in_trial_period": false,
       "entitlement_id": "premium"
     }
-  ],
-  "is_valid": true
+  ]
 };
 
 $done({ body: JSON.stringify(objc) });

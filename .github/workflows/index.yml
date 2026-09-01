@@ -1,0 +1,57 @@
+# ============================================================
+# GitHub Actions: Auto-generate Scripts Index (自动同步脚本索引)
+# Author: Levi
+# Trigger: scripts/ 目录发生变更时自动执行并更新 docs/SCRIPTS.md
+# ============================================================
+
+name: Index Sync
+
+on:
+  push:
+    paths:
+      - 'scripts/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: index-sync
+      cancel-in-progress: true
+
+    steps:
+      - name: Checkout repository
+        run: |
+          git clone --branch ${{ github.ref_name }} --depth 1 "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" .
+
+      - name: Generate scripts index
+        run: python3 .github/scripts/index.py
+        env:
+          GITHUB_REPOSITORY: ${{ github.repository }}
+
+      - name: Detect changes
+        id: changes
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "changes=false" >> "$GITHUB_OUTPUT"
+            echo "未监测到变动，跳过提交"
+          else
+            echo "changes=true" >> "$GITHUB_OUTPUT"
+            echo "已监测到变动，执行提交"
+          fi
+
+      - name: Commit and push if changes exist
+        if: steps.changes.outputs.changes == 'true'
+        run: |
+          git config user.name "czy13724"
+          git config user.email "support@levifree.qzz.io"
+          git add docs/SCRIPTS.md
+          if git diff --staged --quiet; then
+            echo "未监测到变动，跳过提交"
+          else
+            git commit --author "czy13724 <support@levifree.qzz.io>" -m "chore: 自动同步脚本索引 (docs/SCRIPTS.md)"
+            git push origin HEAD:${{ github.ref_name }}
+          fi

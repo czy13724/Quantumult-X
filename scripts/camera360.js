@@ -1,8 +1,3 @@
-// Quantumult X引用地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/camera360.js
-// Surge/Shadowrocket 模块地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Surge/camera360.sgmodule
-// Loon 插件地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Loon/camera360.plugin
-// Stash 覆写地址： https://raw.githubusercontent.com/czy13724/Quantumult-X/main/Stash/camera360.stoverride
-
 /*
 项目名称： camera360
 项目作者： David
@@ -11,15 +6,13 @@
 使用声明： 仅供个人参考学习交流，禁止用于商业用途。
 
 [rewrite_local]
-https:\/\/(?:cdn-bm\.camera360\.com\/api\/iap\/check-receipt|phototask-api\.360in\.com\/user\/profile|cdn-bm\.camera360\.com\/api\/pay\/recovery) url script-response-body https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/camera360.js    
+https:\/\/(?:cdn-bm\.camera360\.com\/api\/iap\/check-receipt|phototask-api\.360in\.com\/user\/profile|cdn-bm\.camera360\.com\/api\/pay\/recovery) url script-response-body https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/camera360.js
 
 [mitm]
 hostname = *.camera360.com
 */
 
-var obj = JSON.parse($response.body);
-obj=
-{
+const obj = {
   "status": 200,
   "data": {
     "sandbox": 1,
@@ -35,4 +28,5 @@ obj=
   "exetime": "1572056389212-1672531199999",
   "serverTime": 1893451191.3622
 };
-$done({body: JSON.stringify(obj)});
+
+$done({ body: JSON.stringify(obj) });
